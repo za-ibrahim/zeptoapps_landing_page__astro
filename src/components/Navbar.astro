@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/logo.avif";
+import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
 ---
 
 <nav class="pt-4 text-black text-sm">
@@ -112,11 +113,8 @@ import logo from "../assets/logo.avif";
       </div>
 
       <!-- Get a Quote Button -->
-      <a
-        class="bg-[#0067ab] text-white py-2 px-4 rounded-lg ml-4 hidden lg:block"
-        href="/contact"
-      >
-        Get a Quote
+      <a href="/contact" class="hidden lg:block">
+        <ArrowAnimatedButton />
       </a>
 
       <!-- Mobile Menu Button -->
@@ -231,11 +229,8 @@ import logo from "../assets/logo.avif";
           <a class="mobile-links" href="/contact">Contact</a>
         </li>
         <li class="pt-3 border-t border-gray-200">
-          <a
-            class="bg-[#0067ab] text-white block py-3 px-4 rounded-lg text-center font-semibold"
-            href="/contact"
-          >
-            Get a Quote
+          <a href="/contact">
+            <ArrowAnimatedButton />
           </a>
         </li>
       </ul>
@@ -269,7 +264,7 @@ import logo from "../assets/logo.avif";
             "animate-slide-up",
             "animate-slide-down"
           );
-        }, 300); // Match animation duration
+        }, 260); // Match animation duration
       }
 
       // Update aria-expanded
