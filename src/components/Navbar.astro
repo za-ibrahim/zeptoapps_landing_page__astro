@@ -1,0 +1,520 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.avif";
+---
+
+<nav class="pt-4 text-black text-sm">
+  <div
+    class="max-w-4xl mx-auto bg-white border border-gray-300/50 shadow shadow-gray-300 rounded-xl p-2"
+  >
+    <!-- Mobile and Desktop Header -->
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <div>
+        <a href="/">
+          <Image src={logo} alt="Zepto Apps Logo" class="w-28 h-auto" />
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-5">
+        <ul class="flex gap-5">
+          <li>
+            <a class="links" href="/">Home</a>
+          </li>
+          <li class="dropdown-container">
+            <div
+              class="links"
+              role="button"
+              tabindex="0"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Services
+              <span class="parent-menu-dropdown-icon"
+                ><svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 492 492"
+                  style="enable-background:new 0 0 492 492;"
+                  xml:space="preserve"
+                >
+                  <g>
+                    <g>
+                      <path
+                        d="M265.2,390.7l218.9-218.9c5.1-5.1,7.9-11.8,7.9-19s-2.8-14-7.9-19L468,117.5c-10.5-10.5-27.6-10.5-38.1,0L246.1,301.4 L62,117.3c-5.1-5.1-11.8-7.9-19-7.9c-7.2,0-14,2.8-19,7.9L7.9,133.5c-5.1,5.1-7.9,11.8-7.9,19s2.8,14,7.9,19L227,390.7 c5.1,5.1,11.9,7.9,19.1,7.8C253.3,398.5,260.1,395.8,265.2,390.7z"
+                      ></path>
+                    </g>
+                  </g>
+                </svg></span
+              >
+            </div>
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="/web-development">Web Development</a></li>
+                <li><a href="/mobile-apps">Mobile Apps</a></li>
+                <li><a href="/e-commerce">E-commerce Solutions</a></li>
+                <li><a href="/consulting">Consulting</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="dropdown-container">
+            <div
+              class="links"
+              role="button"
+              tabindex="0"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Shopify Apps
+              <span class="parent-menu-dropdown-icon"
+                ><svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 492 492"
+                  style="enable-background:new 0 0 492 492;"
+                  xml:space="preserve"
+                >
+                  <g>
+                    <g>
+                      <path
+                        d="M265.2,390.7l218.9-218.9c5.1-5.1,7.9-11.8,7.9-19s-2.8-14-7.9-19L468,117.5c-10.5-10.5-27.6-10.5-38.1,0L246.1,301.4 L62,117.3c-5.1-5.1-11.8-7.9-19-7.9c-7.2,0-14,2.8-19,7.9L7.9,133.5c-5.1,5.1-7.9,11.8-7.9,19s2.8,14,7.9,19L227,390.7 c5.1,5.1,11.9,7.9,19.1,7.8C253.3,398.5,260.1,395.8,265.2,390.7z"
+                      ></path>
+                    </g>
+                  </g>
+                </svg></span
+              >
+            </div>
+            <div class="dropdown-menu">
+              <ul>
+                <li>
+                  <a href="/inventory-management">Inventory Management</a>
+                </li>
+                <li><a href="/order-tracking">Order Tracking</a></li>
+                <li><a href="/customer-reviews">Customer Reviews</a></li>
+                <li>
+                  <a href="/analytics-reporting">Analytics & Reporting</a>
+                </li>
+                <li><a href="/marketing-tools">Marketing Tools</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a class="links" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Get a Quote Button -->
+      <a
+        class="bg-[#0067ab] text-white py-2 px-4 rounded-lg ml-4 hidden lg:block"
+        href="/contact"
+      >
+        Get a Quote
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="lg:hidden mobile-menu-button p-2"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+      >
+        <svg
+          viewBox="-2.5 0 19 19"
+          xmlns="http://www.w3.org/2000/svg"
+          class="cf-icon-svg"
+          ><path
+            d="M.789 4.836a1.03 1.03 0 0 1 1.03-1.029h10.363a1.03 1.03 0 1 1 0 2.059H1.818A1.03 1.03 0 0 1 .79 4.836zm12.422 4.347a1.03 1.03 0 0 1-1.03 1.029H1.819a1.03 1.03 0 0 1 0-2.059h10.364a1.03 1.03 0 0 1 1.029 1.03zm0 4.345a1.03 1.03 0 0 1-1.03 1.03H1.819a1.03 1.03 0 1 1 0-2.059h10.364a1.03 1.03 0 0 1 1.029 1.03z"
+          ></path></svg
+        >
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div
+      class="mobile-menu hidden lg:hidden mt-4 border-t border-gray-200 pt-4"
+    >
+      <ul class="space-y-3">
+        <li>
+          <a class="mobile-links" href="/">Home</a>
+        </li>
+        <li class="mobile-dropdown-container">
+          <div class="mobile-links mobile-dropdown-trigger">
+            Services
+            <span class="mobile-dropdown-icon">
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 492 492"
+                class="w-4 h-4"
+              >
+                <path
+                  d="M265.2,390.7l218.9-218.9c5.1-5.1,7.9-11.8,7.9-19s-2.8-14-7.9-19L468,117.5c-10.5-10.5-27.6-10.5-38.1,0L246.1,301.4 L62,117.3c-5.1-5.1-11.8-7.9-19-7.9c-7.2,0-14,2.8-19,7.9L7.9,133.5c-5.1,5.1-7.9,11.8-7.9,19s2.8,14,7.9,19L227,390.7 c5.1,5.1,11.9,7.9,19.1,7.8C253.3,398.5,260.1,395.8,265.2,390.7z"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div class="mobile-dropdown-menu">
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a class="mobile-sub-links" href="/web-development"
+                  >Web Development</a
+                >
+              </li>
+              <li>
+                <a class="mobile-sub-links" href="/mobile-apps">Mobile Apps</a>
+              </li>
+              <li>
+                <a class="mobile-sub-links" href="/e-commerce"
+                  >E-commerce Solutions</a
+                >
+              </li>
+              <li>
+                <a class="mobile-sub-links" href="/consulting">Consulting</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="mobile-dropdown-container">
+          <div class="mobile-links mobile-dropdown-trigger">
+            Shopify Apps
+            <span class="mobile-dropdown-icon">
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 492 492"
+                class="w-4 h-4"
+              >
+                <path
+                  d="M265.2,390.7l218.9-218.9c5.1-5.1,7.9-11.8,7.9-19s-2.8-14-7.9-19L468,117.5c-10.5-10.5-27.6-10.5-38.1,0L246.1,301.4 L62,117.3c-5.1-5.1-11.8-7.9-19-7.9c-7.2,0-14,2.8-19,7.9L7.9,133.5c-5.1,5.1-7.9,11.8-7.9,19s2.8,14,7.9,19L227,390.7 c5.1,5.1,11.9,7.9,19.1,7.8C253.3,398.5,260.1,395.8,265.2,390.7z"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div class="mobile-dropdown-menu">
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a class="mobile-sub-links" href="/inventory-management"
+                  >Inventory Management</a
+                >
+              </li>
+              <li>
+                <a class="mobile-sub-links" href="/order-tracking"
+                  >Order Tracking</a
+                >
+              </li>
+              <li>
+                <a class="mobile-sub-links" href="/customer-reviews"
+                  >Customer Reviews</a
+                >
+              </li>
+              <li>
+                <a class="mobile-sub-links" href="/analytics-reporting"
+                  >Analytics & Reporting</a
+                >
+              </li>
+              <li>
+                <a class="mobile-sub-links" href="/marketing-tools"
+                  >Marketing Tools</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a class="mobile-links" href="/contact">Contact</a>
+        </li>
+        <li class="pt-3 border-t border-gray-200">
+          <a
+            class="bg-[#0067ab] text-white block py-3 px-4 rounded-lg text-center font-semibold"
+            href="/contact"
+          >
+            Get a Quote
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuButton = document.querySelector(".mobile-menu-button");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const mobileDropdownTriggers = document.querySelectorAll(
+      ".mobile-dropdown-trigger"
+    );
+
+    // Toggle mobile menu
+    mobileMenuButton?.addEventListener("click", function () {
+      const isHidden = mobileMenu?.classList.contains("hidden");
+
+      if (isHidden) {
+        // Show menu with animation
+        mobileMenu?.classList.remove("hidden");
+        mobileMenu?.classList.add("animate-slide-down");
+      } else {
+        // Hide menu with animation
+        mobileMenu?.classList.add("animate-slide-up");
+        setTimeout(() => {
+          mobileMenu?.classList.add("hidden");
+          mobileMenu?.classList.remove(
+            "animate-slide-up",
+            "animate-slide-down"
+          );
+        }, 300); // Match animation duration
+      }
+
+      // Update aria-expanded
+      if (mobileMenuButton) {
+        mobileMenuButton.setAttribute(
+          "aria-expanded",
+          isHidden ? "true" : "false"
+        );
+      }
+    });
+
+    // Handle mobile dropdown menus
+    mobileDropdownTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        const triggerElement = event.currentTarget as HTMLElement;
+        const container = triggerElement.closest(".mobile-dropdown-container");
+        const menu = container?.querySelector(".mobile-dropdown-menu");
+        const icon = triggerElement.querySelector(".mobile-dropdown-icon svg");
+
+        const isHidden = menu?.classList.contains("hidden");
+
+        if (isHidden) {
+          // Show dropdown with animation
+          menu?.classList.remove("hidden");
+          menu?.classList.add("animate-slide-down");
+          icon?.classList.add("rotate-180");
+        } else {
+          // Hide dropdown with animation
+          menu?.classList.add("animate-slide-up");
+          icon?.classList.remove("rotate-180");
+          setTimeout(() => {
+            menu?.classList.add("hidden");
+            menu?.classList.remove("animate-slide-up", "animate-slide-down");
+          }, 300);
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  @reference '../styles/global.css';
+
+  /* Desktop Navigation Styles */
+  .links {
+    @apply hover:text-[#0067ab] font-semibold flex items-center justify-center cursor-pointer transition-colors duration-200;
+  }
+
+  .parent-menu-dropdown-icon {
+    padding-left: 5px;
+  }
+
+  svg {
+    fill: #4d4d4d;
+    height: 0.7em;
+    width: auto;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+  }
+
+  .links:hover svg {
+    fill: #0067ab;
+  }
+
+  .mobile-menu-button svg {
+    height: 1.65rem;
+    width: auto;
+  }
+
+  /* Desktop Dropdown styles */
+  .dropdown-container {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid rgba(209, 213, 219, 0.5);
+    border-radius: 0.75rem;
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 50;
+    min-width: 200px;
+    margin-top: 8px;
+  }
+
+  .dropdown-container:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-container:hover svg {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu ul {
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+  }
+
+  .dropdown-menu li {
+    margin: 0;
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #374151;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-radius: 0;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: #f9fafb;
+    color: #0067ab;
+    padding-left: 1.25rem;
+  }
+
+  /* Mobile Navigation Styles */
+  .mobile-menu-button {
+    @apply text-gray-600 hover:text-[#0067ab] transition-colors duration-200;
+  }
+
+  .mobile-links {
+    @apply block py-2 px-3 text-gray-700 hover:text-[#0067ab] font-semibold transition-colors duration-200 cursor-pointer;
+  }
+
+  .mobile-dropdown-trigger {
+    @apply flex items-center justify-between w-full;
+  }
+
+  .mobile-dropdown-container {
+    @apply w-full;
+  }
+
+  .mobile-dropdown-icon {
+    @apply transition-transform duration-200;
+  }
+
+  .mobile-dropdown-icon svg {
+    @apply w-4 h-4 fill-current;
+  }
+
+  .mobile-dropdown-menu {
+    @apply hidden;
+    overflow: hidden;
+  }
+
+  .mobile-dropdown-menu:not(.hidden) {
+    display: block;
+  }
+
+  .mobile-sub-links {
+    @apply block py-2 px-3 text-gray-600 hover:text-[#0067ab] transition-colors duration-200;
+  }
+
+  /* Rotation utility for mobile dropdown icons */
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    nav {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  /* Mobile menu animations */
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-in forwards;
+  }
+
+  @media (max-width: 480px) {
+    nav {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    .mobile-links {
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+    }
+
+    .mobile-sub-links {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Animations */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Ensure dropdown appears outside the nav container */
+  nav {
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Enhanced mobile experience */
+  .mobile-menu {
+    @apply border-t border-gray-200;
+  }
+
+  /* Logo responsive sizing */
+  @media (max-width: 640px) {
+    .mobile-menu {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+    }
+  }
+</style>
