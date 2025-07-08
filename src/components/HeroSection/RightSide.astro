@@ -28,7 +28,7 @@ import img5 from "../../assets/products/5.png";
       <Image
         src={img1}
         alt="Product 1"
-        class="absolute top-[65px] rounded-sm w-6 h-auto"
+        class="product absolute top-[65px] rounded-sm w-6 h-auto"
       />
     </div>
   </div>
@@ -37,7 +37,7 @@ import img5 from "../../assets/products/5.png";
       <Image
         src={img2}
         alt="Product 2"
-        class="absolute top-[25px] rounded-sm w-6 h-auto"
+        class="product absolute top-[25px] rounded-sm w-6 h-auto"
       />
     </div>
   </div>
@@ -46,7 +46,7 @@ import img5 from "../../assets/products/5.png";
       <Image
         src={img3}
         alt="Product 3"
-        class="absolute top-[40px] right-0 rounded-sm w-6 h-auto"
+        class="product absolute top-[40px] right-0 rounded-sm w-6 h-auto"
       />
     </div>
   </div>
@@ -55,7 +55,7 @@ import img5 from "../../assets/products/5.png";
       <Image
         src={img4}
         alt="Product 4"
-        class="absolute bottom-[60px] right-0 rounded-sm w-6 h-auto"
+        class="product absolute bottom-[60px] right-0 rounded-sm w-6 h-auto"
       />
     </div>
   </div>
@@ -104,6 +104,15 @@ import img5 from "../../assets/products/5.png";
   }
   .loader .box:nth-child(5) .upper-box {
     animation: rotateBox 20s infinite linear;
+  }
+
+  .loader .box:nth-child(2) .upper-box .product,
+  .loader .box:nth-child(4) .upper-box .product {
+    animation: stable-rotate 30s infinite linear;
+  }
+  .loader .box:nth-child(3) .upper-box .product,
+  .loader .box:nth-child(5) .upper-box .product {
+    animation: stable-rotate 20s infinite linear;
   }
 
   .loader .box:nth-child(1) {
@@ -174,6 +183,14 @@ import img5 from "../../assets/products/5.png";
     }
     100% {
       transform: rotate(360deg);
+    }
+  }
+  @keyframes stable-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
     }
   }
 
