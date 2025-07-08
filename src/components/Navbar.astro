@@ -4,9 +4,9 @@ import logo from "../assets/logo.avif";
 import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
 ---
 
-<nav class="pt-4 text-black text-sm">
+<nav class="text-black text-sm">
   <div
-    class="max-w-4xl mx-auto bg-white border border-gray-300/50 shadow shadow-gray-300 rounded-xl p-2"
+    class="nav-container mx-auto bg-white border border-white shadow rounded-xl p-2"
   >
     <!-- Mobile and Desktop Header -->
     <div class="flex justify-between items-center">
@@ -468,14 +468,6 @@ import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
     transform: rotate(180deg);
   }
 
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    nav {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-  }
-
   /* Mobile menu animations */
   .animate-slide-down {
     animation: slideDown 0.3s ease-out forwards;
@@ -486,11 +478,6 @@ import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
   }
 
   @media (max-width: 480px) {
-    nav {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-    }
-
     .mobile-links {
       padding: 0.75rem 1rem;
       font-size: 1rem;
@@ -527,8 +514,16 @@ import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
 
   /* Ensure dropdown appears outside the nav container */
   nav {
-    position: relative;
-    z-index: 10;
+    position: sticky;
+    top: 1rem;
+    z-index: 50;
+  }
+  .nav-container {
+    position: absolute;
+    z-index: 50;
+    width: 100%;
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.72);
   }
 
   /* Enhanced mobile experience */
