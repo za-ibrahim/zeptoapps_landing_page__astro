@@ -31,38 +31,46 @@ import img5 from "../../assets/products/5.png";
   </div>
   <div class="box">
     <div class="upper-box">
-      <Image
-        src={img1}
-        alt="Product 1"
-        class="product absolute top-[65px] rounded-sm w-6 h-auto"
-      />
+      <a href="https://productpersonalizer.com/" target="_blank">
+        <Image
+          src={img1}
+          alt="Product 1"
+          class="product absolute top-[65px] rounded-sm w-6 h-auto"
+        />
+      </a>
     </div>
   </div>
   <div class="box">
     <div class="upper-box">
-      <Image
-        src={img2}
-        alt="Product 2"
-        class="product absolute top-[25px] rounded-sm w-6 h-auto"
-      />
+      <a href="https://landing-page-woad-tau.vercel.app/" target="_blank">
+        <Image
+          src={img2}
+          alt="Product 2"
+          class="product absolute top-[25px] rounded-sm w-6 h-auto"
+        />
+      </a>
     </div>
   </div>
   <div class="box">
     <div class="upper-box">
-      <Image
-        src={img3}
-        alt="Product 3"
-        class="product absolute top-[40px] right-0 rounded-sm w-6 h-auto"
-      />
+      <a href="https://productpersonalizer.com/" target="_blank">
+        <Image
+          src={img3}
+          alt="Product 3"
+          class="product absolute top-[40px] right-0 rounded-sm w-6 h-auto"
+        />
+      </a>
     </div>
   </div>
   <div class="box">
     <div class="upper-box">
-      <Image
-        src={img4}
-        alt="Product 4"
-        class="product absolute bottom-[60px] right-0 rounded-sm w-6 h-auto"
-      />
+      <a href="https://productpersonalizer.com/" target="_blank">
+        <Image
+          src={img4}
+          alt="Product 4"
+          class="product absolute bottom-[60px] right-0 rounded-sm w-6 h-auto"
+        />
+      </a>
     </div>
   </div>
 </div>
@@ -100,6 +108,7 @@ import img5 from "../../assets/products/5.png";
   .loader .box .upper-box {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
   }
 
   .loader .box:nth-child(2) .upper-box {
@@ -122,6 +131,25 @@ import img5 from "../../assets/products/5.png";
   .loader .box:nth-child(3) .upper-box .product,
   .loader .box:nth-child(5) .upper-box .product {
     animation: stable-rotate 20s infinite linear;
+  }
+
+  .product:hover {
+    animation-play-state: paused;
+  }
+
+  /* Pause rotation of parent .upper-box on hover */
+  .product:hover ~ .upper-box,
+  .product:hover {
+    animation-play-state: paused !important;
+  }
+
+  /* Or target the parent .upper-box when child is hovered */
+  .upper-box:hover {
+    animation-play-state: paused !important;
+  }
+
+  .upper-box:hover .product {
+    animation-play-state: paused !important;
   }
 
   .loader .box:nth-child(1) {
