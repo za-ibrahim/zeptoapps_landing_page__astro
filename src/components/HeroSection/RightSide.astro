@@ -1,3 +1,12 @@
+---
+import { Image } from "astro:assets";
+import img1 from "../../assets/products/1.png";
+import img2 from "../../assets/products/2.png";
+import img3 from "../../assets/products/3.png";
+import img4 from "../../assets/products/4.png";
+import img5 from "../../assets/products/5.png";
+---
+
 <div class="loader">
   <div class="box">
     <div class="logo">
@@ -14,10 +23,42 @@
       >
     </div>
   </div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
+  <div class="box">
+    <div class="upper-box">
+      <Image
+        src={img1}
+        alt="Product 1"
+        class="absolute top-[65px] rounded-sm w-6 h-auto"
+      />
+    </div>
+  </div>
+  <div class="box">
+    <div class="upper-box">
+      <Image
+        src={img2}
+        alt="Product 2"
+        class="absolute top-[25px] rounded-sm w-6 h-auto"
+      />
+    </div>
+  </div>
+  <div class="box">
+    <div class="upper-box">
+      <Image
+        src={img3}
+        alt="Product 3"
+        class="absolute top-[40px] right-0 rounded-sm w-6 h-auto"
+      />
+    </div>
+  </div>
+  <div class="box">
+    <div class="upper-box">
+      <Image
+        src={img4}
+        alt="Product 4"
+        class="absolute bottom-[60px] right-0 rounded-sm w-6 h-auto"
+      />
+    </div>
+  </div>
 </div>
 
 <style>
@@ -40,11 +81,29 @@
     background: rgba(100, 100, 100, 0.15);
     background: var(--background);
     border-radius: 50%;
-    border-top: 1px solid rgba(100, 100, 100, 1);
+    /* border-top: 1px solid rgba(100, 100, 100, 1); */
     box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 10px -0px;
     backdrop-filter: blur(5px);
     transform: scale(2);
     animation: ripple var(--duration) infinite ease-in-out;
+  }
+
+  .loader .box .upper-box {
+    width: 100%;
+    height: 100%;
+  }
+
+  .loader .box:nth-child(2) .upper-box {
+    animation: rotateBox 40s infinite linear;
+  }
+  .loader .box:nth-child(3) .upper-box {
+    animation: rotateBox 20s infinite linear;
+  }
+  .loader .box:nth-child(4) .upper-box {
+    animation: rotateBox 40s infinite linear;
+  }
+  .loader .box:nth-child(5) .upper-box {
+    animation: rotateBox 20s infinite linear;
   }
 
   .loader .box:nth-child(1) {
@@ -106,6 +165,15 @@
     100% {
       transform: scale(2);
       box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 10px -0px;
+    }
+  }
+
+  @keyframes rotateBox {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 
