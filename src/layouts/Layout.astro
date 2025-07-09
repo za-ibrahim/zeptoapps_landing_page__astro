@@ -14,22 +14,24 @@ import "../styles/global.css";
     <title>Zepto Apps</title>
   </head>
   <body>
-    <Navbar />
     <main>
-      <slot />
+      <Navbar />
+      <section>
+        <slot />
+      </section>
     </main>
   </body>
 </html>
 
 <Font cssVariable="--font-roboto" preload />
 <style>
-  body {
+  main {
     font-family: var(--font-roboto);
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
   }
-  main {
+  section {
     padding-top: calc(58px + 1rem);
   }
 </style>

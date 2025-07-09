@@ -13,7 +13,9 @@ const { tag } = Astro.props;
       </div> -->
 
       <h1 class="hero-title">
-        Build Your Business <span class="xs:inline sm:block lg:inline">with Zepto Apps</span>
+        Build Your Business <span class="xs:inline sm:block lg:inline"
+          >with Zepto Apps</span
+        >
       </h1>
 
       <p class="hero-description">
@@ -35,7 +37,7 @@ const { tag } = Astro.props;
 
       <div class="hero-stats">
         <div class="stat-item">
-          <span class="stat-number">10K+</span>
+          <span class="stat-number">100K+</span>
           <span class="stat-label">Active Users</span>
         </div>
         <div class="stat-item">
@@ -451,6 +453,16 @@ const { tag } = Astro.props;
 
       .hero-stats {
         justify-content: center;
+      }
+    }
+
+    @media (max-width: 425px) {
+      .stat-number {
+        font-size: 1.4rem;
+      }
+
+      .stat-label {
+        font-size: 0.8rem;
       }
     }
   </style>

@@ -1,0 +1,118 @@
+---
+import { Image } from "astro:assets";
+import m_1 from "../assets/brands/m_01.webp";
+import m_2 from "../assets/brands/m_02.webp";
+import m_3 from "../assets/brands/m_03.webp";
+import m_4 from "../assets/brands/m_04.webp";
+import m_5 from "../assets/brands/m_05.webp";
+import m_6 from "../assets/brands/m_06.webp";
+import m_7 from "../assets/brands/m_07.webp";
+import m_8 from "../assets/brands/m_08.webp";
+import m_9 from "../assets/brands/m_09.webp";
+import m_10 from "../assets/brands/m_10.webp";
+import m_11 from "../assets/brands/m_11.webp";
+import m_12 from "../assets/brands/m_12.webp";
+import m_13 from "../assets/brands/m_13.webp";
+import m_14 from "../assets/brands/m_14.webp";
+import m_15 from "../assets/brands/m_15.webp";
+import m_16 from "../assets/brands/m_16.webp";
+
+const brands = [
+  m_1,
+  m_2,
+  m_3,
+  m_4,
+  m_5,
+  m_6,
+  m_7,
+  m_8,
+  m_9,
+  m_10,
+  m_11,
+  m_12,
+  m_13,
+  m_14,
+  m_15,
+  m_16,
+];
+---
+
+<section>
+  <div class="marquee">
+    <div class="marquee-track">
+      {
+        brands.slice(0, 8).map((brand) => (
+          <div>
+            <Image src={brand} alt="Brand Logo" />
+          </div>
+        ))
+      }
+      {
+        brands.slice(0, 8).map((brand) => (
+          <div>
+            <Image src={brand} alt="Brand Logo" />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <div class="marquee mt-4">
+    <div class="marquee-track transform translate-x-[7rem]">
+      {
+        brands.slice(8, 16).map((brand) => (
+          <div>
+            <Image src={brand} alt="Brand Logo" />
+          </div>
+        ))
+      }
+      {
+        brands.slice(8, 16).map((brand) => (
+          <div>
+            <Image src={brand} alt="Brand Logo" />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 30s linear infinite;
+  }
+
+  .marquee-track div {
+    height: 3.5rem;
+    width: 14rem;
+    overflow: hidden;
+    display: flex;
+    padding: 8px;
+    margin-right: 30px;
+    align-items: center;
+    background: white;
+    border-radius: 0.85rem;
+    justify-content: center;
+  }
+  .marquee-track div img {
+    height: 2rem;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
