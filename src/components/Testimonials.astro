@@ -1,0 +1,693 @@
+---
+const testimonials = [
+  {
+    id: 1,
+    name: "Sarah Johnson",
+    role: "CEO, Tech Innovations",
+    company: "Tech Innovations Inc.",
+    avatar:
+      "https://testingbot.com/free-online-tools/random-avatar/300",
+    content:
+      "Zepto Apps has transformed our business operations completely. Their solutions are intuitive, reliable, and have significantly improved our productivity. The support team is exceptional!",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Michael Chen",
+    role: "CTO, Digital Solutions",
+    company: "Digital Solutions Corp",
+    avatar:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    content:
+      "The quality of Zepto Apps' products is outstanding. We've been using their solutions for over two years, and they continue to exceed our expectations with regular updates and new features.",
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: "Emily Rodriguez",
+    role: "Product Manager, StartupXYZ",
+    company: "StartupXYZ",
+    avatar:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+    content:
+      "What sets Zepto Apps apart is their commitment to customer success. They don't just provide products; they provide solutions that grow with your business. Highly recommended!",
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: "David Thompson",
+    role: "Founder, Creative Agency",
+    company: "Creative Minds Agency",
+    avatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    content:
+      "The user experience is phenomenal. Zepto Apps has made complex processes simple and enjoyable. Our team adopted their tools instantly without any learning curve.",
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: "Lisa Wang",
+    role: "Operations Director, E-commerce Plus",
+    company: "E-commerce Plus",
+    avatar:
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop&crop=face",
+    content:
+      "Outstanding customer service and robust functionality. Zepto Apps has been instrumental in scaling our operations. Their open-source approach gives us the flexibility we need.",
+    rating: 5,
+  },
+];
+---
+
+<div class="!pt-22">
+  <div class="text-center mb-12">
+    <p class="text-lg text-gray-600 mb-4">Testimonials</p>
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+      What People Think About Our Products
+    </h1>
+  </div>
+
+  <div class="testimonial-slider-container">
+    <div class="testimonial-slider" id="testimonialSlider">
+      <!-- Clone of last slide for smooth infinite scrolling -->
+      <div class="testimonial-slide clone" data-slide="clone-last">
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"
+                fill="currentColor"></path>
+            </svg>
+          </div>
+
+          <div class="stars">
+            {
+              Array.from(
+                { length: testimonials[testimonials.length - 1].rating },
+                (_, i) => (
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                )
+              )
+            }
+          </div>
+
+          <p class="testimonial-content">
+            {testimonials[testimonials.length - 1].content}
+          </p>
+
+          <div class="testimonial-author">
+            <img
+              src={testimonials[testimonials.length - 1].avatar}
+              alt={testimonials[testimonials.length - 1].name}
+              class="author-avatar"
+            />
+            <div class="author-info">
+              <h4 class="author-name">
+                {testimonials[testimonials.length - 1].name}
+              </h4>
+              <p class="author-role">
+                {testimonials[testimonials.length - 1].role}
+              </p>
+              <p class="author-company">
+                {testimonials[testimonials.length - 1].company}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Original slides -->
+      {
+        testimonials.map((testimonial, index) => (
+          <div class="testimonial-slide" data-slide={index}>
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+
+              <div class="stars">
+                {Array.from({ length: testimonial.rating }, (_, i) => (
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                ))}
+              </div>
+
+              <p class="testimonial-content">{testimonial.content}</p>
+
+              <div class="testimonial-author">
+                <img
+                  src={testimonial.avatar}
+                  alt={testimonial.name}
+                  class="author-avatar"
+                />
+                <div class="author-info">
+                  <h4 class="author-name">{testimonial.name}</h4>
+                  <p class="author-role">{testimonial.role}</p>
+                  <p class="author-company">{testimonial.company}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+
+      <!-- Clone of first slide for smooth infinite scrolling -->
+      <div class="testimonial-slide clone" data-slide="clone-first">
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"
+                fill="currentColor"></path>
+            </svg>
+          </div>
+
+          <div class="stars">
+            {
+              Array.from({ length: testimonials[0].rating }, (_, i) => (
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+              ))
+            }
+          </div>
+
+          <p class="testimonial-content">{testimonials[0].content}</p>
+
+          <div class="testimonial-author">
+            <img
+              src={testimonials[0].avatar}
+              alt={testimonials[0].name}
+              class="author-avatar"
+            />
+            <div class="author-info">
+              <h4 class="author-name">{testimonials[0].name}</h4>
+              <p class="author-role">{testimonials[0].role}</p>
+              <p class="author-company">{testimonials[0].company}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button
+      class="slider-nav prev"
+      id="prevBtn"
+      aria-label="Previous testimonial"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15 18L9 12L15 6"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </button>
+
+    <button class="slider-nav next" id="nextBtn" aria-label="Next testimonial">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9 18L15 12L9 6"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </button>
+
+    <!-- Dots Indicator -->
+    <div class="slider-dots">
+      {
+        testimonials.map((_, index) => (
+          <button
+            class="dot"
+            data-slide={index}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .testimonial-slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .testimonial-slider {
+    max-width: 95%;
+    margin: auto;
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .testimonial-slide {
+    min-width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .testimonial-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 24px;
+    padding: 48px 40px;
+    /* box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04); */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  /* .testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+      0 32px 64px -12px rgba(0, 0, 0, 0.15),
+      0 20px 30px -5px rgba(0, 0, 0, 0.08);
+  } */
+
+  .quote-icon {
+    color: #6366f1;
+    margin-bottom: 24px;
+    opacity: 0.8;
+  }
+
+  .stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 24px;
+    color: #fbbf24;
+  }
+
+  .testimonial-content {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #374151;
+    margin-bottom: 32px;
+    font-style: italic;
+    position: relative;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .author-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e5e7eb;
+    transition: all 0.3s ease;
+  }
+
+  .testimonial-card:hover .author-avatar {
+    border-color: #6366f1;
+    transform: scale(1.05);
+  }
+
+  .author-info {
+    flex: 1;
+  }
+
+  .author-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 4px 0;
+  }
+
+  .author-role {
+    font-size: 0.875rem;
+    color: #6366f1;
+    font-weight: 500;
+    margin: 0 0 2px 0;
+  }
+
+  .author-company {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+  }
+
+  .slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: #374151;
+    z-index: 10;
+  }
+
+  .slider-nav:hover {
+    background: #6366f1;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .slider-nav.prev {
+    left: 15px;
+  }
+
+  .slider-nav.next {
+    right: 15px;
+  }
+
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active {
+    background: #6366f1;
+    transform: scale(1.2);
+  }
+
+  .dot:hover {
+    background: #9ca3af;
+  }
+
+  .dot.active:hover {
+    background: #4f46e5;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .testimonial-slide {
+      padding: 0 10px;
+    }
+
+    .testimonial-card {
+      padding: 32px 24px;
+    }
+
+    .testimonial-content {
+      font-size: 1rem;
+    }
+
+    .slider-nav {
+      width: 40px;
+      height: 40px;
+    }
+
+    .slider-nav.prev {
+      left: 5px;
+    }
+
+    .slider-nav.next {
+      right: 5px;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .testimonial-card {
+      padding: 24px 20px;
+    }
+
+    .slider-nav {
+      display: none;
+    }
+
+    .testimonial-author {
+      flex-direction: column;
+      text-align: center;
+      gap: 12px;
+    }
+  }
+</style>
+
+<script is:inline>
+  class TestimonialSlider {
+    constructor() {
+      this.slider = document.getElementById("testimonialSlider");
+      this.prevBtn = document.getElementById("prevBtn");
+      this.nextBtn = document.getElementById("nextBtn");
+      this.dots = document.querySelectorAll(".dot");
+      this.slides = document.querySelectorAll(".testimonial-slide:not(.clone)");
+      this.allSlides = document.querySelectorAll(".testimonial-slide");
+      this.totalSlides = this.slides.length;
+      this.currentSlide = 0;
+      this.actualIndex = 1; // Start at index 1 (first real slide, after clone)
+      this.autoPlayInterval = null;
+      this.autoPlayDelay = 5000;
+      this.isTransitioning = false;
+
+      this.init();
+    }
+
+    init() {
+      // Set initial position to the first real slide (index 1)
+      this.slider.style.transform = `translateX(-${this.actualIndex * 100}%)`;
+      this.updateDots();
+      this.bindEvents();
+      this.startAutoPlay();
+    }
+
+    bindEvents() {
+      this.prevBtn?.addEventListener("click", () => this.prevSlide());
+      this.nextBtn?.addEventListener("click", () => this.nextSlide());
+
+      this.dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => this.goToSlide(index));
+      });
+
+      // Listen for transition end to handle infinite loop jumps
+      this.slider?.addEventListener("transitionend", () => {
+        this.handleTransitionEnd();
+      });
+
+      // Pause auto-play on hover
+      this.slider?.addEventListener("mouseenter", () => this.stopAutoPlay());
+      this.slider?.addEventListener("mouseleave", () => this.startAutoPlay());
+
+      // Touch/swipe support
+      let startX = 0;
+      let startY = 0;
+      let threshold = 50;
+
+      this.slider?.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+      });
+
+      this.slider?.addEventListener("touchend", (e) => {
+        if (!startX || !startY) return;
+
+        let endX = e.changedTouches[0].clientX;
+        let endY = e.changedTouches[0].clientY;
+
+        let diffX = startX - endX;
+        let diffY = startY - endY;
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > threshold) {
+          if (diffX > 0) {
+            this.nextSlide();
+          } else {
+            this.prevSlide();
+          }
+        }
+
+        startX = 0;
+        startY = 0;
+      });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") this.prevSlide();
+        if (e.key === "ArrowRight") this.nextSlide();
+      });
+    }
+
+    updateSlider(withTransition = true) {
+      if (!this.slider) return;
+
+      if (!withTransition) {
+        this.slider.style.transition = "none";
+      } else {
+        this.slider.style.transition =
+          "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+      }
+
+      const translateX = -this.actualIndex * 100;
+      this.slider.style.transform = `translateX(${translateX}%)`;
+
+      this.updateDots();
+    }
+
+    updateDots() {
+      // Update dots based on current slide (0-based for real slides)
+      this.dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === this.currentSlide);
+      });
+    }
+
+    handleTransitionEnd() {
+      this.isTransitioning = false;
+
+      // Handle infinite loop transitions
+      if (this.actualIndex === 0) {
+        // We're at the clone of the last slide, jump to the real last slide
+        this.actualIndex = this.totalSlides;
+        this.currentSlide = this.totalSlides - 1;
+        this.updateSlider(false);
+      } else if (this.actualIndex === this.totalSlides + 1) {
+        // We're at the clone of the first slide, jump to the real first slide
+        this.actualIndex = 1;
+        this.currentSlide = 0;
+        this.updateSlider(false);
+      }
+
+      // Force a repaint to ensure the transition is properly reset
+      setTimeout(() => {
+        this.slider.style.transition =
+          "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+      }, 10);
+    }
+
+    nextSlide() {
+      if (this.isTransitioning) return;
+      this.isTransitioning = true;
+
+      this.actualIndex++;
+      this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+
+      this.updateSlider();
+      this.resetAutoPlay();
+    }
+
+    prevSlide() {
+      if (this.isTransitioning) return;
+      this.isTransitioning = true;
+
+      this.actualIndex--;
+      this.currentSlide =
+        (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+
+      this.updateSlider();
+      this.resetAutoPlay();
+    }
+
+    goToSlide(index) {
+      if (this.isTransitioning || index === this.currentSlide) return;
+      this.isTransitioning = true;
+
+      this.currentSlide = index;
+      this.actualIndex = index + 1; // +1 because of the clone at the beginning
+
+      this.updateSlider();
+      this.resetAutoPlay();
+    }
+
+    startAutoPlay() {
+      this.autoPlayInterval = setInterval(() => {
+        this.nextSlide();
+      }, this.autoPlayDelay);
+    }
+
+    stopAutoPlay() {
+      if (this.autoPlayInterval) {
+        clearInterval(this.autoPlayInterval);
+        this.autoPlayInterval = null;
+      }
+    }
+
+    resetAutoPlay() {
+      this.stopAutoPlay();
+      this.startAutoPlay();
+    }
+  }
+
+  // Initialize slider when DOM is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    new TestimonialSlider();
+  });
+</script>
