@@ -39,7 +39,7 @@ const brands = [
 
 <section class="overflow-hidden">
   <div class="marquee">
-    <div class="marquee-track">
+    <div class="marquee-track marquee-1">
       {
         brands.slice(0, 8).map((brand) => (
           <div>
@@ -57,7 +57,7 @@ const brands = [
     </div>
   </div>
   <div class="marquee mt-3">
-    <div class="marquee-track transform translate-x-[7rem]">
+    <div class="marquee-track marquee-2">
       {
         brands.slice(8, 16).map((brand) => (
           <div>
@@ -84,7 +84,12 @@ const brands = [
 
   .marquee-track {
     display: inline-flex;
+  }
+  .marquee-1 {
     animation: marquee 30s linear infinite;
+  }
+  .marquee-2 {
+    animation: marquee-reverse 30s linear infinite;
   }
 
   .marquee-track div {
@@ -123,6 +128,14 @@ const brands = [
     }
     100% {
       transform: translateX(-50%);
+    }
+  }
+  @keyframes marquee-reverse {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
     }
   }
 </style>
