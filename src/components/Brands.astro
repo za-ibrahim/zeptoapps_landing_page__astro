@@ -94,9 +94,8 @@ const brands = [
 
   .marquee-track div {
     width: 14rem;
-    padding: 8px;
     display: flex;
-    height: 3.5rem;
+    height: 5rem;
     overflow: hidden;
     align-items: center;
     background: white;
@@ -107,7 +106,7 @@ const brands = [
     box-shadow: 0 2px 4px rgba(158, 158, 158, 0.1);
   }
   .marquee-track div img {
-    height: 2rem;
+    height: 100%;
     width: auto;
     object-fit: contain;
     filter: grayscale(100%);
@@ -119,7 +118,7 @@ const brands = [
 
   .marquee-track div:hover img {
     filter: grayscale(0%);
-    transform: scale(0.95);
+    transform: scale(0.85);
   }
 
   @keyframes marquee {
