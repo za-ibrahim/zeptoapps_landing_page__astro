@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 import { Font } from "astro:assets";
 import "../styles/global.css";
 import ComponentLayout from "./ComponentLayout.astro";
@@ -21,6 +22,7 @@ import ComponentLayout from "./ComponentLayout.astro";
     <main>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
 
