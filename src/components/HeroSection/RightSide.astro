@@ -5,7 +5,6 @@ import img1 from "../../assets/products/1.png";
 import img2 from "../../assets/products/2.png";
 import img3 from "../../assets/products/3.png";
 import img4 from "../../assets/products/4.png";
-import img5 from "../../assets/products/5.png";
 ---
 
 <div class="loader">
@@ -75,6 +74,25 @@ import img5 from "../../assets/products/5.png";
   </div>
 </div>
 
+<script>
+  const products = document.querySelectorAll(".product");
+  const upperBoxes = document.querySelectorAll(".upper-box");
+
+  products.forEach((product, index) => {
+    const upperBox = upperBoxes[index];
+
+    product.addEventListener("mouseenter", () => {
+      upperBox.style.animationPlayState = "paused";
+      product.style.animationPlayState = "paused";
+    });
+
+    product.addEventListener("mouseleave", () => {
+      upperBox.style.animationPlayState = "running";
+      product.style.animationPlayState = "running";
+    });
+  });
+</script>
+
 <style>
   .loader {
     --size: 250px;
@@ -131,25 +149,6 @@ import img5 from "../../assets/products/5.png";
   .loader .box:nth-child(3) .upper-box .product,
   .loader .box:nth-child(5) .upper-box .product {
     animation: stable-rotate 20s infinite linear;
-  }
-
-  .product:hover {
-    animation-play-state: paused;
-  }
-
-  /* Pause rotation of parent .upper-box on hover */
-  .product:hover ~ .upper-box,
-  .product:hover {
-    animation-play-state: paused !important;
-  }
-
-  /* Or target the parent .upper-box when child is hovered */
-  .upper-box:hover {
-    animation-play-state: paused !important;
-  }
-
-  .upper-box:hover .product {
-    animation-play-state: paused !important;
   }
 
   .loader .box:nth-child(1) {
@@ -241,6 +240,17 @@ import img5 from "../../assets/products/5.png";
     }
     100% {
       fill: var(--logo-color);
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .loader {
+      --size: 210px;
+      height: var(--size);
+    }
+    .product {
+      width: 1.3rem;
+      height: auto;
     }
   }
 </style>
