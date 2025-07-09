@@ -4,7 +4,7 @@ import logo from "../assets/logo.avif";
 import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
 ---
 
-<nav class="text-gray-700 text-sm">
+<nav class="text-gray-700 text-sm sticky">
   <div
     class="nav-container mx-auto bg-white border border-white shadow rounded-xl p-2"
   >
@@ -110,17 +110,28 @@ import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
             <div class="dropdown-menu">
               <ul>
                 <li>
-                  <a href="/inventory-management">Zepto Product Personalizert</a
+                  <a
+                    href="https://apps.shopify.com/product-personalizer"
+                    target="_blank">Zepto Product Personalizert</a
                   >
                 </li>
                 <li>
-                  <a href="/order-tracking">PopMan: Popups & Social Proof</a>
+                  <a
+                    href="https://apps.shopify.com/popman-popups-social"
+                    target="_blank">PopMan: Popups & Social Proof</a
+                  >
                 </li>
                 <li>
-                  <a href="/customer-reviews">BoostlyCart Cart Drawer Upsell</a>
+                  <a
+                    href="https://apps.shopify.com/boostlycart-cart-drawer-upsell"
+                    target="_blank">BoostlyCart Cart Drawer Upsell</a
+                  >
                 </li>
                 <li>
-                  <a href="/analytics-reporting">Zepto Sign Customizer</a>
+                  <a
+                    href="https://apps.shopify.com/neon-sign-customizer"
+                    target="_blank">Zepto Sign Customizer</a
+                  >
                 </li>
               </ul>
             </div>
@@ -229,28 +240,31 @@ import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
           <div class="mobile-dropdown-menu hidden">
             <ul class="ml-4 mt-2 space-y-2">
               <li>
-                <a class="mobile-sub-links" href="/inventory-management"
-                  >Inventory Management</a
+                <a
+                  class="mobile-sub-links"
+                  href="https://apps.shopify.com/product-personalizer"
+                  target="_blank">Zepto Product Personalizert</a
                 >
               </li>
               <li>
-                <a class="mobile-sub-links" href="/order-tracking"
-                  >Order Tracking</a
+                <a
+                  class="mobile-sub-links"
+                  href="https://apps.shopify.com/popman-popups-social"
+                  target="_blank">PopMan: Popups & Social Proof</a
                 >
               </li>
               <li>
-                <a class="mobile-sub-links" href="/customer-reviews"
-                  >Customer Reviews</a
+                <a
+                  class="mobile-sub-links"
+                  href="https://apps.shopify.com/boostlycart-cart-drawer-upsell"
+                  target="_blank">BoostlyCart Cart Drawer Upsell</a
                 >
               </li>
               <li>
-                <a class="mobile-sub-links" href="/analytics-reporting"
-                  >Analytics & Reporting</a
-                >
-              </li>
-              <li>
-                <a class="mobile-sub-links" href="/marketing-tools"
-                  >Marketing Tools</a
+                <a
+                  class="mobile-sub-links"
+                  href="https://apps.shopify.com/neon-sign-customizer"
+                  target="_blank">Zepto Sign Customizer</a
                 >
               </li>
             </ul>
@@ -513,22 +527,17 @@ import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
   }
 
   /* Ensure dropdown appears outside the nav container */
-  nav {
-    position: sticky;
-    top: 1rem;
-    z-index: 50;
-  }
   .nav-container {
     position: absolute;
     z-index: 50;
     width: 100%;
-    backdrop-filter: blur(15px);
-    background-color: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(30px);
+    background-color: rgba(207, 207, 207, 0.027);
   }
 
   /* Enhanced mobile experience */
   .mobile-menu {
-    @apply border-t border-gray-200;
+    @apply border-t border-white;
   }
 
   /* Logo responsive sizing */

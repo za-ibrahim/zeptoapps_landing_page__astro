@@ -36,7 +36,7 @@ const commitmentItems = [
 ];
 ---
 
-<ComponentLayout class="!py-20">
+<ComponentLayout class="!pt-22">
   <h1 class="text-center">What's so Special About Zepto Apps?</h1>
   <p class="text-center max-w-2xl mx-auto">
     We help small businesses around the world with amazing products that solve
@@ -46,14 +46,14 @@ const commitmentItems = [
     {
       commitmentItems.map((item) => (
         <div class="flex flex-col items-center justify-center p-4 bg-white rounded-lg">
-          <div class="flex justify-center items-center w-16 h-16 bg-gradient-to-b from-gray-200 to-gray-400 rounded-full p-2">
+          <div class="flex justify-center items-center w-16 h-16 bg-gradient-to-b from-gray-200/80 to-gray-400/80 rounded-full p-2">
             <Image
               src={item.image}
               alt={item.title}
               class="object-contain w-8 h-auto"
             />
           </div>
-          <h4 class="mt-2 text-lg text-gray-700">{item.title}</h4>
+          <h4 class="mt-2 text-lg text-gray-700 text-center">{item.title}</h4>
         </div>
       ))
     }
