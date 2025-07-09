@@ -1,0 +1,85 @@
+---
+import { Image } from "astro:assets";
+import ComponentLayout from "../layouts/ComponentLayout.astro";
+import codeImg from "../assets/commitment/code.svg";
+import ideaImg from "../assets/commitment/idea.svg";
+import updateImg from "../assets/commitment/update.svg";
+import puzzleImg from "../assets/commitment/puzzle.svg";
+import supportImg from "../assets/commitment/support.svg";
+import extensionImg from "../assets/commitment/extension.svg";
+
+const commitmentItems = [
+  {
+    title: "We are Open Source",
+    image: codeImg,
+  },
+  {
+    title: "Problem Solvers",
+    image: ideaImg,
+  },
+  {
+    title: "Highly-Rated Support",
+    image: supportImg,
+  },
+  {
+    title: "Feature-Rich Free & Pro Plugins",
+    image: puzzleImg,
+  },
+  {
+    title: "Regular Updates & Bug fixes",
+    image: updateImg,
+  },
+  {
+    title: "Extensions to step-up your game",
+    image: extensionImg,
+  },
+];
+---
+
+<ComponentLayout class="!py-20">
+  <h1 class="text-center">What's so Special About Zepto Apps?</h1>
+  <p class="text-center max-w-2xl mx-auto">
+    We help small businesses around the world with amazing products that solve
+    their business and web problems. Zepto Apps is special because -
+  </p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-12">
+    {
+      commitmentItems.map((item) => (
+        <div class="flex flex-col items-center justify-center p-4 bg-white rounded-lg">
+          <div class="flex justify-center items-center w-16 h-16 bg-gradient-to-b from-gray-200 to-gray-400 rounded-full p-2">
+            <Image
+              src={item.image}
+              alt={item.title}
+              class="object-contain w-8 h-auto"
+            />
+          </div>
+          <h4 class="mt-2 text-lg text-gray-700">{item.title}</h4>
+        </div>
+      ))
+    }
+  </div>
+</ComponentLayout>
+
+<style>
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+</style>

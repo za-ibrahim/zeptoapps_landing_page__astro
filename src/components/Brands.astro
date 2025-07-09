@@ -106,6 +106,15 @@ const brands = [
     width: auto;
     object-fit: contain;
     filter: grayscale(100%);
+    transform: scale(0.9);
+    transition:
+      filter 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .marquee-track div:hover img {
+    filter: grayscale(0%);
+    transform: scale(0.95);
   }
 
   @keyframes marquee {
