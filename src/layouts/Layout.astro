@@ -16,9 +16,11 @@ import ComponentLayout from "./ComponentLayout.astro";
     <title>Zepto Apps</title>
   </head>
   <body>
-    <ComponentLayout class="sticky top-4 z-50">
-      <Navbar />
-    </ComponentLayout>
+    <div id="navbar-container" class="navbar-transition">
+      <ComponentLayout>
+        <Navbar />
+      </ComponentLayout>
+    </div>
     <main>
       <slot />
     </main>
@@ -26,12 +28,28 @@ import ComponentLayout from "./ComponentLayout.astro";
   </body>
 </html>
 
+<script src="../script/nav.js"></script>
+
 <Font cssVariable="--font-roboto" preload />
 <style>
   body {
     font-family: var(--font-roboto);
   }
   main {
-    padding-top: calc(58px + 1rem);
+    padding-top: calc(58px);
+  }
+  .navbar-transition {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 1rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+  .navbar-hidden {
+    transform: translateY(-110%) !important;
+  }
+  .navbar-visible {
+    transform: translateY(0%) !important;
   }
 </style>

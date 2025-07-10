@@ -1,8 +1,8 @@
 ---
-const { class: className } = Astro.props;
+const { class: className, id } = Astro.props;
 ---
 
-<div class={className}>
+<div class={className} id={id}>
   <slot />
 </div>
 
