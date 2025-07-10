@@ -24,23 +24,23 @@ function onDOMReady() {
     window.addEventListener("scroll", scrollAction);
 
 
-    const navbarContainer = document.querySelector(".nav-container");
-    if (navbarContainer) {
-        navbarContainer.addEventListener("mouseover", () => {
-            if (!navbar.classList.contains("navbar-visible") && currentScroll > threshold) {
-                console.log("container")
-                navbar.style.transform = "translateY(-1rem)";
-                navbar.classList.remove("navbar-hidden");
-            }
-        });
-        navbarContainer.addEventListener("mouseout", () => {
-            if (!navbar.classList.contains("navbar-visible") && currentScroll > threshold) {
-                navbar.classList.add("navbar-hidden");
-                navbar.classList.remove("navbar-visible");
-                navbar.style.transform = "translateY(0)";
-            }
-        });
+    const navMouseOver = () => {
+        if (!navbar.classList.contains("navbar-visible") && currentScroll > threshold) {
+            console.log("container")
+            navbar.style.transform = "translateY(-1rem)";
+            navbar.classList.remove("navbar-hidden");
+        }
     }
+    const navMouseOut = () => {
+        if (!navbar.classList.contains("navbar-visible") && currentScroll > threshold) {
+            navbar.classList.add("navbar-hidden");
+            navbar.classList.remove("navbar-visible");
+            navbar.style.transform = "translateY(0)";
+        }
+    }
+    const navbarContainer = document.querySelector(".nav-container");
+    navbarContainer.addEventListener("mouseover", navMouseOver);
+    navbarContainer.addEventListener("mouseout", navMouseOut);
 
 
 
@@ -59,8 +59,9 @@ function onDOMReady() {
             mobileMenu?.classList.remove("hidden");
             mobileMenu?.classList.add("animate-slide-down");
             window.removeEventListener("scroll", scrollAction);
+            navbarContainer.removeEventListener("mouseover", navMouseOver);
+            navbarContainer.removeEventListener("mouseout", navMouseOut);
         } else {
-            window.addEventListener("scroll", scrollAction);
             // Hide menu with animation
             mobileMenu?.classList.add("animate-slide-up");
             setTimeout(() => {
@@ -70,6 +71,9 @@ function onDOMReady() {
                     "animate-slide-down"
                 );
             }, 260); // Match animation duration
+            window.addEventListener("scroll", scrollAction);
+            navbarContainer.addEventListener("mouseover", navMouseOver);
+            navbarContainer.addEventListener("mouseout", navMouseOut);
         }
 
         // Update aria-expanded
