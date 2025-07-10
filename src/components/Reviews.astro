@@ -1,0 +1,184 @@
+---
+import { Image } from "astro:assets";
+import happy_user from "../assets/happy_user.png";
+import ComponentLayout from "../layouts/ComponentLayout.astro";
+
+const reviews = [
+  {
+    name: "John Doe",
+    review:
+      "This app has truly transformed my business! Before using it, I struggled to manage my store efficiently and keep up with customer demands. Now, everything is streamlined and automated, saving me countless hours each week. The user interface is intuitive, and I love how easy it is to customize features to fit my needs. I can't imagine running my Shopify store without it anymore.",
+    country: "USA",
+    rating: 5,
+  },
+  {
+    name: "Jane Smith",
+    review:
+      "Excellent support and features! Whenever I have a question or run into an issue, the customer service team responds quickly and always provides helpful solutions. The app itself is packed with useful tools that have helped me increase sales and improve customer satisfaction. I especially appreciate the regular updates and new features that keep making the app better.",
+    country: "Canada",
+    rating: 4,
+  },
+  {
+    name: "Alice Johnson",
+    review:
+      "I highly recommend this app for Shopify stores. It has made a significant difference in how I manage my products and interact with customers. The analytics dashboard gives me valuable insights into my store's performance, and the automation features have freed up so much of my time. If you're looking to grow your business, this app is a must-have.",
+    country: "UK",
+    rating: 5,
+  },
+  {
+    name: "Carlos Martinez",
+    review:
+      "Easy to use and very effective. I was able to set everything up in just a few minutes, and the results were almost immediate. My store's conversion rate has improved, and customers are leaving more positive reviews than ever before. The app integrates seamlessly with my existing workflow, making it a pleasure to use every day.",
+    country: "Spain",
+    rating: 5,
+  },
+  {
+    name: "Sophie Dubois",
+    review:
+      "Great value for the price. I was hesitant at first, but after seeing the impact on my store's performance, I can confidently say it's worth every penny. The features offered rival those of much more expensive apps, and the support team is always ready to help. My store runs smoother, and my customers are happier.",
+    country: "France",
+    rating: 4,
+  },
+  {
+    name: "Liam O'Connor",
+    review:
+      "Customer service is top-notch. Every time I've needed assistance, the team has gone above and beyond to ensure my issues are resolved quickly. The app itself is robust and reliable, with features that have helped me scale my business efficiently. I appreciate the attention to detail and the commitment to customer satisfaction.",
+    country: "Ireland",
+    rating: 5,
+  },
+  {
+    name: "Mia Chen",
+    review:
+      "This app helped me grow my store quickly. The marketing tools and automation features have made it so much easier to reach new customers and retain existing ones. I love the detailed analytics and the ability to customize campaigns to fit my brand. It's an essential tool for anyone serious about growing their Shopify business.",
+    country: "China",
+    rating: 5,
+  },
+  {
+    name: "Raj Patel",
+    review:
+      "A must-have for any Shopify owner. The app simplifies so many complex tasks and allows me to focus on what matters most—serving my customers. The integration with other tools is seamless, and the performance has been flawless. I recommend it to all my fellow store owners looking to take their business to the next level.",
+    country: "India",
+    rating: 5,
+  },
+  {
+    name: "Emma Müller",
+    review:
+      "Intuitive interface and powerful features. I was able to get started right away without any complicated setup. The app offers a wide range of tools that have improved my store's efficiency and customer experience. I appreciate the regular updates and the responsive support team. It's a fantastic investment for any Shopify store.",
+    country: "Germany",
+    rating: 4,
+  },
+  {
+    name: "Lucas Rossi",
+    review:
+      "Fantastic app, highly recommended. Since installing it, I've seen a noticeable increase in sales and customer engagement. The features are well thought out and easy to use, and the support team is always available to help with any questions. It's clear that the developers care about their users and are committed to continuous improvement.",
+    country: "Brazil",
+    rating: 5,
+  },
+];
+---
+
+<div class="reviews-section mt-22">
+  <div class="reviews-container">
+    <ComponentLayout class="flex md:flex-row flex-col justify-between">
+      <div class="h-full flex flex-col items-start ">
+        <h2 class="text-4xl">
+          Trusted By More Than <br /> 1000000+ Shopify Stores
+        </h2>
+        <div class="flex gap-4 mt-6">
+          <div class="flex items-start justify-center gap-2">
+            <div class="stat_icon_container">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  fill-rule="evenodd"
+                  d="M3.5 8a5.5 5.5 0 1 1 8.596 4.547 9.005 9.005 0 0 1 5.9 8.18.75.75 0 0 1-1.5.045 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.499-.044 9.005 9.005 0 0 1 5.9-8.181A5.5 5.5 0 0 1 3.5 8M9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8"
+                ></path><path
+                  d="M17.29 8q-.221 0-.434.03a.75.75 0 1 1-.212-1.484 4.53 4.53 0 0 1 3.38 8.097 6.69 6.69 0 0 1 3.956 6.107.75.75 0 0 1-1.5 0 5.19 5.19 0 0 0-3.696-4.972l-.534-.16v-1.676l.41-.209A3.03 3.03 0 0 0 17.29 8"
+                ></path></svg
+              >
+            </div>
+            <div class="text-center">
+              <p class="text-3xl">100K+</p>
+              <p class="text-sm">Current Users</p>
+            </div>
+          </div>
+          <div class="flex items-start justify-center gap-2">
+            <div class="stat_icon_container">
+              <Image src={happy_user} alt="Happy User" />
+            </div>
+            <div class="text-center">
+              <p class="text-3xl">100K+</p>
+              <p class="text-sm">Current Users</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-list grow-0 flex-1/2 pt-5 md:pt-0">
+        {
+          reviews.map((review) => (
+            <div class="flex gap-4 p-4 bg-white/20 border border-white backdrop-blur-3xl rounded-lg shadow-md select-none">
+              <div>
+                <div class="flex gap-1.5">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 -0.025 0.85 0.85"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M.451.006a.06.06 0 0 1 .027.026l.1.198L.8.262a.06.06 0 0 1 .05.066.06.06 0 0 1-.017.033l-.16.154.038.217a.057.057 0 0 1-.048.067.06.06 0 0 1-.037-.006L.425.691.226.793a.06.06 0 0 1-.08-.025A.06.06 0 0 1 .14.731L.178.514.018.36A.057.057 0 0 1 .017.278.06.06 0 0 1 .051.261L.273.23.372.033A.06.06 0 0 1 .451.007"
+                        fill="#1C1C1F"
+                      />
+                    </svg>
+                  ))}
+                </div>
+                <p class="text-sm text-gray-600 line-clamp-3 mt-2">
+                  {review.review}
+                </p>
+                <h3 class="text-lg font-semibold mt-3">{review.name}</h3>
+                <p class="text-sm text-gray-500">{review.country}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </ComponentLayout>
+  </div>
+</div>
+
+<style>
+  .reviews-section {
+    /* background-image: url("../assets/g_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+    height: 600px;
+    overflow: hidden;
+    /* backdrop-filter: blur(10px); */
+    /* gradient color */
+    background: linear-gradient(
+      to bottom,
+      rgba(198, 216, 221, 0.4),
+      rgba(255, 255, 255, 0.863),
+      rgba(198, 216, 221, 0.4)
+    );
+  }
+  .reviews-container {
+    padding: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .stat_icon_container {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    object-fit: contain;
+    align-items: center;
+    justify-content: space-center;
+  }
+  .reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+</style>
