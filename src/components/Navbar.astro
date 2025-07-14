@@ -288,7 +288,7 @@ import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
 
   /* Desktop Navigation Styles */
   .links {
-    @apply hover:text-[#0067ab] font-semibold flex items-center justify-center cursor-pointer transition-colors duration-200;
+    @apply hover:text-primary font-semibold flex items-center justify-center cursor-pointer transition-colors duration-200;
   }
 
   .parent-menu-dropdown-icon {
@@ -304,7 +304,7 @@ import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
   }
 
   .links:hover svg {
-    fill: #0067ab;
+    fill: var(--color-primary);
   }
 
   .mobile-menu-button svg {
@@ -359,7 +359,7 @@ import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
   .dropdown-menu a {
     display: block;
     padding: 0.75rem 1rem;
-    color: #374151;
+    color: var(--color-text_80);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
@@ -367,18 +367,18 @@ import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
   }
 
   .dropdown-menu a:hover {
-    background-color: #f9fafb;
-    color: #0067ab;
+    background-color: --alpha(var(--color-text) / 0.05);
+    color: var(--color-primary);
     padding-left: 1.25rem;
   }
 
   /* Mobile Navigation Styles */
   .mobile-menu-button {
-    @apply text-gray-600 hover:text-[#0067ab] transition-colors duration-200;
+    @apply text-gray-600 hover:text-primary transition-colors duration-200;
   }
 
   .mobile-links {
-    @apply block py-2 px-3 text-gray-700 hover:text-[#0067ab] font-semibold transition-colors duration-200 cursor-pointer;
+    @apply block py-2 px-3 text-gray-700 hover:text-primary font-semibold transition-colors duration-200 cursor-pointer;
   }
 
   .mobile-dropdown-trigger {
@@ -407,7 +407,7 @@ import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
   }
 
   .mobile-sub-links {
-    @apply block py-2 px-3 text-gray-600 hover:text-[#0067ab] transition-colors duration-200;
+    @apply block py-2 px-3 text-text_70 hover:text-primary transition-colors duration-200;
   }
 
   /* Rotation utility for mobile dropdown icons */

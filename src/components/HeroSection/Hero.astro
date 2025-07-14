@@ -5,82 +5,84 @@ import RightSide from "./RightSide.astro";
 const { tag } = Astro.props;
 ---
 
-<ComponentLayout>
-  <section class="hero-section">
-    <div class="hero-container">
-      <!-- Left side - Content -->
-      <div class="hero-content">
-        <!-- <div class="hero-badge">
+<div class="main">
+  <ComponentLayout>
+    <section class="hero-section">
+      <div class="hero-container">
+        <!-- Left side - Content -->
+        <div class="hero-content">
+          <!-- <div class="hero-badge">
         <span class="badge-text">🚀 Leading SaaS Solutions</span>
       </div> -->
 
-        <h1 class="hero-title">
-          Build Your Business <span class="xs:inline sm:block lg:inline"
-            >with Zepto Apps</span
-          >
-        </h1>
+          <h1 class="hero-title">
+            Build Your Business <span class="xs:inline sm:block lg:inline"
+              >with Zepto Apps</span
+            >
+          </h1>
 
-        <p class="hero-description">
-          Accelerate your digital transformation with our cutting-edge SaaS
-          products. From CRM to analytics, we've got everything you need to
-          scale your business efficiently.
-        </p>
+          <p class="hero-description">
+            Accelerate your digital transformation with our cutting-edge SaaS
+            products. From CRM to analytics, we've got everything you need to
+            scale your business efficiently.
+          </p>
 
-        <div class="hero-buttons">
-          <a
-            href="https://apps.shopify.com/partners/zepto-apps"
-            target="_blank"
-          >
-            <button class="learn-more">
-              <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
-              </span>
-              <span class="button-text">Browse Apps</span>
-            </button>
-          </a>
-        </div>
+          <div class="hero-buttons">
+            <a
+              href="https://apps.shopify.com/partners/zepto-apps"
+              target="_blank"
+            >
+              <button class="learn-more">
+                <span class="circle" aria-hidden="true">
+                  <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Browse Apps</span>
+              </button>
+            </a>
+          </div>
 
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-number">100K+</span>
-            <span class="stat-label">Active Users</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">99.9%</span>
-            <span class="stat-label">Uptime</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">24/7</span>
-            <span class="stat-label">Support</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right side - Animated Products -->
-      {
-        tag === "1" ? (
-          <div class="mx-auto hidden lg:inline-flex">
-            <RightSide />
-          </div>
-        ) : tag === "2" ? (
-          <div class="hero-visual hidden lg:inline-flex">
-            <div class="products-showcase">
-              <div class="product-card card-1">
-                <div class="card-icon crm-icon">📊</div>
-              </div>
-              <div class="product-card card-2">
-                <div class="card-icon analytics-icon">📈</div>
-              </div>
-              <div class="product-card card-3">
-                <div class="card-icon automation-icon">⚡</div>
-              </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">100K+</span>
+              <span class="stat-label">Active Users</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">99.9%</span>
+              <span class="stat-label">Uptime</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Support</span>
             </div>
           </div>
-        ) : null
-      }
-    </div>
-  </section>
-</ComponentLayout>
+        </div>
+
+        <!-- Right side - Animated Products -->
+        {
+          tag === "1" ? (
+            <div class="mx-auto hidden lg:inline-flex">
+              <RightSide />
+            </div>
+          ) : tag === "2" ? (
+            <div class="hero-visual hidden lg:inline-flex">
+              <div class="products-showcase">
+                <div class="product-card card-1">
+                  <div class="card-icon crm-icon">📊</div>
+                </div>
+                <div class="product-card card-2">
+                  <div class="card-icon analytics-icon">📈</div>
+                </div>
+                <div class="product-card card-3">
+                  <div class="card-icon automation-icon">⚡</div>
+                </div>
+              </div>
+            </div>
+          ) : null
+        }
+      </div>
+    </section>
+  </ComponentLayout>
+</div>
 
 <style>
   /* button style */
@@ -322,7 +324,7 @@ const { tag } = Astro.props;
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    color: black;
+    /* color: var(--color-accent); */
   }
 
   .stat-label {
