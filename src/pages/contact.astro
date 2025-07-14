@@ -5,9 +5,17 @@ import callSvg from "../assets/call.svg";
 import mailSvg from "../assets/mail.svg";
 import locationSvg from "../assets/location.svg";
 import { Image } from "astro:assets";
+import SpingLoader from "../components/SpingLoader.astro";
 ---
 
-<Layout head={{ title: "Contact Us | Zepto Apps" }}>
+<Layout
+  head={{
+    title: "Contact Us | Zepto Apps",
+    jsCDNs: [
+      "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js",
+    ],
+  }}
+>
   <ComponentLayout class="!pt-22">
     <div class="text-center">
       <h1>Contact Us</h1>
@@ -50,7 +58,7 @@ import { Image } from "astro:assets";
         </div>
       </div>
       <form
-        class="w-full max-h-full flex flex-col gap-5 bg-white p-10 rounded-lg"
+        class="w-full max-h-full flex flex-col gap-5 bg-white p-8 rounded-lg"
       >
         <label for="from_name">
           Name
@@ -82,17 +90,62 @@ import { Image } from "astro:assets";
           ></textarea>
         </label>
         <button
+          id="submitBtn"
           type="submit"
-          class="bg-accent hover:ring-2 hover:ring-accent/50 px-4 py-3 rounded-lg text-background font-semibold transition-all duration-200 flex items-center justify-center gap-2"
+          class="flex-row bg-accent hover:ring-2 hover:ring-accent/50 px-4 py-3 rounded-lg text-background font-semibold transition-all duration-200 flex items-center justify-center gap-2"
         >
-          Send
+          <span>Send</span>
+          <span style="display: none;">
+            <SpingLoader />
+          </span>
         </button>
+        <span
+          id="successMessage"
+          style="display: none;"
+          class="text-sm text-center bg-secondary_2 py-0.5 rounded-full text-white w-1/2 mx-auto"
+          >Message sent successfully!</span
+        >
       </form>
     </div>
   </ComponentLayout>
 </Layout>
 
-<script></script>
+<script>
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const submitBtn = document.getElementById("submitBtn");
+    const successMessage = document.getElementById("successMessage");
+
+    const serviceID = "zepto_service_ugmln2a";
+    const templateID = "zepto_template_ivzhjnf";
+    const publicKey = "5Yat8qUG0lo9avjxi";
+
+    try {
+      submitBtn.querySelector("span:first-child").style.display = "none";
+      submitBtn.querySelector("span:last-child").style.display = "inline";
+      submitBtn.disabled = true;
+      await emailjs.sendForm(serviceID, templateID, form, publicKey);
+      form.reset();
+      successMessage.style.display = "block";
+      setTimeout(() => {
+        successMessage.style.display = "none";
+      }, 3000);
+    } catch (error) {
+      console.error("Failed to send message:", error);
+      alert("Failed to send message. Please try again later.");
+    } finally {
+      submitBtn.querySelector("span:last-child").style.display = "none";
+      submitBtn.querySelector("span:first-child").style.display = "inline";
+      submitBtn.disabled = false;
+    }
+  };
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    form.addEventListener("submit", handleSubmit);
+  });
+</script>
 
 <style>
   h1 {

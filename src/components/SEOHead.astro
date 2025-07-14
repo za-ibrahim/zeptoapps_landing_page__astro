@@ -8,6 +8,8 @@ const {
   locale = "en_US",
   siteName = "ZeptoApps.com",
   twitterUsername = null,
+  jsCDNs = [],
+  cssCDNs = [],
 } = Astro.props;
 ---
 
@@ -42,6 +44,18 @@ const {
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /> -->
   <meta name="theme-color" content="#ffffff" />
+
+  <!-- CDNs -->
+  {
+    cssCDNs.map((href) => (
+      <link rel="stylesheet" href={href} crossorigin="anonymous" />
+    ))
+  }
+  {
+    jsCDNs.map((src) => (
+      <script type="text/javascript" src={src} defer crossorigin="anonymous" />
+    ))
+  }
 
   <!-- Optional: preload hero image or fonts for performance -->
   <!-- <link rel="preload" as="image" href="/hero.jpg" /> -->
