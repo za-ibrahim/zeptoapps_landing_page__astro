@@ -7,13 +7,11 @@ import locationSvg from "../assets/location.svg";
 import { Image } from "astro:assets";
 ---
 
-<Layout>
+<Layout head={{ title: "Contact Us | Zepto Apps" }}>
   <ComponentLayout class="!pt-22">
     <div class="text-center">
       <h1>Contact Us</h1>
-      <h2 class="text-xl mb-1">
-        Let's talk about growing your business.
-      </h2>
+      <h2 class="text-xl mb-1">Let's talk about growing your business.</h2>
       <p>
         Not only do we help you with apps that can help you sell more, but we
         also provide Ecommerce functionality-extending applications that can
@@ -64,8 +62,9 @@ import { Image } from "astro:assets";
           />
         </label>
         <label for="reply_to">
-          Email
+          Email *
           <input
+            required
             name="reply_to"
             placeholder="Email"
             type="email"
@@ -73,8 +72,9 @@ import { Image } from "astro:assets";
           />
         </label>
         <label for="message">
-          Message
+          Message *
           <textarea
+            required
             name="message"
             placeholder="Message"
             rows={5}
@@ -91,6 +91,8 @@ import { Image } from "astro:assets";
     </div>
   </ComponentLayout>
 </Layout>
+
+<script></script>
 
 <style>
   h1 {

@@ -1,0 +1,48 @@
+---
+const {
+  title = "Zepto Apps | Shopify Apps | Themes | Custom Ecommerce",
+  description = "Zepto Apps is a Web Application Development Company Building Shopify Apps, Themes &amp; Custom E-commerce. Over the last 7 years, we have successfully served 68k customers with our premium products and services. Our SaaS application, Zepto Product Personalizer, is empowering 16,000 E-commerce businesses across the globe.",
+  url = "https://zeptoapps.com/",
+  image = "http://zeptoapps.com/cdn/shop/files/zepto-logo_ac45d161-bca3-4fb1-b10d-7409acf310c3.webp?v=1659511636", // Open Graph image (1200x630 recommended)
+  type = "website", // Can be "article" if it's a blog post
+  locale = "en_US",
+  siteName = "ZeptoApps.com",
+  twitterUsername = null,
+} = Astro.props;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+
+  <!-- Canonical -->
+  <link rel="canonical" href={url} />
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:type" content={type} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={url} />
+  <meta property="og:image" content={image} />
+  <meta property="og:locale" content={locale} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+  {twitterUsername && <meta name="twitter:site" content={twitterUsername} />}
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /> -->
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Optional: preload hero image or fonts for performance -->
+  <!-- <link rel="preload" as="image" href="/hero.jpg" /> -->
+</head>

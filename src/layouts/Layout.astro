@@ -1,20 +1,24 @@
 ---
+import { Font } from "astro:assets";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import { Font } from "astro:assets";
-import "../styles/global.css";
 import ComponentLayout from "./ComponentLayout.astro";
+import "../styles/global.css";
+import SEOHead from "../components/SEOHead.astro";
+
+const { head } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
+  <!-- <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>Zepto Apps | Shopify Apps | Themes | Custom Ecommerce</title>
-  </head>
+  </head> -->
+  {head && <SEOHead {...head} />}
   <body>
     <div id="navbar-container" class="navbar-transition">
       <ComponentLayout>
