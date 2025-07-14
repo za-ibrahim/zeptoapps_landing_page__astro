@@ -16,34 +16,40 @@ import { Image } from "astro:assets";
         feedback.
       </p>
     </div>
-    <div class="grid md:grid-cols-2 gap-5 mt-10">
-      <div class="flex flex-col gap-5">
+    <div class="grid md:grid-cols-2 gap-5 mt-10 min-h-[300px]">
+      <div class="grid grid-rows-3 gap-5 max-h-full">
         <div
-          class="flex flex-col justify-center items-center bg-white rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-400 ease-in-out"
+          class="flex flex-col justify-center items-center bg-white rounded-lg p-5 text-center hover:shadow-lg transition-shadow duration-400 ease-in-out"
         >
-          <Image src={mailSvg} alt="Email Icon" class="w-8 h-8" />
+          <Image src={mailSvg} alt="Email Icon" class="w-12 h-12" />
           <span class="text-xl font-extrabold">Email</span>
-          <span class="">contact@zeptoapps.com</span>
+          <address class="not-italic">
+            <a href="mailto:contact@zeptoapps.com">contact@zeptoapps.com</a>
+          </address>
         </div>
         <div
-          class="flex flex-col justify-center items-center bg-white rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-400 ease-in-out"
+          class="flex flex-col justify-center items-center bg-white rounded-lg p-5 text-center hover:shadow-lg transition-shadow duration-400 ease-in-out"
         >
-          <Image src={callSvg} alt="Email Icon" class="w-8 h-8" />
+          <Image src={callSvg} alt="Email Icon" class="w-12 h-12" />
           <span class="text-xl font-extrabold">Phone</span>
-          <span class="">+8801708136034</span>
+          <address class="not-italic">
+            <a href="tel:+8801708136034">+8801708136034</a>
+          </address>
         </div>
         <div
-          class="flex flex-col justify-center items-center bg-white rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-400 ease-in-out"
+          class="flex flex-col justify-center items-center bg-white rounded-lg p-5 text-center hover:shadow-lg transition-shadow duration-400 ease-in-out"
         >
-          <Image src={locationSvg} alt="Email Icon" class="w-8 h-8" />
+          <Image src={locationSvg} alt="Email Icon" class="w-12 h-12" />
           <span class="text-xl font-extrabold">Address</span>
-          <span class=""
-            >6th floor, Plot-36, 9th Avenue, Block - D, Sector 15, Uttara, Dhaka
-            -1230, Bangladesh.</span
-          >
+          <address class="not-italic">
+            6th floor, Plot-36, 9th Avenue, Block - D, Sector 15, Uttara, Dhaka
+            -1230, Bangladesh.
+          </address>
         </div>
       </div>
-      <form class="w-full flex flex-col gap-5 bg-white p-10 rounded-lg">
+      <form
+        class="w-full max-h-full flex flex-col gap-5 bg-white p-10 rounded-lg"
+      >
         <label for="from_name">
           Name
           <input
@@ -67,13 +73,13 @@ import { Image } from "astro:assets";
           <textarea
             name="message"
             placeholder="Message"
-            rows={4}
+            rows={5}
             class="w-full border outline-none mt-2 border-text_20 px-4 py-3 rounded-lg focus:border-primary transition-all duration-200"
           ></textarea>
         </label>
         <button
           type="submit"
-          class="bg-accent hover:ring-2 hover:ring-secondary px-4 py-3 rounded-lg text-background font-semibold transition-all duration-200 flex items-center justify-center gap-2"
+          class="bg-accent hover:ring-2 hover:ring-accent/50 px-4 py-3 rounded-lg text-background font-semibold transition-all duration-200 flex items-center justify-center gap-2"
         >
           Send Message
         </button>
