@@ -1,10 +1,97 @@
 ---
 import ComponentLayout from "../layouts/ComponentLayout.astro";
 import Layout from "../layouts/Layout.astro";
+import callSvg from "../assets/call.svg";
+import mailSvg from "../assets/mail.svg";
+import locationSvg from "../assets/location.svg";
+import { Image } from "astro:assets";
 ---
 
 <Layout>
-  <ComponentLayout>
-    <h1>Contact</h1>
+  <ComponentLayout class="!pt-22">
+    <div class="text-center">
+      <h1>Contact Us</h1>
+      <p>
+        We'd love to hear from you! Please reach out with any questions or
+        feedback.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5 mt-10">
+      <div class="flex flex-col gap-5">
+        <div
+          class="flex flex-col justify-center items-center bg-white rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-400 ease-in-out"
+        >
+          <Image src={mailSvg} alt="Email Icon" class="w-8 h-8" />
+          <span class="text-xl font-extrabold">Email</span>
+          <span class="">contact@zeptoapps.com</span>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center bg-white rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-400 ease-in-out"
+        >
+          <Image src={callSvg} alt="Email Icon" class="w-8 h-8" />
+          <span class="text-xl font-extrabold">Phone</span>
+          <span class="">+8801708136034</span>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center bg-white rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-400 ease-in-out"
+        >
+          <Image src={locationSvg} alt="Email Icon" class="w-8 h-8" />
+          <span class="text-xl font-extrabold">Address</span>
+          <span class=""
+            >6th floor, Plot-36, 9th Avenue, Block - D, Sector 15, Uttara, Dhaka
+            -1230, Bangladesh.</span
+          >
+        </div>
+      </div>
+      <form class="w-full flex flex-col gap-5 bg-white p-10 rounded-lg">
+        <label for="from_name">
+          Name
+          <input
+            name="from_name"
+            placeholder="Name"
+            type="text"
+            class="w-full border outline-none mt-2 border-text_20 px-4 py-3 rounded-lg focus:border-primary transition-all duration-200"
+          />
+        </label>
+        <label for="reply_to">
+          Email
+          <input
+            name="reply_to"
+            placeholder="Email"
+            type="email"
+            class="w-full border outline-none mt-2 border-text_20 px-4 py-3 rounded-lg focus:border-primary transition-all duration-200"
+          />
+        </label>
+        <label for="message">
+          Message
+          <textarea
+            name="message"
+            placeholder="Message"
+            rows={4}
+            class="w-full border outline-none mt-2 border-text_20 px-4 py-3 rounded-lg focus:border-primary transition-all duration-200"
+          ></textarea>
+        </label>
+        <button
+          type="submit"
+          class="bg-accent hover:ring-2 hover:ring-secondary px-4 py-3 rounded-lg text-background font-semibold transition-all duration-200 flex items-center justify-center gap-2"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
   </ComponentLayout>
 </Layout>
+
+<style>
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #555;
+  }
+</style>
