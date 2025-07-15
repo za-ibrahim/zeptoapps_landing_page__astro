@@ -29,16 +29,22 @@ const otherServices = [
     We also provide Shopify store setup, theme customization, integrations, and
     ongoing support.
   </p>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12">
-    {
-      otherServices.map((service) => (
-        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-          <h3 class="text-xl font-semibold mb-2">{service.title}</h3>
-          <p class="text-gray-600">{service.description}</p>
-        </div>
-      ))
-    }
-  </div>
+  <section class="showcase-section">
+    <div class="showcase-grid">
+      {
+        otherServices.map((service, idx) => (
+          <div
+            class={`showcase-card animate-fade-in`}
+            style={`animation-delay: ${idx * 0.1}s`}
+          >
+            <div class="card-gradient" />
+            <h3 class="card-title">{service.title}</h3>
+            <span class="card-desc">{service.description}</span>
+          </div>
+        ))
+      }
+    </div>
+  </section>
 </ComponentLayout>
 
 <style>
@@ -52,5 +58,81 @@ const otherServices = [
     font-size: 1.125rem;
     line-height: 1.6;
     color: #555;
+  }
+  .showcase-section {
+    /* background: #f7f8fa; */
+    /* padding: 3rem 1rem 4rem 1rem; */
+    /* border-radius: 2rem; */
+    /* box-shadow: 0 4px 24px rgba(60, 72, 88, 0.08); */
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  @media (min-width: 640px) {
+    .showcase-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 900px) {
+    .showcase-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .showcase-card {
+    position: relative;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(60, 72, 88, 0.06);
+    padding: 1.7rem 1.2rem 1.2rem 1.2rem;
+    transition:
+      transform 0.18s,
+      box-shadow 0.18s;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .showcase-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 6px 24px rgba(60, 72, 88, 0.12);
+  }
+  .card-gradient {
+    display: none;
+  }
+  .card-title {
+    position: relative;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+    z-index: 1;
+    letter-spacing: 0.2px;
+    text-shadow: none;
+  }
+  .card-desc {
+    position: relative;
+    font-size: 1rem;
+    color: var(--color-text_80);
+    z-index: 1;
+    line-height: 1.6;
+  }
+  /* Animation */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
   }
 </style>
