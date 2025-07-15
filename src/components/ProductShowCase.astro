@@ -1,0 +1,123 @@
+---
+import ComponentLayout from "../layouts/ComponentLayout.astro";
+import pplrImg from "../assets/products/1.png";
+import SignCustomizerImg from "../assets/products/2.png";
+import BoostlyCartImg from "../assets/products/3.png";
+import InfinSEOImg from "../assets/products/4.png";
+import popManImg from "../assets/products/5.png";
+import footerImg from "../assets/footer_bg_.jpg";
+import pplrBNR from "../assets/products/pplr_banner.webp";
+import SignCustomizerBNR from "../assets/products/sign_customizer_banner.webp";
+import BoostlyCartBNR from "../assets/products/boostlyCart_banner.webp";
+import InfinSEOBNR from "../assets/products/infinSEO_banner.webp";
+import popManBNR from "../assets/products/popMan_banner.webp";
+import { Image } from "astro:assets";
+
+const products = [
+  {
+    name: "Product Personalizer",
+    logo: pplrImg,
+    banner: pplrBNR,
+    description:
+      "Infinite options with live preview to sell customized products",
+    link: "https://productpersonalizer.com/",
+  },
+  {
+    name: "Sign Customizer",
+    logo: SignCustomizerImg,
+    banner: SignCustomizerBNR,
+    description: "Sell custom neon signs with easy setup and previews",
+    link: "https://landing-page-woad-tau.vercel.app/",
+  },
+  {
+    name: "PopMan",
+    logo: popManImg,
+    banner: popManBNR,
+    description: "Boost sales with custom popups: sales, social proof & more",
+    link: "https://apps.shopify.com/popman-popups-social",
+  },
+  {
+    name: "BoostlyCart",
+    logo: BoostlyCartImg,
+    banner: BoostlyCartBNR,
+    description: "Simple Slide Cart Drawer with Discounts & Upsells.",
+    link: "https://apps.shopify.com/boostlycart-cart-drawer-upsell",
+  },
+
+  {
+    name: "InfinSEO",
+    logo: InfinSEOImg,
+    banner: InfinSEOBNR,
+    description:
+      "Boost SEO with unlimited optimization & broken link management",
+    link: "https://apps.shopify.com/infinseo",
+  },
+];
+---
+
+<ComponentLayout class="!pt-22">
+  <h1 class="text-center">Featured WordPress Products</h1>
+  <p class="text-center max-w-2xl mx-auto">
+    Over 6 Million+ clients use our products to build & grow their websites
+  </p>
+
+  <div class="flex flex-wrap justify-center gap-8 mt-12">
+    {
+      products?.map((prod) => (
+        <a href={prod?.link} target="_blank" class="card">
+          <div class="w-full max-h-[200px] overflow-hidden">
+            <Image src={prod?.banner} alt={prod?.name} />
+          </div>
+          <div class="relative">
+            <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full overflow-hidden object-contain m-auto shadow-lg">
+              <Image src={prod?.logo} alt={prod?.name} class="w-full h-auto" />
+            </div>
+            <h2 class="product_name mt-12 text-center text-2xl transition-all duration-300 ease-in-out">
+              {prod?.name}
+            </h2>
+            <span class="pt-1 pb-2 px-4 line-clamp-3 text-center text-text_70">
+              {prod?.description || "No description available."}
+            </span>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</ComponentLayout>
+
+<style>
+  :root {
+    --sizeWidth: 350px;
+    --sizeHeight: 365px;
+    --gridGap: 24px;
+  }
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  .card {
+    max-width: var(--sizeWidth);
+    min-height: var(--sizeHeight);
+    overflow: hidden;
+    border-radius: 8px;
+    background: white;
+    border-radius: 1rem;
+    display: inline-block;
+    border: 1.5px solid white;
+    transition: all 0.3s ease;
+  }
+  .card:hover {
+    /* border: 1px solid var(--color-primary); */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    .product_name {
+      color: var(--color-primary);
+    }
+  }
+</style>
