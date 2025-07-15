@@ -22,7 +22,7 @@ const stats = [
     icon: "✨",
   },
   {
-    count: 99,
+    count: 99.99,
     label: "Satisfaction Rate (%)",
     // gradient: "from-violet-500 to-purple-600",
     gradient: "from-primary_2 to-secondary_2",
@@ -53,7 +53,7 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
               class="stat-count !text-4xl md:text-6xl font-bold text-white relative z-10"
               data-count={count}
             >
-              0
+              {count}
             </span>
             <span class="mt-4 !text-lg md:text-xl text-white/90 font-medium text-center relative z-10">
               {label}

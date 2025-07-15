@@ -1,0 +1,203 @@
+---
+import ComponentLayout from "../../layouts/ComponentLayout.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout head={{ title: "Shopify Store Migration Services" }}>
+  <ComponentLayout class="!pt-15">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <h1>Shopify Store Migration Services</h1>
+      <p class="hero-description">
+        We provide seamless migration services to help you transfer your existing
+        e-commerce store to Shopify without losing your data, customers, or sales
+        momentum.
+      </p>
+      <a href="/contact" class="cta-button">Get Started Today</a>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <h2 class="section-title">Our Migration Process</h2>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Store Analysis & Planning</h3>
+          <p>
+            We assess your current store and create a comprehensive migration
+            strategy.
+          </p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>Data Migration</h3>
+          <p>We carefully transfer your products, customers, and order history.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>Theme & Design Transfer</h3>
+          <p>We recreate your store's look and feel on Shopify platform.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>Testing & Launch</h3>
+          <p>Thorough testing and seamless transition to your new Shopify store.</p>
+        </div>
+      </div>
+    </section>
+  </ComponentLayout>
+</Layout>
+
+<style>
+  /* Base Styles */
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-primary_2)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    text-align: center;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #64748b;
+    margin: 0 auto 2rem;
+    max-width: 800px;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  /* Process Section */
+  .process-section {
+    padding: 6rem 0;
+    /* background: white; */
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .process-step {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .step-number {
+    width: 3rem;
+    height: 3rem;
+    background: #2563eb;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: 600;
+  }
+
+  /* button */
+  .cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-secondary_2);
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+  .cta-button:hover {
+    background: var(--color-primary);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    text-align: center;
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+  }
+
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    color: #94a3b8;
+    margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .primary-button {
+    background: #2563eb;
+    color: white;
+  }
+
+  .secondary-button {
+    background: transparent;
+    border: 2px solid #2563eb;
+    color: white;
+  }
+
+  .primary-button:hover {
+    background: #1d4ed8;
+  }
+
+  .secondary-button:hover {
+    background: #2563eb;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
