@@ -1,20 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/HeroSection/Hero.astro";
-import Brands from "../components/Brands.astro";
-import WhyChooseUs from "../components/WhyChooseUs.astro";
-import Testimonials from "../components/Testimonials.astro";
 import Stats from "../components/Stats.astro";
+import Brands from "../components/Brands.astro";
 import Reviews from "../components/Reviews.astro";
+import Hero from "../components/HeroSection/Hero.astro";
+import WhyChooseUs from "../components/WhyChooseUs.astro";
 import ProductShowCase from "../components/ProductShowCase.astro";
+import OtherServiceShowcase from "../components/OtherServiceShowcase.astro";
 ---
 
 <Layout head={{}}>
   <Hero tag="1" />
   <Brands />
   <ProductShowCase />
-  <Reviews />
   <WhyChooseUs />
+  <Reviews />
+  <OtherServiceShowcase />
   <!-- <Testimonials /> -->
   <Stats />
 </Layout>
