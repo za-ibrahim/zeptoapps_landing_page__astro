@@ -1,20 +1,23 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../../assets/logo.png";
-import img1 from "../../assets/products/1.png";
-import img2 from "../../assets/products/2.png";
-import img3 from "../../assets/products/3.png";
-import img4 from "../../assets/products/4.png";
+import pplrImg from "../../assets/products/1.png";
+import SignCustomizerImg from "../../assets/products/2.png";
+import BoostlyCartImg from "../../assets/products/3.png";
+import InfinSEOImg from "../../assets/products/4.png";
+import popManImg from "../../assets/products/5.png";
 ---
 
 <div class="loader">
   <div class="box">
     <div class="logo">
-      <Image
-        src={logo}
-        alt="Logo"
-        class="logo-image absolute inset-0 w-8 h-auto mx-auto my-auto"
-      />
+      <a href="/">
+        <Image
+          src={logo}
+          alt="Logo"
+          class="logo-image absolute inset-0 w-6 xl:w-7 h-auto mx-auto my-auto"
+        />
+      </a>
       <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         width="800"
@@ -32,9 +35,9 @@ import img4 from "../../assets/products/4.png";
     <div class="upper-box">
       <a href="https://productpersonalizer.com/" target="_blank">
         <Image
-          src={img1}
+          src={pplrImg}
           alt="Product 1"
-          class="product absolute top-[65px] rounded-sm w-6 h-auto"
+          class="product absolute top-0 left-0 inset-[65%] rounded-sm w-5 h-auto"
         />
       </a>
     </div>
@@ -43,31 +46,45 @@ import img4 from "../../assets/products/4.png";
     <div class="upper-box">
       <a href="https://landing-page-woad-tau.vercel.app/" target="_blank">
         <Image
-          src={img2}
+          src={SignCustomizerImg}
           alt="Product 2"
-          class="product absolute top-[25px] rounded-sm w-6 h-auto"
+          class="product absolute top-1/2 -translate-y-1/2 right-0 inset-[90%] rounded-sm w-5 h-auto"
         />
       </a>
     </div>
   </div>
   <div class="box">
     <div class="upper-box">
-      <a href="https://productpersonalizer.com/" target="_blank">
+      <a
+        href="https://apps.shopify.com/boostlycart-cart-drawer-upsell"
+        target="_blank"
+      >
         <Image
-          src={img3}
+          src={BoostlyCartImg}
           alt="Product 3"
-          class="product absolute top-[40px] right-0 rounded-sm w-6 h-auto"
+          class="product absolute bottom-0 left-1/2 -translate-x-1/2 inset-[93%] rounded-sm w-5 h-auto"
         />
       </a>
     </div>
   </div>
   <div class="box">
     <div class="upper-box">
-      <a href="https://productpersonalizer.com/" target="_blank">
+      <a href="https://apps.shopify.com/infinseo" target="_blank">
         <Image
-          src={img4}
+          src={InfinSEOImg}
           alt="Product 4"
-          class="product absolute bottom-[60px] right-0 rounded-sm w-6 h-auto"
+          class="product absolute top-0 right-1/4 -translate-x-1/2 inset-[70%] rounded-sm w-5 h-auto"
+        />
+      </a>
+    </div>
+  </div>
+  <div class="box">
+    <div class="upper-box">
+      <a href="https://apps.shopify.com/infinseo" target="_blank">
+        <Image
+          src={popManImg}
+          alt="Product 5"
+          class="product absolute bottom-1/5 left-1/12 -translate-x-1/2 inset-[72%] rounded-sm w-5 h-auto"
         />
       </a>
     </div>
@@ -95,7 +112,7 @@ import img4 from "../../assets/products/4.png";
 
 <style>
   .loader {
-    --size: 250px;
+    --size: 210px;
     --duration: 3s;
     --logo-color: rgb(221, 213, 213);
     --background: linear-gradient(
@@ -131,26 +148,34 @@ import img4 from "../../assets/products/4.png";
   }
 
   .loader .box:nth-child(2) .upper-box {
-    animation: rotateBox 30s infinite linear;
+    animation: rotateBox 40s infinite linear;
   }
   .loader .box:nth-child(3) .upper-box {
-    animation: rotateBox 20s infinite linear;
+    animation: rotateBox 40s infinite linear;
   }
   .loader .box:nth-child(4) .upper-box {
-    animation: rotateBox 30s infinite linear;
+    animation: rotateBox 40s infinite linear;
   }
   .loader .box:nth-child(5) .upper-box {
-    animation: rotateBox 20s infinite linear;
+    animation: rotateBox 40s infinite linear;
+  }
+  .loader .box:nth-child(6) .upper-box {
+    animation: rotateBox 35s infinite linear;
   }
 
   .loader .box:nth-child(2) .upper-box .product,
-  .loader .box:nth-child(4) .upper-box .product {
-    animation: stable-rotate 30s infinite linear;
-  }
   .loader .box:nth-child(3) .upper-box .product,
+  .loader .box:nth-child(4) .upper-box .product,
+  .loader .box:nth-child(5) .upper-box .product {
+    animation: stable-rotate 40s infinite linear;
+  }
+  .loader .box:nth-child(6) .upper-box .product {
+    animation: stable-rotate 35s infinite linear;
+  }
+  /* .loader .box:nth-child(3) .upper-box .product,
   .loader .box:nth-child(5) .upper-box .product {
     animation: stable-rotate 20s infinite linear;
-  }
+  } */
 
   .loader .box:nth-child(1) {
     inset: 40%;
@@ -183,6 +208,12 @@ import img4 from "../../assets/products/4.png";
     z-index: 95;
     border-color: rgba(100, 100, 100, 0.2);
     animation-delay: 0.8s;
+  }
+  .loader .box:nth-child(6) {
+    inset: -10%;
+    z-index: 94;
+    border-color: rgba(100, 100, 100, 0.2);
+    animation-delay: 1s;
   }
 
   .loader .logo {
@@ -246,11 +277,11 @@ import img4 from "../../assets/products/4.png";
 
   @media screen and (max-width: 1200px) {
     .loader {
-      --size: 210px;
+      --size: 180px;
       height: var(--size);
     }
     .product {
-      width: 1.3rem;
+      width: 1.15rem;
       height: auto;
     }
   }
