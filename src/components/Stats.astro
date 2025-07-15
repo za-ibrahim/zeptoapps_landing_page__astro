@@ -1,0 +1,245 @@
+---
+const stats = [
+  {
+    count: 1200,
+    label: "Happy Clients",
+    // gradient: "from-rose-500 to-pink-600",
+    gradient: "from-primary to-primary_2",
+    icon: "🌟",
+  },
+  {
+    count: 50,
+    label: "Projects Delivered",
+    // gradient: "from-amber-500 to-orange-600",
+    gradient: "from-secondary to-secondary_2",
+    icon: "🚀",
+  },
+  {
+    count: 15,
+    label: "Years Experience",
+    // gradient: "from-emerald-500 to-teal-600",
+    gradient: "from-primary to-accent",
+    icon: "✨",
+  },
+  {
+    count: 99,
+    label: "Satisfaction Rate (%)",
+    // gradient: "from-violet-500 to-purple-600",
+    gradient: "from-primary_2 to-secondary_2",
+    icon: "💎",
+  },
+];
+
+import ComponentLayout from "../layouts/ComponentLayout.astro";
+---
+
+<!-- <ComponentLayout class="!pt-22"> -->
+<section
+  class="stats-section py-16 bg-gradient-to-b from-gray-900 to-gray-900 shadow-xl mx-auto px-4 sm:px-6 lg:px-8 !mt-22"
+  aria-label="Statistics Section"
+>
+  <ComponentLayout class="">
+    <h1 class="text-center text-white">Our Impact in Numbers</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {
+        stats.map(({ count, label, gradient, icon }) => (
+          <div
+            class={`stat-card flex flex-col items-center justify-center p-8 bg-gradient-to-br ${gradient} rounded-2xl shadow-lg relative group`}
+            role="figure"
+          >
+            <div class="absolute inset-0 bg-black/[0.1] rounded-2xl transform scale-x-[1.015] scale-y-[1.035] group-hover:bg-black/[0.05] transition-all duration-500" />
+            <span class="icon text-4xl mb-3">{icon}</span>
+            <span
+              class="stat-count !text-4xl md:text-6xl font-bold text-white relative z-10"
+              data-count={count}
+            >
+              0
+            </span>
+            <span class="mt-4 !text-lg md:text-xl text-white/90 font-medium text-center relative z-10">
+              {label}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </ComponentLayout>
+</section>
+
+<script>
+  const ANIMATION_DURATION = 2000;
+
+  // Add 'any' type to silence TypeScript errors while keeping the functionality
+  const easeOutExpo = (x: any) => (x === 1 ? 1 : 1 - Math.pow(2, -10 * x));
+
+  function animateCount(el: any, end: any, duration = ANIMATION_DURATION) {
+    let start = 0;
+    let startTime: any = null;
+
+    function animate(timestamp: any) {
+      if (startTime === null) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const easedProgress = easeOutExpo(progress);
+      const currentValue = Math.floor(easedProgress * (end - start) + start);
+
+      el.textContent = currentValue.toLocaleString();
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        el.textContent = end.toLocaleString();
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  function initStatsCount() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const dataCount = el.getAttribute("data-count");
+            if (dataCount !== null) {
+              const end = parseInt(dataCount, 10);
+              if (!isNaN(end)) {
+                animateCount(el, end);
+              }
+            }
+            observer.unobserve(el);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "50px",
+      }
+    );
+
+    document.querySelectorAll(".stat-count").forEach((el) => {
+      observer.observe(el);
+    });
+  }
+
+  // Initialize on page load and view transitions
+  window.addEventListener("astro:after-swap", initStatsCount);
+  window.addEventListener("DOMContentLoaded", initStatsCount);
+
+  // Add mouse movement effect
+  document.querySelectorAll(".stat-card").forEach((card) => {
+    card.addEventListener("mousemove", (e: any) => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      (card as any).style.setProperty("--mouse-x", `${x}px`);
+      (card as any).style.setProperty("--mouse-y", `${y}px`);
+    });
+  });
+</script>
+
+<style>
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .stats-section {
+    transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .stats-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(244, 63, 94, 0.3),
+      rgba(168, 85, 247, 0.3),
+      rgba(244, 63, 94, 0.3),
+      transparent
+    );
+  }
+
+  .stat-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .stat-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      800px circle at var(--mouse-x, center) var(--mouse-y, center),
+      rgba(255, 255, 255, 0.1),
+      transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  .stat-card:hover::before {
+    opacity: 1;
+  }
+
+  .stat-card .icon {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
+    transition: all 0.4s ease;
+  }
+
+  .stat-card:hover .icon {
+    transform: scale(1.2) rotate(8deg);
+    filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.6));
+  }
+
+  .stat-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+      0 20px 48px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.15);
+  }
+
+  .stat-count {
+    background: linear-gradient(
+      to right bottom,
+      rgb(255, 255, 255) 30%,
+      rgba(255, 255, 255, 0.9)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stats-section,
+    .stat-card,
+    .stat-card::before,
+    .stat-card .icon {
+      transition: none;
+    }
+
+    .stat-card:hover {
+      transform: none;
+    }
+
+    .stat-card:hover .icon {
+      transform: none;
+      filter: none;
+    }
+  }
+</style>
