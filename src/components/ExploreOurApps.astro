@@ -30,17 +30,17 @@ const products = [
 ---
 
 <div
-  class="bg-gradient-to-b from-gray-200/60 to-gray-200 mt-20 md:py-15 py-12 border-white border-t"
+  class="bg-gradient-to-b from-gray-200/60 to-gray-200 mt-20 py-7 border-white border-t"
 >
   <ComponentLayout
     class="!flex md:flex-row flex-col !justify-between !items-center gap-4"
   >
-    <h1 class="md:text-left text-center">Explore Our<br />Apps</h1>
+    <h1 class="md:text-left text-center">Explore Our Apps</h1>
     <div
       class="flex flex-wrap gap-5 md:justify-end justify-center items-center"
     >
       {
-        products.map((product) => (
+        products.map((product, idx) => (
           <a href={product.to} target="_blank">
             <div
               class="shadow-box"
@@ -57,12 +57,11 @@ const products = [
   h1 {
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 1rem;
   }
 
   .shadow-box {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border-radius: 10px;
     box-shadow:
       0 10px 20px rgba(0, 0, 0, 0.25),
@@ -96,8 +95,8 @@ const products = [
 
   @media (max-width: 768px) {
     .shadow-box {
-      width: 65px;
-      height: 65px;
+      width: 45px;
+      height: 45px;
       border-radius: 8px;
     }
   }
@@ -106,8 +105,8 @@ const products = [
       font-size: 1.5rem;
     }
     .shadow-box {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 7px;
     }
   }
