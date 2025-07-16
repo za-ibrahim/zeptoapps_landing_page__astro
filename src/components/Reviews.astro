@@ -77,10 +77,14 @@ const reviews = [
 ];
 ---
 
-<div class="reviews-section mt-22">
+<div
+  class="reviews-section bg-gradient-to-b from-gray-200/60 to-gray-200 mt-22"
+>
   <div class="reviews-container">
     <ComponentLayout class="flex md:flex-row flex-col justify-between gap-5">
-      <div class="flex flex-col md:items-start md:justify-center font-bold py-10">
+      <div
+        class="flex flex-col md:items-start md:justify-center font-bold py-10"
+      >
         <h2 class="text-4xl leading-snug md:text-left text-center">
           Trusted By More Than <br /> 1000000+ Shopify Stores
         </h2>
@@ -96,7 +100,7 @@ const reviews = [
                 ></path></svg
               >
             </div>
-            <div class="text-center">
+            <div class="text-left">
               <p class="text-3xl">100K+</p>
               <p class="text-sm font-normal">Current Users</p>
             </div>
@@ -105,9 +109,9 @@ const reviews = [
             <div class="stat_icon_container">
               <Image src={happy_user} alt="Happy User" />
             </div>
-            <div class="text-center">
-              <p class="text-3xl">100K+</p>
-              <p class="text-sm font-normal">Current Users</p>
+            <div class="text-left">
+              <p class="text-3xl">99.99%</p>
+              <p class="text-sm font-normal">Satisfaction Rate</p>
             </div>
           </div>
         </div>
@@ -151,13 +155,13 @@ const reviews = [
 <style>
   .reviews-section {
     overflow: hidden;
-    background: linear-gradient(
+    /* background: linear-gradient(
       -30deg,
       #ee765218,
       #e73c7e18,
       #23a5d518,
       #23d5ab18
-    );
+    ); */
     background-size: 200% 200%;
     animation: gradientMove 15s ease infinite;
   }
