@@ -1,0 +1,123 @@
+---
+import ComponentLayout from "../layouts/ComponentLayout.astro";
+const products = [
+  {
+    image: "/assets/1.png",
+    name: "Zepto Product Personalizer",
+    to: "https://apps.shopify.com/product-personalizer",
+  },
+  {
+    image: "/assets/2.png",
+    name: "Zepto Sign Customizer",
+    to: "https://apps.shopify.com/neon-sign-customizer",
+  },
+  {
+    image: "/assets/3.png",
+    name: "BoostlyCart Cart Drawer Upsell",
+    to: "https://apps.shopify.com/boostlycart-cart-drawer-upsell",
+  },
+  {
+    image: "/assets/4.png",
+    name: "PopMan: Popups & Social Proof",
+    to: "https://apps.shopify.com/popman-popups-social",
+  },
+  {
+    image: "/assets/5.png",
+    name: "InfinSEO: SEO Image Optimizer",
+    to: "https://apps.shopify.com/infinseo",
+  },
+];
+---
+
+<div
+  class="bg-gradient-to-br from-gray-100 to-gray-300 mt-20 md:py-15 py-12 border-white border-t"
+>
+  <ComponentLayout
+    class="!flex md:flex-row flex-col !justify-between !items-center gap-4"
+  >
+    <h1 class="md:text-left text-center">Explore Our<br />Apps</h1>
+    <div
+      class="flex flex-wrap gap-5 md:justify-end justify-center items-center"
+    >
+      {
+        products.map((product) => (
+          <a href={product.to} target="_blank">
+            <div
+              class="shadow-box"
+              style={`background-image: url('${product.image}');`}
+            />
+          </a>
+        ))
+      }
+
+      <!-- <div class="shadow-box" style="background-image: url('/assets/2.png')">
+      </div>
+      <div class="shadow-box" style="background-image: url('/assets/3.png')">
+      </div>
+      <div class="shadow-box" style="background-image: url('/assets/5.png')">
+      </div>
+      <div class="shadow-box" style="background-image: url('/assets/4.png')">
+      </div> -->
+    </div>
+  </ComponentLayout>
+</div>
+
+<style>
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .shadow-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    box-shadow:
+      0 10px 20px rgba(0, 0, 0, 0.25),
+      /* strong shadow underneath */ 0 6px 6px rgba(0, 0, 0, 0.22),
+      /* mid-level shadow */ inset 0 -2px 6px rgba(0, 0, 0, 0.1),
+      /* inner bottom shading */ inset 0 2px 6px rgba(255, 255, 255, 0.6); /* inner top highlight */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    color: #333;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    /* background-image: url("../assets/products/1.png"); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Optional: On hover, pop out more */
+  .shadow-box:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 14px 28px rgba(0, 0, 0, 0.3),
+      0 10px 10px rgba(0, 0, 0, 0.22),
+      inset 0 -2px 6px rgba(0, 0, 0, 0.1),
+      inset 0 2px 6px rgba(255, 255, 255, 0.6);
+  }
+
+  @media (max-width: 768px) {
+    .shadow-box {
+      width: 65px;
+      height: 65px;
+      border-radius: 8px;
+    }
+  }
+  @media (max-width: 425px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    .shadow-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 7px;
+    }
+  }
+</style>
