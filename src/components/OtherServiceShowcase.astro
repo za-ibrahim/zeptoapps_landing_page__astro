@@ -4,26 +4,26 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
 const otherServices = [
   {
     title: "Custom Shopify App Development",
-    // banner: appDevelopmentImg,
+    to: "/services/custom-shopify-app-dev",
     banner: "/assets/services/custom_app_development.webp",
     description: "Tailored app development to meet your unique business needs.",
   },
   {
     title: "Professional Theme Set-up and Modification",
-    // banner: themeSetupImg,
+    to: "/services/custom-shopify-theme-dev",
     banner: "/assets/services/theme_setup.webp",
     description:
       "Custom theme setup and modifications for a unique store design.",
   },
   {
     title: "Store Migration",
-    // banner: storeMigrationImg,
+    to: "/services/shopify-store-migration",
     banner: "/assets/services/store_migration.webp",
     description: "Seamless migration of your existing store to Shopify.",
   },
   {
     title: "Custom Ecommerce Solutions",
-    // banner: customEcommerceImg,
+    to: "/custom-ecommerce",
     banner: "/assets/services/custom_ecommerce.webp",
     description:
       "End-to-end ecommerce solutions including design, development, and support.",
@@ -41,7 +41,7 @@ const otherServices = [
   <div class="flex flex-wrap justify-center gap-8 mt-12">
     {
       otherServices?.map((service) => (
-        <a href="/" target="_blank" class="card">
+        <a href={service?.to} target="_self" class="card">
           <div
             class="w-full min-h-[260px] overflow-hidden"
             style={`background-image: url('${service?.banner}'); background-size: cover; background-position: center; background-repeat: no-repeat;`}

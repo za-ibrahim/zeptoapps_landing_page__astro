@@ -1,61 +1,62 @@
 ---
+import { Image } from "astro:assets";
+import diamond from "../assets/diamond.png";
+import rocket from "../assets/rocket.png";
+import rating from "../assets/rating.png";
+import calendar from "../assets/calendar.png";
+
 const stats = [
   {
-    count: 1200,
+    count: "100K+",
     label: "Happy Clients",
     // gradient: "from-rose-500 to-pink-600",
     gradient: "from-primary to-primary_2",
-    icon: "🌟",
+    icon: rating,
   },
   {
-    count: 50,
-    label: "Projects Delivered",
+    count: "3M+",
+    label: "Product Published",
     // gradient: "from-amber-500 to-orange-600",
     gradient: "from-secondary to-secondary_2",
-    icon: "🚀",
+    icon: rocket,
   },
   {
-    count: 15,
-    label: "Years Experience",
+    count: "8",
+    label: "Years In Business",
     // gradient: "from-emerald-500 to-teal-600",
     gradient: "from-primary to-accent",
-    icon: "✨",
+    icon: calendar,
   },
   {
-    count: 99.99,
+    count: "99.99",
     label: "Satisfaction Rate (%)",
     // gradient: "from-violet-500 to-purple-600",
     gradient: "from-primary_2 to-secondary_2",
-    icon: "💎",
+    icon: diamond,
   },
 ];
 
 import ComponentLayout from "../layouts/ComponentLayout.astro";
 ---
 
-<!-- <ComponentLayout class="!pt-22"> -->
 <section
-  class="stats-section py-16 bg-gradient-to-b from-gray-900 to-gray-900 shadow-xl mx-auto px-4 sm:px-6 lg:px-8 !mt-22"
+  class="stats-section py-16 bg-white mx-auto px-4 sm:px-6 lg:px-8 !mt-22"
   aria-label="Statistics Section"
 >
   <ComponentLayout class="">
-    <h1 class="text-center text-white">Our Impact in Numbers</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <h1 class="text-center">Our Impact in Numbers</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-5">
       {
         stats.map(({ count, label, gradient, icon }) => (
-          <div
-            class={`stat-card flex flex-col items-center justify-center p-8 bg-gradient-to-br ${gradient} rounded-2xl shadow-lg relative group`}
-            role="figure"
-          >
-            <div class="absolute inset-0 bg-black/[0.1] rounded-2xl transform scale-x-[1.015] scale-y-[1.035] group-hover:bg-black/[0.05] transition-all duration-500" />
-            <span class="icon text-4xl mb-3">{icon}</span>
+          <div class="shadow-box">
+            <Image class="icon w-10 h-10 mb-3" src={icon} alt={label} />
             <span
-              class="stat-count !text-4xl md:text-6xl font-bold text-white relative z-10"
+              class="stat-count !text-4xl md:text-6xl font-bold relative z-10"
               data-count={count}
             >
               {count}
             </span>
-            <span class="mt-4 !text-lg md:text-xl text-white/90 font-medium text-center relative z-10">
+            <span class="mt-4 !text-lg md:text-xl font-medium text-center relative z-10">
               {label}
             </span>
           </div>
@@ -65,7 +66,7 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
   </ComponentLayout>
 </section>
 
-<script>
+<!-- <script>
   const ANIMATION_DURATION = 2000;
 
   // Add 'any' type to silence TypeScript errors while keeping the functionality
@@ -138,7 +139,7 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
       (card as any).style.setProperty("--mouse-y", `${y}px`);
     });
   });
-</script>
+</script> -->
 
 <style>
   h1 {
@@ -150,8 +151,8 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
     transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* backdrop-filter: blur(8px); */
+    /* border: 1px solid rgba(255, 255, 255, 0.05); */
   }
 
   .stats-section::before {
@@ -164,19 +165,35 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(244, 63, 94, 0.3),
-      rgba(168, 85, 247, 0.3),
-      rgba(244, 63, 94, 0.3),
+      --alpha(var(--color-primary) / 0.5),
+      var(--color-secondary),
+      --alpha(var(--color-primary) / 0.5),
+      transparent
+    );
+  }
+  .stats-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      --alpha(var(--color-primary) / 0.5),
+      var(--color-secondary),
+      --alpha(var(--color-primary) / 0.5),
       transparent
     );
   }
 
   .stat-card {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px 5px rgb(211, 210, 210);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.747);
   }
 
   .stat-card::before {
@@ -207,22 +224,42 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
   }
 
   .stat-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    /* transform: translateY(-8px) scale(1.02); */
     box-shadow:
       0 20px 48px rgba(0, 0, 0, 0.3),
       0 0 0 1px rgba(255, 255, 255, 0.15);
   }
 
   .stat-count {
-    background: linear-gradient(
-      to right bottom,
-      rgb(255, 255, 255) 30%,
-      rgba(255, 255, 255, 0.9)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    /* filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.788)); */
+  }
+
+  .shadow-box {
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow:
+      0 10px 20px rgba(0, 0, 0, 0.2),
+      /* strong shadow underneath */ 0 6px 6px rgba(0, 0, 0, 0.01),
+      /* mid-level shadow */ inset 0 -2px 6px rgba(0, 0, 0, 0.2),
+      /* inner bottom shading */ inset 0 2px 6px rgba(255, 255, 255, 0.6); /* inner top highlight */
+    color: #333;
+    display: flex;
+    font-size: 1.3rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: sans-serif;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  /* Optional: On hover, pop out more */
+  .shadow-box:hover {
+    transform: translateY(-2px);
   }
 
   @media (prefers-reduced-motion: reduce) {
