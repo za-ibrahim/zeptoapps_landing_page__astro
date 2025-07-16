@@ -1,13 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/logo.avif";
+import ComponentLayout from "../layouts/ComponentLayout.astro";
 ---
 
 <footer class="bg-gradient-to-br from-gray-100 to-gray-300 text-white">
   <div
     class="backdrop-blur-xs bg-gradient-to-br from-gray-100/50 to-gray-300/40"
   >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <ComponentLayout>
       <!-- Main Footer Content -->
       <div class="py-12 lg:py-16">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
@@ -307,7 +308,7 @@ import logo from "../assets/logo.avif";
           </div>
         </div>
       </div>
-    </div>
+    </ComponentLayout>
   </div>
 </footer>
 
