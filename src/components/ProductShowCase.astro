@@ -63,7 +63,7 @@ const products = [
   <div class="flex flex-wrap justify-center gap-8 mt-12">
     {
       products?.map((prod) => (
-        <a href={prod?.link} target="_blank" class="card">
+        <a href={prod?.link} target="_blank" class="card shadow-lg">
           <div class="w-full max-h-[200px] overflow-hidden">
             <Image src={prod?.banner} alt={prod?.name} />
           </div>
@@ -114,7 +114,8 @@ const products = [
   }
   .card:hover {
     /* border: 1px solid var(--color-primary); */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+    transform: scale(1.01) translateY(-2px);
     .product_name {
       color: var(--color-primary);
     }
