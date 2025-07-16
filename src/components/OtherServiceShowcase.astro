@@ -16,7 +16,7 @@ const otherServices = [
       "Custom theme setup and modifications for a unique store design.",
   },
   {
-    title: "Store Migration",
+    title: "Store Migration between different platforms",
     to: "/services/shopify-store-migration",
     banner: "/assets/services/store_migration.webp",
     description: "Seamless migration of your existing store to Shopify.",
@@ -38,7 +38,7 @@ const otherServices = [
     ongoing support.
   </p>
 
-  <div class="flex flex-wrap justify-center gap-8 mt-12">
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
     {
       otherServices?.map((service) => (
         <a href={service?.to} target="_self" class="card">
@@ -49,12 +49,12 @@ const otherServices = [
             {/* <img src={service?.banner} alt={service?.title} /> */}
           </div>
           <div class="py-5 px-4">
-            <h2 class="product_name text-center text-xl transition-all duration-300 ease-in-out">
+            <h2 class="product_name text-center text-lg transition-all duration-300 ease-in-out">
               {service?.title}
             </h2>
-            <span class="pt-1 line-clamp-3 text-center text-text_70">
+            {/* <span class="pt-1 line-clamp-3 text-center text-text_70">
               {service?.description || "No description available."}
-            </span>
+            </span> */}
           </div>
         </a>
       ))
@@ -80,8 +80,8 @@ const otherServices = [
     color: #555;
   }
   .card {
-    max-width: var(--sizeWidth);
-    min-height: var(--sizeHeight);
+    /* max-width: var(--sizeWidth);
+    min-height: var(--sizeHeight); */
     overflow: hidden;
     border-radius: 8px;
     background: white;
