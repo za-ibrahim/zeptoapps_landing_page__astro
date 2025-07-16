@@ -1,22 +1,35 @@
 ---
+import { Image } from "astro:assets";
 import ComponentLayout from "../layouts/ComponentLayout.astro";
+import themeSetupImg from "../assets/services/theme_setup.webp";
+import storeMigrationImg from "../assets/services/store_migration.webp";
+import customEcommerceImg from "../assets/services/custom_ecommerce.webp";
+import appDevelopmentImg from "../assets/services/custom_app_development.webp";
 
 const otherServices = [
   {
     title: "Custom Shopify App Development",
+    // banner: appDevelopmentImg,
+    banner: "/assets/services/custom_app_development.webp",
     description: "Tailored app development to meet your unique business needs.",
   },
   {
     title: "Professional Theme Set-up and Modification",
+    // banner: themeSetupImg,
+    banner: "/assets/services/theme_setup.webp",
     description:
       "Custom theme setup and modifications for a unique store design.",
   },
   {
     title: "Store Migration",
+    // banner: storeMigrationImg,
+    banner: "/assets/services/store_migration.webp",
     description: "Seamless migration of your existing store to Shopify.",
   },
   {
     title: "Custom Ecommerce Solutions",
+    // banner: customEcommerceImg,
+    banner: "/assets/services/custom_ecommerce.webp",
     description:
       "End-to-end ecommerce solutions including design, development, and support.",
   },
@@ -29,25 +42,37 @@ const otherServices = [
     We also provide Shopify store setup, theme customization, integrations, and
     ongoing support.
   </p>
-  <section class="mt-12">
-    <div class="showcase-grid">
-      {
-        otherServices.map((service, idx) => (
+
+  <div class="flex flex-wrap justify-center gap-8 mt-12">
+    {
+      otherServices?.map((service) => (
+        <a href="/" target="_blank" class="card">
           <div
-            class={`showcase-card animate-fade-in`}
-            style={`animation-delay: ${idx * 0.1}s`}
+            class="w-full min-h-[260px] overflow-hidden"
+            style={`background-image: url('${service?.banner}'); background-size: cover; background-position: center; background-repeat: no-repeat;`}
           >
-            <div class="card-gradient" />
-            <h3 class="card-title">{service.title}</h3>
-            <span class="card-desc">{service.description}</span>
+            {/* <img src={service?.banner} alt={service?.title} /> */}
           </div>
-        ))
-      }
-    </div>
-  </section>
+          <div class="py-5 px-4">
+            <h2 class="product_name text-center text-xl transition-all duration-300 ease-in-out">
+              {service?.title}
+            </h2>
+            <span class="pt-1 line-clamp-3 text-center text-text_70">
+              {service?.description || "No description available."}
+            </span>
+          </div>
+        </a>
+      ))
+    }
+  </div>
 </ComponentLayout>
 
 <style>
+  :root {
+    --sizeWidth: 350px;
+    --sizeHeight: 365px;
+    --gridGap: 24px;
+  }
   h1 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -59,71 +84,22 @@ const otherServices = [
     line-height: 1.6;
     color: #555;
   }
-  .showcase-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  @media (min-width: 640px) {
-    .showcase-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media (min-width: 900px) {
-    .showcase-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  .showcase-card {
-    position: relative;
+  .card {
+    max-width: var(--sizeWidth);
+    min-height: var(--sizeHeight);
+    overflow: hidden;
+    border-radius: 8px;
     background: white;
     border-radius: 1rem;
-    box-shadow: 0 2px 12px rgba(60, 72, 88, 0.06);
-    padding: 1.7rem 1.2rem 1.2rem 1.2rem;
-    transition:
-      transform 0.18s,
-      box-shadow 0.18s;
-    overflow: hidden;
-    z-index: 1;
-    cursor: pointer;
+    display: inline-block;
+    /* border: 1.5px solid white; */
+    transition: all 0.3s ease;
   }
-  .showcase-card:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 6px 24px rgba(60, 72, 88, 0.12);
-  }
-  .card-gradient {
-    display: none;
-  }
-  .card-title {
-    position: relative;
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--color-text);
-    z-index: 1;
-    letter-spacing: 0.2px;
-    text-shadow: none;
-  }
-  .card-desc {
-    position: relative;
-    font-size: 1rem;
-    color: var(--color-text_80);
-    z-index: 1;
-    line-height: 1.6;
-  }
-  /* Animation */
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(16px);
+  .card:hover {
+    /* border: 1px solid var(--color-primary); */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    .product_name {
+      color: var(--color-primary);
     }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-  .animate-fade-in {
-    animation: fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
   }
 </style>
