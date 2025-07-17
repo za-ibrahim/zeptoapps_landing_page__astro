@@ -2,6 +2,29 @@
 import { Image } from "astro:assets";
 import logo from "../assets/logo.avif";
 import ComponentLayout from "../layouts/ComponentLayout.astro";
+
+const productLinks = [
+  {
+    url: "https://apps.shopify.com/product-personalizer",
+    title: "Zepto Product Personalizer",
+  },
+  {
+    url: "https://apps.shopify.com/neon-sign-customizer",
+    title: "Zepto Sign Customizer",
+  },
+  {
+    url: "https://apps.shopify.com/popman-popups-social",
+    title: "BoostlyCart Cart Drawer Upsell",
+  },
+  {
+    url: "https://apps.shopify.com/boostlycart-cart-drawer-upsell",
+    title: "PopMan: Popups & Social Proof",
+  },
+  {
+    url: "https://apps.shopify.com/boostlycart-cart-drawer-upsell",
+    title: "InfinSEO: SEO Image Optimizer",
+  },
+];
 ---
 
 <footer class="bg-gradient-to-br from-gray-100 to-gray-300 text-white">
@@ -64,51 +87,19 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
                   Products
                 </h3>
                 <ul class="space-y-4">
-                  <li>
-                    <a
-                      target="_blank"
-                      href="https://apps.shopify.com/product-personalizer"
-                      class="text-gray-500 hover:text-gray-800 transition-colors duration-200 text-sm"
-                    >
-                      Zepto Product Personalizer
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      target="_blank"
-                      href="https://apps.shopify.com/neon-sign-customizer"
-                      class="text-gray-500 hover:text-gray-800 transition-colors duration-200 text-sm"
-                    >
-                      Zepto Sign Customizer
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      target="_blank"
-                      href="https://apps.shopify.com/boostlycart-cart-drawer-upsell"
-                      class="text-gray-500 hover:text-gray-800 transition-colors duration-200 text-sm"
-                    >
-                      BoostlyCart Cart Drawer Upsell
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      target="_blank"
-                      href="https://apps.shopify.com/infinseo"
-                      class="text-gray-500 hover:text-gray-800 transition-colors duration-200 text-sm"
-                    >
-                      InfinSEO: SEO Image Optimizer
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      target="_blank"
-                      href="https://apps.shopify.com/popman-popups-social"
-                      class="text-gray-500 hover:text-gray-800 transition-colors duration-200 text-sm"
-                    >
-                      PopMan: Popups & Social Proof
-                    </a>
-                  </li>
+                  {
+                    productLinks.map((link) => (
+                      <li>
+                        <a
+                          target="_blank"
+                          href={link.url}
+                          class="text-gray-500 hover:text-gray-800 transition-colors duration-200 text-sm"
+                        >
+                          {link.title}
+                        </a>
+                      </li>
+                    ))
+                  }
                 </ul>
               </div>
 
@@ -153,10 +144,10 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="/contact"
                       class="text-gray-500 hover:text-gray-800 transition-colors duration-200 text-sm"
                     >
-                      Press Kit
+                      Contact Us
                     </a>
                   </li>
                   <li>
@@ -173,7 +164,7 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
               <!-- Get Help -->
               <div>
                 <h3 class="text-lg font-semibold mb-6 text-gray-700">
-                  Get Help
+                  Services
                 </h3>
                 <ul class="space-y-4">
                   <li>
@@ -181,7 +172,7 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
                       href="/contact"
                       class="text-gray-500 hover:text-gray-800 transition-colors duration-200 text-sm"
                     >
-                      Contact Us
+                      Custom Shopify App Development
                     </a>
                   </li>
                   <li>
@@ -189,7 +180,7 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
                       href="#"
                       class="text-gray-500 hover:text-gray-800 transition-colors duration-200 text-sm"
                     >
-                      Support Center
+                      Professional Theme Set-up and Modification
                     </a>
                   </li>
                   <li>
@@ -197,7 +188,7 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
                       href="#"
                       class="text-gray-500 hover:text-gray-800 transition-colors duration-200 text-sm"
                     >
-                      Documentation
+                      Store Migration between different platforms
                     </a>
                   </li>
                   <li>
@@ -205,23 +196,7 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
                       href="#"
                       class="text-gray-500 hover:text-gray-800 transition-colors duration-200 text-sm"
                     >
-                      FAQ
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="text-gray-500 hover:text-gray-800 transition-colors duration-200 text-sm"
-                    >
-                      Community Forum
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="text-gray-500 hover:text-gray-800 transition-colors duration-200 text-sm"
-                    >
-                      Live Chat
+                      Custom Ecommerce Solutions
                     </a>
                   </li>
                 </ul>

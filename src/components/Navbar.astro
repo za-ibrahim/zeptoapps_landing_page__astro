@@ -3,40 +3,59 @@ import { Image } from "astro:assets";
 import logo from "../assets/logo.avif";
 import ArrowAnimatedButton from "./ArrowAnimatedButton.astro";
 
-const productLinks = [
+const allLinks = [
   {
-    url: "https://apps.shopify.com/product-personalizer",
-    title: "Zepto Product Personalizer",
+    title: "Home",
+    url: "/",
   },
   {
-    url: "https://apps.shopify.com/neon-sign-customizer",
-    title: "Zepto Sign Customizer",
+    title: "Shopify Apps",
+    urls: [
+      {
+        title: "Zepto Product Personalizer",
+        url: "https://apps.shopify.com/product-personalizer",
+      },
+      {
+        title: "Zepto Sign Customizer",
+        url: "https://apps.shopify.com/neon-sign-customizer",
+      },
+      {
+        title: "BoostlyCart Cart Drawer Upsell",
+        url: "https://apps.shopify.com/popman-popups-social",
+      },
+      {
+        title: "PopMan: Popups & Social Proof",
+        url: "https://apps.shopify.com/boostlycart-cart-drawer-upsell",
+      },
+      {
+        title: "InfinSEO: SEO Image Optimizer",
+        url: "https://apps.shopify.com/boostlycart-cart-drawer-upsell",
+      },
+    ],
   },
   {
-    url: "https://apps.shopify.com/popman-popups-social",
-    title: "BoostlyCart Cart Drawer Upsell",
+    title: "Blog",
+    url: "blogs",
   },
+  // {
+  //   title: "Services",
+  //   urls: [
+  //     {
+  //       title: "Custom Shopify App Development",
+  //       url: "/services/custom-shopify-app-dev",
+  //     },
+  //     {
+  //       title: "Professional Theme Set-up and Modification",
+  //       url: "/services/custom-shopify-theme-dev",
+  //     },
+  //     { title: "Store Migration", url: "/services/shopify-store-migration" },
+  //     { title: "Custom Ecommerce", url: "/services/custom-ecommerce" },
+  //   ],
+  // },
   {
-    url: "https://apps.shopify.com/boostlycart-cart-drawer-upsell",
-    title: "PopMan: Popups & Social Proof",
+    title: "Contact Us",
+    url: "/contact",
   },
-  {
-    url: "https://apps.shopify.com/boostlycart-cart-drawer-upsell",
-    title: "InfinSEO: SEO Image Optimizer",
-  },
-];
-
-const servicesLinks = [
-  {
-    title: "Custom Shopify App Development",
-    url: "/services/custom-shopify-app-dev",
-  },
-  {
-    title: "Professional Theme Set-up and Modification",
-    url: "/services/custom-shopify-theme-dev",
-  },
-  { title: "Store Migration", url: "/services/shopify-store-migration" },
-  { title: "Custom Ecommerce", url: "/services/custom-ecommerce" },
 ];
 ---
 
@@ -56,98 +75,58 @@ const servicesLinks = [
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center gap-5">
         <ul class="flex gap-5">
-          <li>
-            <a class="links" href="/">Home</a>
-          </li>
-          <li class="dropdown-container">
-            <div
-              class="links"
-              role="button"
-              tabindex="0"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Shopify Apps
-              <span class="parent-menu-dropdown-icon"
-                ><svg
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  x="0px"
-                  y="0px"
-                  viewBox="0 0 492 492"
-                  style="enable-background:new 0 0 492 492;"
-                  xml:space="preserve"
-                >
-                  <g>
-                    <g>
-                      <path
-                        d="M265.2,390.7l218.9-218.9c5.1-5.1,7.9-11.8,7.9-19s-2.8-14-7.9-19L468,117.5c-10.5-10.5-27.6-10.5-38.1,0L246.1,301.4 L62,117.3c-5.1-5.1-11.8-7.9-19-7.9c-7.2,0-14,2.8-19,7.9L7.9,133.5c-5.1,5.1-7.9,11.8-7.9,19s2.8,14,7.9,19L227,390.7 c5.1,5.1,11.9,7.9,19.1,7.8C253.3,398.5,260.1,395.8,265.2,390.7z"
-                      ></path>
-                    </g>
-                  </g>
-                </svg></span
-              >
-            </div>
-            <div class="dropdown-menu">
-              <ul>
-                {
-                  productLinks.map((product) => (
-                    <li>
-                      <a href={product.url} target="_blank">
-                        {product.title}
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-          </li>
-          <li class="dropdown-container">
-            <div
-              class="links"
-              role="button"
-              tabindex="0"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Services
-              <span class="parent-menu-dropdown-icon"
-                ><svg
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  x="0px"
-                  y="0px"
-                  viewBox="0 0 492 492"
-                  style="enable-background:new 0 0 492 492;"
-                  xml:space="preserve"
-                >
-                  <g>
-                    <g>
-                      <path
-                        d="M265.2,390.7l218.9-218.9c5.1-5.1,7.9-11.8,7.9-19s-2.8-14-7.9-19L468,117.5c-10.5-10.5-27.6-10.5-38.1,0L246.1,301.4 L62,117.3c-5.1-5.1-11.8-7.9-19-7.9c-7.2,0-14,2.8-19,7.9L7.9,133.5c-5.1,5.1-7.9,11.8-7.9,19s2.8,14,7.9,19L227,390.7 c5.1,5.1,11.9,7.9,19.1,7.8C253.3,398.5,260.1,395.8,265.2,390.7z"
-                      ></path>
-                    </g>
-                  </g>
-                </svg></span
-              >
-            </div>
-            <div class="dropdown-menu">
-              <ul>
-                {
-                  servicesLinks.map((service) => (
-                    <li>
-                      <a href={service.url}>{service.title}</a>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a class="links" href="/contact">Contact</a>
-          </li>
+          {
+            allLinks?.map((link) =>
+              link?.urls ? (
+                <li class="dropdown-container">
+                  <div
+                    class="links"
+                    role="button"
+                    tabindex="0"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {link.title}
+                    <span class="parent-menu-dropdown-icon">
+                      <svg
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 492 492"
+                        style="enable-background:new 0 0 492 492;"
+                        xml:space="preserve"
+                      >
+                        <g>
+                          <g>
+                            <path d="M265.2,390.7l218.9-218.9c5.1-5.1,7.9-11.8,7.9-19s-2.8-14-7.9-19L468,117.5c-10.5-10.5-27.6-10.5-38.1,0L246.1,301.4 L62,117.3c-5.1-5.1-11.8-7.9-19-7.9c-7.2,0-14,2.8-19,7.9L7.9,133.5c-5.1,5.1-7.9,11.8-7.9,19s2.8,14,7.9,19L227,390.7 c5.1,5.1,11.9,7.9,19.1,7.8C253.3,398.5,260.1,395.8,265.2,390.7z" />
+                          </g>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="dropdown-menu">
+                    <ul>
+                      {link.urls.map((subLink) => (
+                        <li>
+                          <a href={subLink.url} target="_blank">
+                            {subLink.title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+              ) : (
+                <li>
+                  <a class="links" href={link.url}>
+                    {link.title}
+                  </a>
+                </li>
+              )
+            )
+          }
         </ul>
       </div>
 
@@ -180,76 +159,48 @@ const servicesLinks = [
     <!-- Mobile Navigation Menu -->
     <div class="mobile-menu hidden lg:hidden">
       <ul class="space-y-3">
-        <li>
-          <a class="mobile-links" href="/">Home</a>
-        </li>
-        <li class="mobile-dropdown-container">
-          <div class="mobile-links mobile-dropdown-trigger">
-            Shopify Apps
-            <span class="mobile-dropdown-icon">
-              <svg
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 492 492"
-                class="w-4 h-4"
-              >
-                <path
-                  d="M265.2,390.7l218.9-218.9c5.1-5.1,7.9-11.8,7.9-19s-2.8-14-7.9-19L468,117.5c-10.5-10.5-27.6-10.5-38.1,0L246.1,301.4 L62,117.3c-5.1-5.1-11.8-7.9-19-7.9c-7.2,0-14,2.8-19,7.9L7.9,133.5c-5.1,5.1-7.9,11.8-7.9,19s2.8,14,7.9,19L227,390.7 c5.1,5.1,11.9,7.9,19.1,7.8C253.3,398.5,260.1,395.8,265.2,390.7z"
-                ></path>
-              </svg>
-            </span>
-          </div>
-          <div class="mobile-dropdown-menu hidden">
-            <ul class="ml-4 mt-2 space-y-2">
-              {
-                productLinks.map((product) => (
-                  <li>
-                    <a
-                      class="mobile-sub-links"
-                      href={product.url}
-                      target="_blank"
+        {
+          allLinks.map((link) =>
+            link?.urls ? (
+              <li class="mobile-dropdown-container">
+                <div class="mobile-links mobile-dropdown-trigger">
+                  {link.title}
+                  <span class="mobile-dropdown-icon">
+                    <svg
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 492 492"
+                      class="w-4 h-4"
                     >
-                      {product.title}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-        </li>
-        <li class="mobile-dropdown-container">
-          <div class="mobile-links mobile-dropdown-trigger">
-            Services
-            <span class="mobile-dropdown-icon">
-              <svg
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 492 492"
-                class="w-4 h-4"
-              >
-                <path
-                  d="M265.2,390.7l218.9-218.9c5.1-5.1,7.9-11.8,7.9-19s-2.8-14-7.9-19L468,117.5c-10.5-10.5-27.6-10.5-38.1,0L246.1,301.4 L62,117.3c-5.1-5.1-11.8-7.9-19-7.9c-7.2,0-14,2.8-19,7.9L7.9,133.5c-5.1,5.1-7.9,11.8-7.9,19s2.8,14,7.9,19L227,390.7 c5.1,5.1,11.9,7.9,19.1,7.8C253.3,398.5,260.1,395.8,265.2,390.7z"
-                ></path>
-              </svg>
-            </span>
-          </div>
-          <div class="mobile-dropdown-menu hidden">
-            <ul class="ml-4 mt-2 space-y-2">
-              {
-                servicesLinks.map((service) => (
-                  <li>
-                    <a class="mobile-sub-links" href={service.url}>
-                      {service.title}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-        </li>
-        <li>
-          <a class="mobile-links" href="/contact">Contact</a>
-        </li>
+                      <path d="M265.2,390.7l218.9-218.9c5.1-5.1,7.9-11.8,7.9-19s-2.8-14-7.9-19L468,117.5c-10.5-10.5-27.6-10.5-38.1,0L246.1,301.4 L62,117.3c-5.1-5.1-11.8-7.9-19-7.9c-7.2,0-14,2.8-19,7.9L7.9,133.5c-5.1,5.1-7.9,11.8-7.9,19s2.8,14,7.9,19L227,390.7 c5.1,5.1,11.9,7.9,19.1,7.8C253.3,398.5,260.1,395.8,265.2,390.7z" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="mobile-dropdown-menu hidden">
+                  <ul class="ml-4 mt-2 space-y-2">
+                    {link.urls.map((subLink) => (
+                      <li>
+                        <a
+                          class="mobile-sub-links"
+                          href={subLink.url}
+                          target="_blank"
+                        >
+                          {subLink.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ) : (
+              <li>
+                <a class="mobile-links" href={link.url}>
+                  {link.title}
+                </a>
+              </li>
+            )
+          )
+        }
         <li class="pt-3 border-t-2 border-white">
           <a
             href="https://apps.shopify.com/partners/zepto-apps"
