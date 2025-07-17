@@ -12,31 +12,36 @@ const allLinks = [
     title: "Shopify Apps",
     urls: [
       {
+        target: "_blank",
         title: "Zepto Product Personalizer",
         url: "https://apps.shopify.com/product-personalizer",
       },
       {
+        target: "_blank",
         title: "Zepto Sign Customizer",
         url: "https://apps.shopify.com/neon-sign-customizer",
       },
       {
+        target: "_blank",
         title: "BoostlyCart Cart Drawer Upsell",
         url: "https://apps.shopify.com/popman-popups-social",
       },
       {
+        target: "_blank",
         title: "PopMan: Popups & Social Proof",
         url: "https://apps.shopify.com/boostlycart-cart-drawer-upsell",
       },
       {
+        target: "_blank",
         title: "InfinSEO: SEO Image Optimizer",
         url: "https://apps.shopify.com/boostlycart-cart-drawer-upsell",
       },
     ],
   },
-  {
-    title: "Blog",
-    url: "blogs",
-  },
+  // {
+  //   title: "Blog",
+  //   url: "blogs",
+  // },
   // {
   //   title: "Services",
   //   urls: [
@@ -53,8 +58,21 @@ const allLinks = [
   //   ],
   // },
   {
-    title: "Contact Us",
-    url: "/contact",
+    title: "Company",
+    urls: [
+      {
+        title: "Contact Us",
+        url: "/contact",
+      },
+      {
+        title: "About Us",
+        url: "/about-us",
+      },
+      {
+        title: "Careers",
+        url: "https://career.zeptoapps.com/",
+      },
+    ],
   },
 ];
 ---
@@ -110,7 +128,10 @@ const allLinks = [
                     <ul>
                       {link.urls.map((subLink) => (
                         <li>
-                          <a href={subLink.url} target="_blank">
+                          <a
+                            href={subLink.url}
+                            target={subLink?.target ?? "_self"}
+                          >
                             {subLink.title}
                           </a>
                         </li>
