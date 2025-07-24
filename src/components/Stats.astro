@@ -14,22 +14,15 @@ const stats = [
     icon: rating,
   },
   {
-    count: "3M+",
-    label: "Product Published",
+    count: "800+",
+    label: "Five Star Reviews",
     // gradient: "from-amber-500 to-orange-600",
     gradient: "from-secondary to-secondary_2",
     icon: rocket,
   },
   {
-    count: "8",
-    label: "Years In Business",
-    // gradient: "from-emerald-500 to-teal-600",
-    gradient: "from-primary to-accent",
-    icon: calendar,
-  },
-  {
-    count: "99.99",
-    label: "Satisfaction Rate (%)",
+    count: "$2.9B+",
+    label: "Revenue Generated",
     // gradient: "from-violet-500 to-purple-600",
     gradient: "from-primary_2 to-secondary_2",
     icon: diamond,
@@ -40,12 +33,12 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
 ---
 
 <section
-  class="stats-section py-28 bg-white mx-auto px-4 sm:px-6 lg:px-8 !mt-22"
+  class="stats-section py-28 mx-auto px-4 sm:px-6 lg:px-8 !mt-22"
   aria-label="Statistics Section"
 >
   <ComponentLayout class="">
     <h1 class="text-center">Our Impact in Numbers</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-5">
       {
         stats.map(({ count, label, gradient, icon }) => (
           <div class="shadow-box">
@@ -162,14 +155,14 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(
+    /* background: linear-gradient(
       90deg,
       transparent,
       --alpha(var(--color-primary) / 0.5),
       var(--color-secondary),
       --alpha(var(--color-primary) / 0.5),
       transparent
-    );
+    ); */
   }
   .stats-section::after {
     content: "";

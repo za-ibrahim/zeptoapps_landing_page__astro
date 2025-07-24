@@ -25,7 +25,8 @@ const products = [
     name: "Sign Customizer",
     logo: SignCustomizerImg,
     banner: SignCustomizerBNR,
-    description: "Sell custom neon signs with easy setup and previews",
+    description:
+      "Sell custom signs worldwide with realistic previews & dynamic pricing",
     link: "https://landing-page-woad-tau.vercel.app/",
   },
   {
@@ -47,46 +48,52 @@ const products = [
     logo: InfinSEOImg,
     banner: InfinSEOBNR,
     description:
-      "Boost SEO with unlimited optimization & broken link management",
+      "Maximize SEO with unlimited optimization & broken link management",
     link: "https://apps.shopify.com/infinseo",
   },
 ];
 ---
 
-<ComponentLayout class="!pt-22">
-  <h1 class="text-center">Our Shopify Products</h1>
-  <p class="text-center max-w-2xl mx-auto">
-    Over 6 Million+ clients use our products to build & grow their websites
-  </p>
+<div class="bg-white">
+  <ComponentLayout class="!py-22">
+    <h1 class="text-center">Apps Built to Grow Your Business</h1>
+    <p class="text-center max-w-2xl mx-auto">
+      Served More Than 100K Stores Globally
+    </p>
 
-  <div class="flex flex-wrap justify-center gap-8 mt-12">
-    {
-      products?.map((prod) => (
-        <a href={prod?.link} target="_blank" class="card shadow-lg">
-          <div class="w-full max-h-[200px] overflow-hidden">
-            <Image src={prod?.banner} alt={prod?.name} />
-          </div>
-          <div class="relative">
-            <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full overflow-hidden object-contain m-auto shadow-lg">
-              <Image src={prod?.logo} alt={prod?.name} class="w-auto h-full" />
+    <div class="flex flex-wrap justify-center gap-8 mt-12">
+      {
+        products?.map((prod) => (
+          <a href={prod?.link} target="_blank" class="card shadow-lg">
+            <div class="w-full max-h-[200px] overflow-hidden">
+              <Image src={prod?.banner} alt={prod?.name} />
             </div>
-            <h2 class="product_name mt-12 text-center text-2xl transition-all duration-300 ease-in-out">
-              {prod?.name}
-            </h2>
-            <span class="pt-1 pb-2 px-4 line-clamp-3 text-center text-text_70">
-              {prod?.description || "No description available."}
-            </span>
-          </div>
-        </a>
-      ))
-    }
-  </div>
-</ComponentLayout>
+            <div class="relative">
+              <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full overflow-hidden object-contain m-auto shadow-lg">
+                <Image
+                  src={prod?.logo}
+                  alt={prod?.name}
+                  class="w-auto h-full"
+                />
+              </div>
+              <h2 class="product_name mt-12 text-center text-2xl transition-all duration-300 ease-in-out">
+                {prod?.name}
+              </h2>
+              <span class="pt-1 pb-2 px-4 line-clamp-3 text-center text-text_70">
+                {prod?.description || "No description available."}
+              </span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </ComponentLayout>
+</div>
 
 <style>
   :root {
-    --sizeWidth: 350px;
-    --sizeHeight: 365px;
+    --sizeWidth: 500px;
+    --sizeHeight: 370px;
     --gridGap: 24px;
   }
   h1 {
