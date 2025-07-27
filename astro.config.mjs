@@ -8,7 +8,7 @@ export default defineConfig({
   experimental: {
     fonts: [{
       provider: fontProviders.google(),
-      name: "Lexend",
+      name: "Work Sans",
       cssVariable: "--font-roboto"
     }]
   },
