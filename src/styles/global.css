@@ -16,6 +16,10 @@
     --color-text_90: --alpha(var(--color-text) / 0.9);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #f2f4f5;
 }
