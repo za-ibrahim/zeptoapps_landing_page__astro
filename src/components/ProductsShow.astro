@@ -65,7 +65,7 @@ const products = [
       {
         products?.map((prod) => (
           <a href={prod?.link} target="_blank" class="card shadow-lg">
-            <div class="w-full max-h-[200px] overflow-hidden">
+            <div class="w-full max-h-[300px] overflow-hidden">
               <Image src={prod?.banner} alt={prod?.name} />
             </div>
             <div class="relative">
@@ -79,7 +79,7 @@ const products = [
               <h2 class="product_name mt-12 text-center text-2xl transition-all duration-300 ease-in-out">
                 {prod?.name}
               </h2>
-              <span class="pt-1 pb-2 px-4 line-clamp-3 text-center text-text_70">
+              <span class="pt-1 pb-6 px-4 line-clamp-3 text-center text-text_70">
                 {prod?.description || "No description available."}
               </span>
             </div>
@@ -92,9 +92,8 @@ const products = [
 
 <style>
   :root {
-    --sizeWidth: 500px;
+    --sizeWidth: max(calc(50% - 1rem), 500px);
     --sizeHeight: 370px;
-    --gridGap: 24px;
   }
   h1 {
     font-size: 2.5rem;
