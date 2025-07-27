@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import diamond from "../assets/diamond.png";
-import rocket from "../assets/rocket.png";
+// import rocket from "../assets/rocket.png";
 import rating from "../assets/rating.png";
-import calendar from "../assets/calendar.png";
+import happyClient from "../assets/happy_client.png";
 
 const stats = [
   {
@@ -11,14 +11,14 @@ const stats = [
     label: "Happy Clients",
     // gradient: "from-rose-500 to-pink-600",
     gradient: "from-primary to-primary_2",
-    icon: rating,
+    icon: happyClient,
   },
   {
     count: "800+",
     label: "Five Star Reviews",
     // gradient: "from-amber-500 to-orange-600",
     gradient: "from-secondary to-secondary_2",
-    icon: rocket,
+    icon: rating,
   },
   {
     count: "$2.9B+",
@@ -44,7 +44,7 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
       {
         stats.map(({ count, label, gradient, icon }) => (
           <div class="shadow-box h-[280px] md:min-h-[360px]">
-            <Image class="icon w-10 h-10 mb-3" src={icon} alt={label} />
+            <Image class="icon w-15 h-15 mb-5" src={icon} alt={label} />
             <span
               class="stat-count md:text-8xl text-6xl font-bold relative z-10"
               data-count={count}
