@@ -18,14 +18,14 @@ const { tag } = Astro.props;
         <span class="badge-text">🚀 Leading SaaS Solutions</span>
       </div> -->
 
-          <h1 class="hero-title">
+          <h1 class="hero-title xl:text-8xl lg:text-7xl md:text-6xl text-4xl">
             Build Your Business <span class="xs:inline sm:block lg:inline"
               >with <span class="text-primary">Zepto</span>
               <span class="text-secondary_2">Apps</span></span
             >
           </h1>
 
-          <p class="hero-description">
+          <p class="hero-description md:text-xl text-lg max-w-xl">
             Take your eCommerce store to new heights and accelerate your growth
             like never before with the power of our cutting-edge apps
           </p>
@@ -257,7 +257,6 @@ const { tag } = Astro.props;
   }
 
   .hero-title {
-    font-size: 5rem;
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1.5rem;
@@ -283,10 +282,8 @@ const { tag } = Astro.props;
   }
 
   .hero-description {
-    font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-    opacity: 0.9;
     animation: fadeInUp 0.8s ease-out 0.4s both;
   }
 
@@ -472,10 +469,6 @@ const { tag } = Astro.props;
     .hero-container {
       grid-template-columns: 1fr;
       text-align: center;
-    }
-
-    .hero-title {
-      font-size: 2.5rem;
     }
 
     .hero-buttons {

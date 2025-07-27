@@ -33,23 +33,25 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
 ---
 
 <section
-  class="stats-section py-28 mx-auto px-4 sm:px-6 lg:px-8 !mt-22"
+  class="stats-section py-28 mx-auto !mt-22"
   aria-label="Statistics Section"
 >
   <ComponentLayout class="">
-    <h1 class="text-center">Our Impact in Numbers</h1>
+    <h1 class="text-center mb-4 lg:text-6xl sm:text-5xl text-4xl font-bold">
+      Our Impact in Numbers
+    </h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-5">
       {
         stats.map(({ count, label, gradient, icon }) => (
-          <div class="shadow-box">
+          <div class="shadow-box h-[280px] md:min-h-[360px]">
             <Image class="icon w-10 h-10 mb-3" src={icon} alt={label} />
             <span
-              class="stat-count !text-4xl md:text-6xl font-bold relative z-10"
+              class="stat-count md:text-8xl text-6xl font-bold relative z-10"
               data-count={count}
             >
               {count}
             </span>
-            <span class="mt-4 !text-lg md:text-xl font-medium text-center relative z-10">
+            <span class="mt-4 md:text-2xl text-xl font-medium text-center relative z-10">
               {label}
             </span>
           </div>
@@ -135,11 +137,6 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
 </script> -->
 
 <style>
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
   .stats-section {
     transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
