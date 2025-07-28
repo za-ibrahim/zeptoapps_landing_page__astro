@@ -42,7 +42,7 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-5">
       {
         stats.map(({ count, label, gradient, icon }) => (
-          <div class="shadow-box h-[280px] md:min-h-[360px]">
+          <div class="shadow-box h-[280px] md:min-h-[360px] bg-white">
             <Image class="icon w-15 h-15 mb-5" src={icon} alt={label} />
             <span class="mg:text-8xl md:text-7xl text-6xl font-bold relative z-10">
               {count}
