@@ -6,7 +6,7 @@ import img_p1 from "../../assets/hero_p1.webp";
 import img_p2 from "../../assets/hero_p2.webp";
 import img_p3 from "../../assets/hero_p3.webp";
 import shopify_partner from "../../assets/shopify-partner.png";
-import shopify_plus from "../../assets/shopify_and_plus.svg";
+// import shopify_plus from "../../assets/shopify_and_plus.svg";
 const { tag } = Astro.props;
 ---
 
@@ -33,7 +33,11 @@ const { tag } = Astro.props;
           </p>
 
           <div class="hero-buttons">
-            <Image class="w-56 h-auto" src={shopify_partner} alt="shopify logo" />
+            <Image
+              class="h-10 w-auto"
+              src={shopify_partner}
+              alt="shopify logo"
+            />
             <a href="#products-showcase">
               <button class="learn-more">
                 <span class="circle" aria-hidden="true">
@@ -346,7 +350,7 @@ const { tag } = Astro.props;
   }
 
   .hero-visual {
-    background-image: url("../../assets/hero_theme.png");
+    background-image: url("../../assets/hero_image.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -368,16 +372,18 @@ const { tag } = Astro.props;
     left: 95px;
     bottom: 210px;
     animation: floatCard1 6s ease-in-out infinite;
+    display: none !important;
   }
   .card-2 {
-    left: 150px;
-    bottom: 50px;
+    left: 45%;
+    bottom: -5%;
     animation: floatCard2 8s ease-in-out infinite;
   }
   .card-3 {
     top: 50px;
     right: 180px;
     animation: floatCard3 7s ease-in-out infinite;
+    display: none !important;
   }
 
   @keyframes floatCard1 {
