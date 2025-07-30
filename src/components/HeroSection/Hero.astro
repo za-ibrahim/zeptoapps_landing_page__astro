@@ -7,6 +7,14 @@ import img_p2 from "../../assets/hero_p2.webp";
 import img_p3 from "../../assets/hero_p3.webp";
 import shopify_partner from "../../assets/shopify-partner.png";
 // import shopify_plus from "../../assets/shopify_and_plus.svg";
+
+import logo_1 from "../../assets/hero/1.webp";
+import logo_2 from "../../assets/hero/2.webp";
+import logo_3 from "../../assets/hero/3.webp";
+import logo_4 from "../../assets/hero/4.webp";
+import logo_5 from "../../assets/hero/5.webp";
+import logo_bg from "../../assets/hero/logo_bg.webp";
+
 const { tag } = Astro.props;
 ---
 
@@ -80,21 +88,36 @@ const { tag } = Astro.props;
               <RightSide />
             </div>
           ) : tag === "2" ? (
-            <div class="hero-visual hidden lg:inline-flex">
-              <div class="products-showcase">
+            <div class="_hero-visual relative hidden lg:inline-flex">
+              <Image
+                class="h-[580px] w-auto object-contain z-10"
+                src={logo_bg}
+                alt="Hero Visual"
+              />
+              <div class="z-20">
                 <div class="product-card card-1">
                   <div class="card-icon">
-                    <Image src={img_p2} alt="product" />
+                    <Image src={logo_1} alt="product" />
                   </div>
                 </div>
                 <div class="product-card card-2">
                   <div class="card-icon">
-                    <Image src={img_p1} alt="product" />
+                    <Image src={logo_2} alt="product" />
                   </div>
                 </div>
                 <div class="product-card card-3">
                   <div class="card-icon">
-                    <Image src={img_p3} alt="product" />
+                    <Image src={logo_3} alt="product" />
+                  </div>
+                </div>
+                <div class="product-card card-4">
+                  <div class="card-icon">
+                    <Image src={logo_4} alt="product" />
+                  </div>
+                </div>
+                <div class="product-card card-5">
+                  <div class="card-icon">
+                    <Image src={logo_5} alt="product" />
                   </div>
                 </div>
               </div>
@@ -350,7 +373,7 @@ const { tag } = Astro.props;
   }
 
   .hero-visual {
-    background-image: url("../../assets/hero_image.png");
+    background-image: url("../../assets/hero/logo_bg.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -369,21 +392,31 @@ const { tag } = Astro.props;
     position: absolute;
   }
   .card-1 {
-    left: 95px;
-    bottom: 210px;
+    top: 17%;
+    left: 20px;
+    transform: rotate(-18deg) !important;
     animation: floatCard1 6s ease-in-out infinite;
-    display: none !important;
   }
   .card-2 {
-    left: 45%;
-    bottom: -5%;
+    top: 20%;
+    right: 40px;
     animation: floatCard2 8s ease-in-out infinite;
   }
   .card-3 {
-    top: 50px;
-    right: 180px;
+    bottom: 15%;
+    left: 40px;
     animation: floatCard3 7s ease-in-out infinite;
-    display: none !important;
+  }
+  .card-4 {
+    bottom: 12%;
+    right: 80px;
+    animation: floatCard1 5s ease-in-out infinite;
+  }
+  .card-5 {
+    left: 40%;
+    transform: translateX(-60%);
+    top: -40px;
+    animation: floatCard2 6s ease-in-out infinite;
   }
 
   @keyframes floatCard1 {
@@ -416,14 +449,9 @@ const { tag } = Astro.props;
     }
   }
 
-  .card-1 .card-icon,
-  .card-2 .card-icon {
-    width: 85px;
-    height: 85px;
-  }
-  .card-3 .card-icon {
-    width: 55px;
-    height: 55px;
+  .card-icon {
+    width: 100px;
+    height: auto;
   }
 
   @keyframes flowRight {
@@ -460,15 +488,6 @@ const { tag } = Astro.props;
     .card-3 {
       top: 75px;
       right: 120px;
-    }
-    .card-1 .card-icon,
-    .card-2 .card-icon {
-      width: 65px;
-      height: 65px;
-    }
-    .card-3 .card-icon {
-      width: 40px;
-      height: 40px;
     }
   }
   @media (max-width: 1023px) {
