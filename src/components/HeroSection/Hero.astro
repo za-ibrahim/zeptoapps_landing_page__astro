@@ -90,7 +90,7 @@ const { tag } = Astro.props;
               <RightSide />
             </div>
           ) : tag === "2" ? (
-            <div class="_hero-visual xl:max-w-[490px] lg:max-w-[390px] ml-auto relative hidden lg:inline-flex">
+            <div class="_hero-visual xl:max-w-[490px] max-w-[390px] ml-auto relative hidden lg:inline-flex">
               <Image
                 width={800}
                 class="w-auto object-contain z-10"
@@ -98,59 +98,59 @@ const { tag } = Astro.props;
                 alt="Hero Visual"
               />
               <div class="z-20">
-                <a
+                <div
                   target="_blank"
                   href="https://productpersonalizer.com/"
                   class="product-card card-1"
                 >
-                  <div class="card-icon w-[70px]">
+                  <div class="card-icon xl:w-[70px] w-[60px]">
                     <Image
                       width={200}
                       src={logo_2}
                       alt="zepto product personalizer"
                     />
                   </div>
-                </a>
-                <a
+                </div>
+                <div
                   target="_blank"
                   href="https://landing-page-woad-tau.vercel.app/"
                   class="product-card card-2"
                 >
-                  <div class="card-icon w-[85px]">
+                  <div class="card-icon xl:w-[75px] w-[65px]">
                     <Image
                       width={200}
                       src={logo_1}
                       alt="zepto sign customizer"
                     />
                   </div>
-                </a>
-                <a
+                </div>
+                <div
                   target="_blank"
                   href="https://apps.shopify.com/infinseo"
                   class="product-card card-3"
                 >
-                  <div class="card-icon w-[60px]">
+                  <div class="card-icon xl:w-[55px] w-[45px]">
                     <Image width={200} src={logo_3} alt="zepto infinSEO" />
                   </div>
-                </a>
-                <a
+                </div>
+                <div
                   target="_blank"
                   href="https://apps.shopify.com/boostlycart-cart-drawer-upsell"
                   class="product-card card-4"
                 >
-                  <div class="card-icon w-[85px]">
+                  <div class="card-icon xl:w-[75px] w-[65px]">
                     <Image width={200} src={logo_4} alt="bootsly" />
                   </div>
-                </a>
-                <a
+                </div>
+                <div
                   target="_blank"
                   href="https://popman.app/"
                   class="product-card card-5"
                 >
-                  <div class="card-icon w-[75px]">
+                  <div class="card-icon xl:w-[70px] w-[60px]">
                     <Image width={200} src={logo_5} alt="zepto popman" />
                   </div>
-                </a>
+                </div>
               </div>
             </div>
           ) : null
@@ -424,7 +424,7 @@ const { tag } = Astro.props;
   }
   .card-1 {
     left: 42%;
-    top: -38px;
+    top: -30px;
     animation: floatCard1 6s ease-in-out infinite;
   }
   .card-2 {
