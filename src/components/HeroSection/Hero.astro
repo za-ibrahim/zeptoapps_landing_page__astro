@@ -8,11 +8,11 @@ import img_p3 from "../../assets/hero_p3.webp";
 import shopify_partner from "../../assets/shopify-partner.png";
 // import shopify_plus from "../../assets/shopify_and_plus.svg";
 
-import logo_1 from "../../assets/hero/1.webp";
-import logo_2 from "../../assets/hero/2.webp";
-import logo_3 from "../../assets/hero/3.webp";
-import logo_4 from "../../assets/hero/4.webp";
-import logo_5 from "../../assets/hero/5.webp";
+import logo_1 from "../../assets/hero/_1.webp";
+import logo_2 from "../../assets/hero/_2.webp";
+import logo_3 from "../../assets/hero/_3.webp";
+import logo_4 from "../../assets/hero/_4.webp";
+import logo_5 from "../../assets/hero/_5.webp";
 import logo_bg from "../../assets/hero/logo_bg.webp";
 
 const { tag } = Astro.props;
@@ -90,36 +90,45 @@ const { tag } = Astro.props;
           ) : tag === "2" ? (
             <div class="_hero-visual relative hidden lg:inline-flex">
               <Image
+                width={800}
                 class="h-[580px] w-auto object-contain z-10"
                 src={logo_bg}
                 alt="Hero Visual"
               />
               <div class="z-20">
-                <div class="product-card card-1">
-                  <div class="card-icon">
-                    <Image src={logo_1} alt="product" />
+                <a href="" class="product-card card-1">
+                  <div class="card-icon !w-[85px] h-auto">
+                    <Image
+                      width={200}
+                      src={logo_2}
+                      alt="zepto product personalizer"
+                    />
                   </div>
-                </div>
-                <div class="product-card card-2">
+                </a>
+                <a href="" class="product-card card-2">
                   <div class="card-icon">
-                    <Image src={logo_2} alt="product" />
+                    <Image
+                      width={200}
+                      src={logo_1}
+                      alt="zepto sign customizer"
+                    />
                   </div>
-                </div>
-                <div class="product-card card-3">
+                </a>
+                <a href="" class="product-card card-3">
+                  <div class="card-icon !w-[60px] h-auto">
+                    <Image width={200} src={logo_3} alt="zepto infinSEO" />
+                  </div>
+                </a>
+                <a href="" class="product-card card-4">
                   <div class="card-icon">
-                    <Image src={logo_3} alt="product" />
+                    <Image width={200} src={logo_4} alt="bootsly" />
                   </div>
-                </div>
-                <div class="product-card card-4">
-                  <div class="card-icon">
-                    <Image src={logo_4} alt="product" />
+                </a>
+                <a href="" class="product-card card-5">
+                  <div class="card-icon !w-[75px] h-auto">
+                    <Image width={200} src={logo_5} alt="zepto popman" />
                   </div>
-                </div>
-                <div class="product-card card-5">
-                  <div class="card-icon">
-                    <Image src={logo_5} alt="product" />
-                  </div>
-                </div>
+                </a>
               </div>
             </div>
           ) : null
@@ -392,50 +401,38 @@ const { tag } = Astro.props;
     position: absolute;
   }
   .card-1 {
-    top: 17%;
-    left: 20px;
-    transform: rotate(-18deg) !important;
+    left: 40%;
+    top: -40px;
     animation: floatCard1 6s ease-in-out infinite;
   }
   .card-2 {
-    top: 20%;
-    right: 40px;
-    animation: floatCard2 8s ease-in-out infinite;
-  }
-  .card-3 {
-    bottom: 15%;
-    left: 40px;
-    animation: floatCard3 7s ease-in-out infinite;
-  }
-  .card-4 {
-    bottom: 12%;
-    right: 80px;
-    animation: floatCard1 5s ease-in-out infinite;
-  }
-  .card-5 {
-    left: 40%;
-    transform: translateX(-60%);
-    top: -40px;
+    top: 19%;
+    left: 15px;
     animation: floatCard2 6s ease-in-out infinite;
   }
-
-  @keyframes floatCard1 {
-    0%,
-    100% {
-      transform: translateY(0) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-8px) rotate(2deg);
-    }
+  .card-3 {
+    top: 20%;
+    right: 65px;
+    animation: floatCard3 8s ease-in-out infinite;
+  }
+  .card-4 {
+    bottom: 8%;
+    left: 65px;
+    animation: floatCard4 7s ease-in-out infinite;
+  }
+  .card-5 {
+    bottom: 12%;
+    right: 100px;
+    animation: floatCard5 5s ease-in-out infinite;
   }
 
   @keyframes floatCard2 {
     0%,
     100% {
-      transform: translateY(0) rotate(0deg);
+      transform: translateY(0) rotate(-18deg);
     }
     50% {
-      transform: translateY(-10px) rotate(-2deg);
+      transform: translateY(-8px) rotate(-20deg);
     }
   }
 
@@ -445,7 +442,37 @@ const { tag } = Astro.props;
       transform: translateY(0) rotate(0deg);
     }
     50% {
-      transform: translateY(-6px) rotate(1deg);
+      transform: translateY(-10px) rotate(-2deg);
+    }
+  }
+
+  @keyframes floatCard4 {
+    0%,
+    100% {
+      transform: translateY(0) rotate(-16deg);
+    }
+    50% {
+      transform: translateY(-6px) rotate(-18deg);
+    }
+  }
+
+  @keyframes floatCard5 {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-12px) rotate(-3deg);
+    }
+  }
+
+  @keyframes floatCard1 {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-14px) rotate(3deg);
     }
   }
 
