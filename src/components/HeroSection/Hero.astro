@@ -90,7 +90,7 @@ const { tag } = Astro.props;
               <RightSide />
             </div>
           ) : tag === "2" ? (
-            <div class="_hero-visual xl:max-w-[500px] lg:max-w-[400px] md: ml-auto relative hidden lg:inline-flex">
+            <div class="_hero-visual xl:max-w-[490px] lg:max-w-[390px] ml-auto relative hidden lg:inline-flex">
               <Image
                 width={800}
                 class="w-auto object-contain z-10"
@@ -103,7 +103,7 @@ const { tag } = Astro.props;
                   href="https://productpersonalizer.com/"
                   class="product-card card-1"
                 >
-                  <div class="card-icon !w-[85px] h-auto">
+                  <div class="card-icon w-[70px]">
                     <Image
                       width={200}
                       src={logo_2}
@@ -116,7 +116,7 @@ const { tag } = Astro.props;
                   href="https://landing-page-woad-tau.vercel.app/"
                   class="product-card card-2"
                 >
-                  <div class="card-icon">
+                  <div class="card-icon w-[85px]">
                     <Image
                       width={200}
                       src={logo_1}
@@ -129,7 +129,7 @@ const { tag } = Astro.props;
                   href="https://apps.shopify.com/infinseo"
                   class="product-card card-3"
                 >
-                  <div class="card-icon !w-[60px] h-auto">
+                  <div class="card-icon w-[60px]">
                     <Image width={200} src={logo_3} alt="zepto infinSEO" />
                   </div>
                 </a>
@@ -138,7 +138,7 @@ const { tag } = Astro.props;
                   href="https://apps.shopify.com/boostlycart-cart-drawer-upsell"
                   class="product-card card-4"
                 >
-                  <div class="card-icon">
+                  <div class="card-icon w-[85px]">
                     <Image width={200} src={logo_4} alt="bootsly" />
                   </div>
                 </a>
@@ -147,7 +147,7 @@ const { tag } = Astro.props;
                   href="https://popman.app/"
                   class="product-card card-5"
                 >
-                  <div class="card-icon !w-[75px] h-auto">
+                  <div class="card-icon w-[75px]">
                     <Image width={200} src={logo_5} alt="zepto popman" />
                   </div>
                 </a>
@@ -449,7 +449,6 @@ const { tag } = Astro.props;
   }
 
   .card-icon {
-    width: 100px;
     height: auto;
   }
 
