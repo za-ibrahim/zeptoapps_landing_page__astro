@@ -2,29 +2,26 @@
 import { Image } from "astro:assets";
 import diamond from "../assets/diamond.png";
 import rocket from "../assets/rocket.png";
-import rating from "../assets/rating.png";
+import rating from "../assets/customer-satisfaction.png";
 
 const stats = [
   {
     count: "100K+",
     label: "Installs",
-    // gradient: "from-rose-500 to-pink-600",
-    gradient: "from-primary to-primary_2",
     icon: rocket,
+    className: "shadow-black",
   },
   {
     count: "800+",
     label: "Five Star Reviews",
-    // gradient: "from-amber-500 to-orange-600",
-    gradient: "from-secondary to-secondary_2",
     icon: rating,
+    className: "shadow-",
   },
   {
     count: "$2.9B+",
     label: "Revenue Generated",
-    // gradient: "from-violet-500 to-purple-600",
-    gradient: "from-primary_2 to-secondary_2",
     icon: diamond,
+    className: "shadow-",
   },
 ];
 
@@ -41,8 +38,10 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
     </h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-5">
       {
-        stats.map(({ count, label, gradient, icon }) => (
-          <div class="shadow-box h-[280px] md:min-h-[360px] bg-white">
+        stats.map(({ count, label, className, icon }) => (
+          <div
+            class={`shadow-box h-[280px] md:min-h-[360px] bg-white ${className}`}
+          >
             <Image class="icon w-15 h-15 mb-5" src={icon} alt={label} />
             <span class="mg:text-8xl md:text-7xl text-6xl font-bold relative z-10">
               {count}

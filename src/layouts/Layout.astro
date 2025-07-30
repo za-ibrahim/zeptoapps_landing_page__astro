@@ -1,5 +1,4 @@
 ---
-import { Font } from "astro:assets";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import ComponentLayout from "./ComponentLayout.astro";
@@ -34,11 +33,7 @@ const { head } = Astro.props;
 
 <script src="../script/nav.js"></script>
 
-<Font cssVariable="--font-roboto" preload />
 <style>
-  body {
-    font-family: var(--font-roboto);
-  }
   main {
     padding-top: calc(58px + 1rem);
   }
