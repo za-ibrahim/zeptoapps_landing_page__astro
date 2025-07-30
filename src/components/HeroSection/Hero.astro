@@ -89,29 +89,62 @@ const { tag } = Astro.props;
             </div>
           ) : tag === "2" ? (
             <div class="_hero-visual relative hidden lg:inline-flex">
-              <Image width={800} class="h-[580px] w-auto object-contain z-10" src={logo_bg} alt="Hero Visual" />
+              <Image
+                width={800}
+                class="w-auto object-contain z-10"
+                src={logo_bg}
+                alt="Hero Visual"
+              />
               <div class="z-20">
-                <a target="_blank" href="https://productpersonalizer.com/" class="product-card card-1">
+                <a
+                  target="_blank"
+                  href="https://productpersonalizer.com/"
+                  class="product-card card-1"
+                >
                   <div class="card-icon !w-[85px] h-auto">
-                    <Image width={200} src={logo_2} alt="zepto product personalizer" />
+                    <Image
+                      width={200}
+                      src={logo_2}
+                      alt="zepto product personalizer"
+                    />
                   </div>
                 </a>
-                <a target="_blank" href="https://landing-page-woad-tau.vercel.app/" class="product-card card-2">
+                <a
+                  target="_blank"
+                  href="https://landing-page-woad-tau.vercel.app/"
+                  class="product-card card-2"
+                >
                   <div class="card-icon">
-                    <Image width={200} src={logo_1} alt="zepto sign customizer" />
+                    <Image
+                      width={200}
+                      src={logo_1}
+                      alt="zepto sign customizer"
+                    />
                   </div>
                 </a>
-                <a target="_blank" href="https://apps.shopify.com/infinseo" class="product-card card-3">
+                <a
+                  target="_blank"
+                  href="https://apps.shopify.com/infinseo"
+                  class="product-card card-3"
+                >
                   <div class="card-icon !w-[60px] h-auto">
                     <Image width={200} src={logo_3} alt="zepto infinSEO" />
                   </div>
                 </a>
-                <a target="_blank" href="https://apps.shopify.com/boostlycart-cart-drawer-upsell" class="product-card card-4">
+                <a
+                  target="_blank"
+                  href="https://apps.shopify.com/boostlycart-cart-drawer-upsell"
+                  class="product-card card-4"
+                >
                   <div class="card-icon">
                     <Image width={200} src={logo_4} alt="bootsly" />
                   </div>
                 </a>
-                <a target="_blank" href="https://popman.app/" class="product-card card-5">
+                <a
+                  target="_blank"
+                  href="https://popman.app/"
+                  class="product-card card-5"
+                >
                   <div class="card-icon !w-[75px] h-auto">
                     <Image width={200} src={logo_5} alt="zepto popman" />
                   </div>
@@ -388,29 +421,34 @@ const { tag } = Astro.props;
     position: absolute;
   }
   .card-1 {
-    left: 40%;
-    top: -40px;
+    left: 42%;
+    top: -38px;
     animation: floatCard1 6s ease-in-out infinite;
   }
   .card-2 {
     top: 19%;
-    left: 15px;
+    left: 2%;
     animation: floatCard2 6s ease-in-out infinite;
   }
   .card-3 {
     top: 20%;
-    right: 65px;
+    right: 2%;
     animation: floatCard3 8s ease-in-out infinite;
   }
   .card-4 {
     bottom: 8%;
-    left: 65px;
+    left: 10%;
     animation: floatCard4 7s ease-in-out infinite;
   }
   .card-5 {
     bottom: 12%;
-    right: 100px;
+    right: 40px;
     animation: floatCard5 5s ease-in-out infinite;
+  }
+
+  .card-icon {
+    width: 100px;
+    height: auto;
   }
 
   @keyframes floatCard2 {
@@ -463,11 +501,6 @@ const { tag } = Astro.props;
     }
   }
 
-  .card-icon {
-    width: 100px;
-    height: auto;
-  }
-
   @keyframes flowRight {
     0%,
     100% {
@@ -490,20 +523,6 @@ const { tag } = Astro.props;
   }
 
   /* Responsive Design */
-  @media (max-width: 1200px) {
-    .card-1 {
-      left: 50px;
-      bottom: 210px;
-    }
-    .card-2 {
-      left: 120px;
-      bottom: 70px;
-    }
-    .card-3 {
-      top: 75px;
-      right: 120px;
-    }
-  }
   @media (max-width: 1023px) {
     .hero-container {
       grid-template-columns: 1fr;
