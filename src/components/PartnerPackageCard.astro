@@ -1,0 +1,25 @@
+---
+const { title, price, features } = Astro.props;
+---
+
+<div class="pricing-card rounded-lg overflow-hidden shadow-md bg-background/70">
+  <div class="text-center custom-shape pt-5 pb-14 stage">
+    <h2 class="text-xl font-bold mb-4">{title}</h2>
+    <span
+      class="price-text !text-4xl font-semibold inline-block cursor-pointer select-none"
+      >${price}</span
+    >
+  </div>
+
+  <div class="p-6">
+    <ul class="list-none flex flex-col gap-2">
+      {
+        features.map((feature) => (
+          <li class="leading-relaxed flex items-center justify-center gap-2">
+            <span>{feature}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

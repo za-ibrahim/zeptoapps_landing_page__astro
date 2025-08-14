@@ -28,3 +28,53 @@ body {
     font-family: var(--font-poppins);
     font-weight: 400;
 }
+
+
+.custom-shape {
+    position: relative;
+    border-radius: 8px;
+    clip-path: polygon(
+            0% 0%,
+            100% 0%,
+            100% 97%,
+            75% 80%,
+            25% 80%,
+            0% 97%,
+            0% 0%
+    );
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-shape::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    padding: 0;
+    background: linear-gradient(60deg,
+            var(--color-primary_2));
+    background-size: 900% 900%;
+    filter: blur(100px);
+    animation: gradient-animate 6s alternate-reverse infinite,
+        glow-pulse 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    transition: background-color 0.225s ease-in-out, box-shadow 0.225s ease-in-out,
+        transform 0.225s ease-in-out;
+}
+
+.pricing-card:hover .custom-shape {
+    transition: background-color 0.225s ease-in-out, box-shadow 0.225s ease-in-out,
+        transform 0.225s ease-in-out;
+    transform: translateY(-2.5px);
+}
+
+@keyframes gradient-animate {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
