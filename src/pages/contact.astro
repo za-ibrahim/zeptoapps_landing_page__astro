@@ -81,6 +81,23 @@ import SpingLoader from "../components/SpingLoader.astro";
             class="w-full border outline-none mt-2 border-text_20 px-4 py-3 rounded-lg focus:border-primary transition-all duration-200"
           />
         </label>
+        <label for="reply_to">
+          Select the app or topic related to your message *
+          <select
+            required
+            name="topic"
+            class="w-full border outline-none mt-2 border-text_20 px-4 py-3 rounded-lg focus:border-primary transition-all duration-200"
+          >
+          <option disabled selected>Select a topic</option>
+          <option>Zepto Product Personalizer</option>
+          <option>Zepto Sign Customizer</option>
+          <option>BoostlyCart Cart Drawer Upsell</option>
+          <option>PopMan: Popups & Social Proof</option>
+          <option>InfinSEO: SEO Image Optimizer</option>
+          <option>Shopify Services</option>
+          <option>Others</option>
+        </select>
+        </label>
         <label for="message">
           Message *
           <textarea

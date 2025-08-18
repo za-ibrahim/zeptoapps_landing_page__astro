@@ -32,6 +32,17 @@ const { head } = Astro.props;
 </html>
 
 <script src="../script/nav.js"></script>
+<script>
+  window.$crisp = [];
+  window.CRISP_WEBSITE_ID = "4b926d79-283b-4b27-af54-5060576309f1";
+  (function () {
+    const d = document;
+    const s = d.createElement("script");
+    s.src = "https://client.crisp.chat/l.js";
+    s.async = 1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+  })();
+</script>
 
 <style>
   main {
