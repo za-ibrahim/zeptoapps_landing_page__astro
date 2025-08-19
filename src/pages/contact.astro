@@ -60,6 +60,7 @@ import SpingLoader from "../components/SpingLoader.astro";
         </div>
       </div>
       <form
+        id="contact-form"
         class="w-full max-h-full flex flex-col gap-5 bg-white p-8 rounded-lg"
       >
         <label for="name">
@@ -154,7 +155,6 @@ import SpingLoader from "../components/SpingLoader.astro";
       submitBtn.disabled = true;
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
-      console.log(data);
       // await emailjs.sendForm(serviceID, templateID, form, publicKey);
       const response = await fetch("https://mailer.zcustomizer.app/send", {
         method: "POST",
@@ -182,7 +182,7 @@ import SpingLoader from "../components/SpingLoader.astro";
   };
 
   window.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
+    const form = document.querySelector("#contact-form");
     form.addEventListener("submit", handleSubmit);
   });
 </script>
