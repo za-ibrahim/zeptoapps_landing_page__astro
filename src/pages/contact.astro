@@ -87,7 +87,7 @@ import SpingLoader from "../components/SpingLoader.astro";
           <select
             required
             name="topic"
-            class="w-full border outline-none mt-2 border-text_20 px-4 py-3 rounded-lg focus:border-primary transition-all duration-200"
+            class="custom-select w-full border outline-none mt-2 border-text_20 px-4 py-3 rounded-lg focus:border-primary transition-all duration-200"
           >
             <option value="" disabled selected>Select a topic</option>
             <option value="Zepto Product Personalizer"
@@ -198,5 +198,19 @@ import SpingLoader from "../components/SpingLoader.astro";
     font-size: 1.125rem;
     line-height: 1.6;
     color: #555;
+  }
+
+  .custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("./assets/arrow-down.svg") no-repeat right 12px center;
+    background-color: #fff;
+    background-size: 12px;
+    padding: 8px 30px 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
   }
 </style>
