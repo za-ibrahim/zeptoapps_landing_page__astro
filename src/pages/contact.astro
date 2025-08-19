@@ -10,7 +10,7 @@ import SpingLoader from "../components/SpingLoader.astro";
 
 <Layout
   head={{
-    title: "Contact Us | Zepto Apps"
+    title: "Contact Us | Zepto Apps",
     // jsCDNs: [
     //   "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js",
     // ],
@@ -129,7 +129,7 @@ import SpingLoader from "../components/SpingLoader.astro";
         </button>
         <span
           id="successMessage"
-          style="display: none;"
+          style="visibility: hidden;"
           class="text-sm text-center bg-secondary_2 py-0.5 rounded-full text-white w-1/2 mx-auto"
           >Message sent successfully!</span
         >
@@ -175,8 +175,8 @@ import SpingLoader from "../components/SpingLoader.astro";
       console.error("Failed to send message:", error);
       alert("Failed to send message. Please try again later.");
     } finally {
-      submitBtn.querySelector("span:last-child").style.display = "none";
-      submitBtn.querySelector("span:first-child").style.display = "inline";
+      submitBtn.querySelector("span:last-child").style.visibility = "hidden";
+      submitBtn.querySelector("span:first-child").style.visibility = "visible";
       submitBtn.disabled = false;
     }
   };

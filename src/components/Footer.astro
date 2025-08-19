@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import logo from "../assets/logo.avif";
 import ComponentLayout from "../layouts/ComponentLayout.astro";
+import SpingLoader from "./SpingLoader.astro";
 
 const productLinks = [
   {
@@ -73,12 +74,22 @@ const productLinks = [
                   />
                 </div>
                 <button
+                  id="newsletter-submitBtn"
                   type="submit"
-                  class="px-6 py-3 bg-gradient-to-br from-primary/90 to-secondary_2 hover:from-primary hover:to-accent text-white font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-secondary_2"
+                  class="flex justify-center items-center min-w-[128.14px] px-6 py-3 bg-gradient-to-br from-primary/90 to-secondary_2 hover:from-primary hover:to-accent text-white font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-secondary_2"
                 >
-                  Subscribe
+                  <span>Subscribe</span>
+                  <span style="display: none;">
+                    <SpingLoader />
+                  </span>
                 </button>
               </form>
+              <span
+                id="newsletter-message"
+                style="visibility: hidden;"
+                class="text-sm pt-2 block rounded-full text-secondary_2"
+                >Thank you for subscribing.</span
+              >
             </div>
           </div>
 
@@ -272,27 +283,48 @@ const productLinks = [
     event.preventDefault();
     const form = event.target;
     const email_data = form.email.value.trim().toLowerCase();
-    console.log(email_data);
+    const submitBtn = document.getElementById("newsletter-submitBtn");
+    const successMessage = document.getElementById("newsletter-message");
 
-    const username = "shamsuddin"; // not email
-    const appPassword = "gYuXti7CfygyJnqSiH086hD0"; // remove spaces
+    const username = "shamsuddin";
+    const appPassword = "Sogy52000AsYuj0wgzxBFsiJ";
 
     const auth = btoa(`${username}:${appPassword}`);
-
-    fetch("https://zeptoapps.com/wp-json/fluent-crm/v2/contacts", {
+    submitBtn.querySelector("span:first-child").style.display = "none";
+    submitBtn.querySelector("span:last-child").style.display = "inline";
+    submitBtn.disabled = true;
+    fetch("https://rankgenie.app/market/wp-json/fluent-crm/v2/subscribers", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Basic ${auth}`,
       },
       body: JSON.stringify({
+        lists: [2],
         email: email_data,
-        lists: [2], // optional
+        status: "subscribed",
       }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.error(err));
+      .then((data) => {
+        if (data?.action_type === "created") {
+          form.reset();
+          successMessage.innerText = "Thank you for subscribing.";
+          successMessage.style.visibility = "visible";
+        } else if (data?.email?.unique) {
+          successMessage.innerText = "Provided email is already subscribed.";
+          successMessage.style.visibility = "visible";
+        }
+        setTimeout(() => {
+          successMessage.style.visibility = "hidden";
+        }, 3000);
+      })
+      .catch((err) => console.error(err))
+      .finally(() => {
+        submitBtn.querySelector("span:last-child").style.display = "none";
+        submitBtn.querySelector("span:first-child").style.display = "inline";
+        submitBtn.disabled = false;
+      });
   };
 
   window.addEventListener("DOMContentLoaded", () => {
