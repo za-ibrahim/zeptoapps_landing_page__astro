@@ -166,17 +166,17 @@ import SpingLoader from "../components/SpingLoader.astro";
       const result = await response.json();
       if (result?.status === "sent") {
         form.reset();
-        successMessage.style.display = "block";
+        successMessage.style.visibility = "visible";
         setTimeout(() => {
-          successMessage.style.display = "none";
+          successMessage.style.visibility = "hidden";
         }, 3000);
       }
     } catch (error) {
       console.error("Failed to send message:", error);
       alert("Failed to send message. Please try again later.");
     } finally {
-      submitBtn.querySelector("span:last-child").style.visibility = "hidden";
-      submitBtn.querySelector("span:first-child").style.visibility = "visible";
+      submitBtn.querySelector("span:last-child").style.display = "none";
+      submitBtn.querySelector("span:first-child").style.display = "inline";
       submitBtn.disabled = false;
     }
   };
