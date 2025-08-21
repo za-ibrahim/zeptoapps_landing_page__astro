@@ -6,90 +6,88 @@ import CollaborateSvg from "../components/CollaborateSvg.astro";
 
 const faqData = [
   {
-    question: "What is Zepto Apps Partner Program?",
+    question: "What is Zepto Apps Affiliate Program?",
     answer:
-      "Zepto Apps Partner program is a platform where you can offer our Shopify Apps, Services, Support, Design, and Development packages to your merchants and earn competitive commissions.",
+      "Zepto Apps Affiliate program is a performance-based marketing program where you earn commissions by promoting our Shopify apps to your audience. Share our apps with your followers and earn money for every successful referral.",
   },
   {
-    question: "How do I become a Zepto Apps partner and refer a client?",
+    question: "How do I become a Zepto Apps affiliate and start earning?",
     answer:
-      "Visit our website and complete the Partner Signup at https://partners.zeptoapps.com/. Once the signup is completed, you will get access to the Partner Dashboard. You'll find a unique referral link that can be used to send your clients, friends or colleagues to refer our solutions.",
+      "Simply sign up for our affiliate program at https://affiliates.zeptoapps.com/. Once approved, you'll receive a unique tracking link and access to promotional materials. Share your link through your blog, social media, or website to start earning commissions.",
   },
   {
     question: "How and when do I get paid?",
     answer:
-      "You will be paid on a monthly basis and the same shall be reflected in the account you specify.",
+      "Commissions are paid monthly via PayPal or bank transfer. Payments are processed on the 15th of each month for the previous month's earnings, with a minimum payout threshold of $50.",
   },
   {
-    question: "How to track the status of my Partners?",
+    question: "How can I track my affiliate performance?",
     answer:
-      "You can check the status of your Partners under the Conversions tab on your partner dashboard.",
+      "You can monitor your clicks, conversions, and earnings in real-time through your affiliate dashboard. Track which content performs best and optimize your promotional strategy accordingly.",
   },
   {
-    question: "Who can become a Zepto Apps Partner?",
+    question: "Who can become a Zepto Apps Affiliate?",
     answer:
-      "Our first references are a Shopify Plus store holder, Multi-store Shopify agencies, and Shopify merchants. Apart from them, any individual with ample Shopify experience and great reselling experience can join us anyway.",
+      "Anyone with an online presence can join! This includes bloggers, YouTubers, social media influencers, Shopify store owners, developers, and digital marketers. If you have an audience interested in e-commerce tools, you're a perfect fit.",
   },
 ];
 ---
 
 <Layout
   head={{
-    title: "Partners | Zepto Apps",
-    description:
-      "Join Zepto Apps Partner Program and earn up to 35% commission. Partner with us to offer Shopify apps, development services, and support to your clients.",
+    title: "Affiliate Program | Zepto Apps",
   }}
 >
   <ComponentLayout class="!py-22">
     <div class="text-center mb-10">
       <h1 class="text-center mb-4 md:text-5xl sm:text-4xl text-3xl font-bold">
-        Become a Partner
+        Join Our Affiliate Program
       </h1>
       <p class="text-lg mb-6">
-        Join our elite partnership program and unlock unlimited earning
-        potential
+        Turn your influence into income. Earn up to 30% commission promoting the
+        best Shopify apps
       </p>
-      <a href="#partnershipform" class="group inline-block">
+      <a href="#affiliateform" class="group inline-block">
         <button
-          class="bg-primary_2 text-white py-2 px-4 rounded-full group-hover:translate-y-[-2px] group-hover:bg-primary duration-300 transition-all"
-          >Apply Now</button
+          class="bg-primary_2 text-white py-2 px-4 rounded-full group-hover:translate-y-[-2px] group-hover:bg-primary duration-300 transition-all cursor-pointer"
+          >Join Now</button
         >
       </a>
     </div>
     <div class="md:grid md:grid-cols-2 flex flex-col-reverse">
       <div>
         <p class="text-lg mb-4">
-          Zepto Apps is one of the best Shopify-centric development agencies in
-          the world.
+          Zepto Apps is one of the leading Shopify app developers, creating
+          tools that help millions of merchants succeed online.
         </p>
         <ul class="flex flex-col gap-3 text-md">
-          <li>We want you to Expand</li>
-          <li>We want you to Grow</li>
-          <li>We want you to generate more revenue</li>
+          <li>Promote high-converting Shopify apps</li>
+          <li>Earn recurring commissions from your referrals</li>
+          <li>Access professional marketing materials</li>
         </ul>
         <p class="text-lg mt-4 mb-6">
-          Our goal is to grow together while ultimately helping scale our mutual
-          clients. Let's chat about combining our efforts so that you and we are
-          satisfied.
+          Our affiliate program is designed for content creators, influencers,
+          and anyone passionate about e-commerce. Start monetizing your audience
+          by promoting tools that genuinely help Shopify store owners grow their
+          business.
         </p>
         <hr class="border-t border-gray-300" />
         <p class="text-lg mt-6">
-          Zepto Apps invites Shopify developers, designers, content creators and
-          influencers to leverage our extensive suite of e-commerce tools. Join
-          our partnership program and transform your Shopify knowledge into a
-          profitable venture.
+          Join thousands of successful affiliates who are already earning
+          substantial commissions by promoting Zepto Apps. Whether you're a
+          blogger, YouTuber, or social media influencer, our program provides
+          everything you need to succeed.
         </p>
-        <p class="text-lg my-6">Why Join?</p>
+        <p class="text-lg my-6">Why Choose Our Affiliate Program?</p>
         <ul class="flex flex-col gap-3 text-md">
           <li>
-            Substantial Earnings: Earn up to 35% commission on customer
-            payments, plus a $100 bonus after your first three successful
-            referrals.
+            High Commissions: Earn up to 30% commission on all sales, with
+            lifetime recurring payments for subscription apps.
           </li>
           <li>
-            Comprehensive Support: Gain access to educational materials and a
-            unique referral link for each app, enhancing your ability to serve
-            and grow your client base.
+            Complete Support: Get access to banners, product demos, email
+            templates, and dedicated affiliate support to maximize your
+            earnings.
           </li>
         </ul>
       </div>
@@ -102,11 +100,11 @@ const faqData = [
         <h1
           class="text-center mb-4 md:text-4xl sm:text-3xl text-2xl font-medium"
         >
-          Discover Our Partner Benefits
+          Discover Our Affiliate Benefits
         </h1>
         <p class="text-lg mb-6">
-          Find out the finest benefits we have tailored just for our partners in
-          the shared mission of optimizing Shopify stores.
+          Join our affiliate program and enjoy these exclusive benefits designed
+          to help you maximize your earning potential.
         </p>
       </div>
       <div class="grid md:grid-cols-3 gap-6 items-start mt-15">
@@ -128,10 +126,11 @@ const faqData = [
               fill="#2A2A2A"></path></svg
           >
           <div>
-            <strong>Shared vision</strong>
+            <strong>Easy to start</strong>
             <p>
-              We believe in a collaborative approach to success, working closely
-              with our partners to achieve common goals.
+              Getting started is simple - sign up, get your unique link, and
+              start sharing. No complex requirements or lengthy approval
+              processes.
             </p>
           </div>
         </div>
@@ -151,10 +150,10 @@ const faqData = [
               fill="#2A2A2A"></path></svg
           >
           <div>
-            <strong>Mutual growth</strong>
+            <strong>High earnings potential</strong>
             <p>
-              We can unlock new opportunities of growing and sharing revenue
-              strategically.
+              Earn competitive commissions with every sale plus bonus incentives
+              for top performers. The more you promote, the more you earn.
             </p>
           </div>
         </div>
@@ -171,11 +170,11 @@ const faqData = [
               fill-rule="evenodd"></path></svg
           >
           <div>
-            <strong>Trusted relationship</strong>
+            <strong>Marketing support</strong>
             <p>
-              We value integrity, transparency, and trust in all our
-              partnerships. Our goal is to build long-lasting relationships that
-              are beneficial for both parties.
+              Get access to banners, product images, email templates, and
+              promotional content to help you effectively market our apps to
+              your audience.
             </p>
           </div>
         </div>
@@ -185,48 +184,48 @@ const faqData = [
   <ComponentLayout class="!py-15">
     <div class="text-center">
       <h1 class="text-center mb-4 md:text-4xl sm:text-3xl text-2xl font-medium">
-        Partnership Revenue Tiers
+        Affiliate Commission Tiers
       </h1>
     </div>
     <div
       class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 pt-5 mb-20"
     >
       <PartnerPackageCard
-        title="Silver Partner"
+        title="Starter Affiliate"
         price="15%"
         features={[
-          "Monthly revenue reports",
-          "Basic marketing materials",
+          "Real-time commission tracking",
+          "Basic promotional materials",
           "Email support",
-          "Partner portal access",
-          "Quarterly business reviews",
+          "Affiliate dashboard access",
+          "Monthly payment reports",
         ]}
       />
       <PartnerPackageCard
-        title="Gold Partner"
+        title="Pro Affiliate"
         price="25%"
         features={[
-          "Real-time revenue tracking",
-          "Custom marketing materials",
-          "Priority phone support",
           "Advanced analytics dashboard",
-          "Monthly strategy calls",
+          "Custom promotional content",
+          "Priority support",
           "Performance bonuses up to 5%",
-          "Co-marketing opportunities",
+          "Exclusive affiliate resources",
+          "Early app access for reviews",
+          "Social media support",
         ]}
       />
       <PartnerPackageCard
-        title="Platinum Partner"
-        price="35%"
+        title="Elite Affiliate"
+        price="30%"
         features={[
-          "Real-time revenue tracking",
-          "Dedicated account manager",
-          "24/7 priority support",
-          "White-label solutions",
-          "Weekly strategy sessions",
+          "Maximum commission rate",
+          "Dedicated affiliate manager",
+          "Custom landing pages",
           "Performance bonuses up to 10%",
-          "Exclusive partner events",
-          "Early access to new features",
+          "VIP affiliate community access",
+          "Exclusive promotional opportunities",
+          "Co-marketing campaigns",
+          "Premium affiliate resources",
         ]}
       />
     </div>
@@ -274,132 +273,131 @@ const faqData = [
     </div>
   </ComponentLayout>
   <div class="bg-white">
-    <ComponentLayout class="!py-15" id="partnershipform">
+    <ComponentLayout class="!py-15" id="affiliateform">
       <div class="text-center">
         <h1
           class="text-center mb-4 md:text-4xl sm:text-3xl text-2xl font-medium"
         >
-          Ready to Partner With Us?
+          Ready to Become an Affiliate?
         </h1>
         <p class="text-lg mb-6">
-          Complete the application below and our partnership team will review
-          your submission within 48 hours.
+          Complete the application below and start earning commissions. Our team
+          will review your submission within 24 hours.
         </p>
       </div>
       <form class="flex flex-col gap-6 mt-14">
         <div class="grid md:grid-cols-2 gap-6">
-          <label for="companyName" class="flex flex-col">
-            Company Name *
+          <label for="fullName" class="flex flex-col">
+            Full Name *
             <input
               type="text"
-              id="companyName"
-              name="companyName"
+              id="fullName"
+              name="fullName"
               required
               class="border border-gray-300 p-2 rounded"
             />
           </label>
-          <label for="primaryContact" class="flex flex-col">
-            Primary Contact *
-            <input
-              type="text"
-              id="primaryContact"
-              name="primaryContact"
-              required
-              class="border border-gray-300 p-2 rounded"
-            />
-          </label>
-        </div>
-        <div class="grid md:grid-cols-2 gap-6">
           <label for="email" class="flex flex-col">
             Email Address *
             <input
-              type="text"
+              type="email"
               id="email"
               name="email"
               required
               class="border border-gray-300 p-2 rounded"
             />
           </label>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
           <label for="phone" class="flex flex-col">
-            Phone Number *
+            Phone Number
             <input
               type="text"
               id="phone"
               name="phone"
+              class="border border-gray-300 p-2 rounded"
+            />
+          </label>
+          <label for="country" class="flex flex-col">
+            Country *
+            <input
+              type="text"
+              id="country"
+              name="country"
               required
               class="border border-gray-300 p-2 rounded"
             />
           </label>
         </div>
         <div class="grid md:grid-cols-2 gap-6">
-          <label for="industry" class="flex flex-col">
-            Industry *
+          <label for="promotionMethod" class="flex flex-col">
+            Primary Promotion Method *
             <select
-              id="industry"
-              name="industry"
+              id="promotionMethod"
+              name="promotionMethod"
               required
               class="border border-gray-300 p-2 rounded"
             >
-              <option value="">Select Industry</option>
-              <option value="technology">Technology</option>
-              <option value="healthcare">Healthcare</option>
-              <option value="finance">Finance</option>
-              <option value="retail">Retail</option>
-              <option value="manufacturing">Manufacturing</option>
+              <option value="">Select Method</option>
+              <option value="blog">Blog/Website</option>
+              <option value="social-media">Social Media</option>
+              <option value="youtube">YouTube</option>
+              <option value="email">Email Marketing</option>
+              <option value="paid-ads">Paid Advertising</option>
               <option value="other">Other</option>
             </select>
           </label>
-          <label for="currentAnnualRevenue" class="flex flex-col">
-            Current Annual Revenue *
+          <label for="audienceSize" class="flex flex-col">
+            Audience Size *
             <select
-              id="currentAnnualRevenue"
-              name="currentAnnualRevenue"
+              id="audienceSize"
+              name="audienceSize"
               required
               class="border border-gray-300 p-2 rounded"
             >
               <option value="">Select Range</option>
-              <option value="under-100k">Under $100K</option>
-              <option value="100k-500k">$100K - $500K</option>
-              <option value="500k-1m">$500K - $1M</option>
-              <option value="1m-5m">$1M - $5M</option>
-              <option value="5m-plus">$5M+</option>
+              <option value="under-1k">Under 1,000</option>
+              <option value="1k-5k">1,000 - 5,000</option>
+              <option value="5k-10k">5,000 - 10,000</option>
+              <option value="10k-50k">10,000 - 50,000</option>
+              <option value="50k-plus">50,000+</option>
             </select>
           </label>
         </div>
         <div class="grid md:grid-cols-2 gap-6">
-          <label for="targetTerritory" class="flex flex-col">
-            Target Territory *
+          <label for="websiteUrl" class="flex flex-col">
+            Website/Social Media URL *
             <input
-              type="text"
-              id="targetTerritory"
-              name="targetTerritory"
-              placeholder="e.g., California, Northeast US, etc."
+              type="url"
+              id="websiteUrl"
+              name="websiteUrl"
+              placeholder="https://your-website.com"
               required
               class="border border-gray-300 p-2 rounded"
             />
           </label>
-          <label for="preferredPartnershipTier" class="flex flex-col">
-            Preferred Partnership Tier *
+          <label for="experienceLevel" class="flex flex-col">
+            Affiliate Marketing Experience *
             <select
-              id="preferredPartnershipTier"
-              name="preferredPartnershipTier"
+              id="experienceLevel"
+              name="experienceLevel"
               required
               class="border border-gray-300 p-2 rounded"
             >
-              <option value="">Select Tier</option>
-              <option value="silver">Silver Partner (15%)</option>
-              <option value="gold">Gold Partner (25%)</option>
-              <option value="platinum">Platinum Partner (35%)</option>
+              <option value="">Select Experience</option>
+              <option value="beginner">Beginner (0-1 years)</option>
+              <option value="intermediate">Intermediate (1-3 years)</option>
+              <option value="advanced">Advanced (3+ years)</option>
             </select>
           </label>
         </div>
-        <label for="whyPartner" class="flex flex-col">
-          Relevant Experience & Why You'd Be a Great Partner *
+        <label for="audienceDescription" class="flex flex-col">
+          Describe Your Audience & Promotion Strategy *
           <textarea
-            id="whyPartner"
-            name="whyPartner"
+            id="audienceDescription"
+            name="audienceDescription"
             rows="4"
-            placeholder="Tell us about your business experience, current client base, and why you're interested in partnering with us. (max 500 characters)"
+            placeholder="Tell us about your audience, niche, and how you plan to promote our apps. Include details about your content strategy and why you'd be a great affiliate. (max 500 characters)"
             maxlength="500"
             class="border border-gray-300 p-2 rounded"></textarea>
         </label>
@@ -407,7 +405,7 @@ const faqData = [
           type="submit"
           class="bg-primary active:bg-primary_2 text-white p-2 rounded md:min-w-xl md:mx-auto"
         >
-          Submit Partnership Application
+          Submit Affiliate Application
         </button>
       </form>
     </ComponentLayout>
