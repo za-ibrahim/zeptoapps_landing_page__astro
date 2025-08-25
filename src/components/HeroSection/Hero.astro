@@ -1,15 +1,23 @@
 ---
-import { Image } from "astro:assets";
+// import { Image } from "astro:assets";
 import ComponentLayout from "../../layouts/ComponentLayout.astro";
 import RightSide from "./RightSide.astro";
-import shopify_partner from "../../assets/shopify-partner.png";
 
-import logo_1 from "../../assets/hero/_1.webp";
-import logo_2 from "../../assets/hero/_2_.webp";
-import logo_3 from "../../assets/hero/_3.webp";
-import logo_4 from "../../assets/hero/_4.webp";
-import logo_5 from "../../assets/hero/_5.webp";
-import logo_bg from "../../assets/hero/logo_bg.webp";
+// import shopify_partner from "../../assets/shopify-partner.png";
+// import logo_1 from "../../assets/hero/_1.webp";
+// import logo_2 from "../../assets/hero/_2_.webp";
+// import logo_3 from "../../assets/hero/_3.webp";
+// import logo_4 from "../../assets/hero/_4.webp";
+// import logo_5 from "../../assets/hero/_5.webp";
+// import logo_bg from "../../assets/hero/logo_bg.webp";
+
+const shopify_partner = "/assets/shopify-partner.png";
+const logo_1 = "/assets/hero/_1.webp";
+const logo_2 = "/assets/hero/_2_.webp";
+const logo_3 = "/assets/hero/_3.webp";
+const logo_4 = "/assets/hero/_4.webp";
+const logo_5 = "/assets/hero/_5.webp";
+const logo_bg = "/assets/hero/logo_bg.webp";
 
 const { tag } = Astro.props;
 ---
@@ -39,11 +47,7 @@ const { tag } = Astro.props;
           </p>
 
           <div class="hero-buttons lg:gap-[2.5rem] gap-[1.5rem]">
-            <Image
-              class="h-10 w-auto"
-              src={shopify_partner}
-              alt="shopify logo"
-            />
+            <img class="h-10 w-auto" src={shopify_partner} alt="shopify logo" />
             <a href="#products-showcase">
               <button class="learn-more">
                 <span class="circle" aria-hidden="true">
@@ -87,11 +91,12 @@ const { tag } = Astro.props;
             </div>
           ) : tag === "2" ? (
             <div class="_hero-visual xl:max-w-[430px] max-w-[390px] mx-auto relative lg:inline-flex">
-              <Image
+              <img
                 width={800}
-                class="w-auto object-contain z-10"
+                class="w-full object-contain z-10"
                 src={logo_bg}
                 alt="Hero Visual"
+                loading="eager"
               />
               <div class="z-20">
                 <div
@@ -100,10 +105,12 @@ const { tag } = Astro.props;
                   class="product-card card-1"
                 >
                   <div class="card-icon xl:w-[70px] w-[60px]">
-                    <Image
+                    <img
                       width={200}
-                      src={logo_2}
+                      src="/assets/hero/t-bg.webp"
+                      x-src={logo_2}
                       alt="zepto product personalizer"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -113,10 +120,12 @@ const { tag } = Astro.props;
                   class="product-card card-2"
                 >
                   <div class="card-icon xl:w-[75px] w-[65px]">
-                    <Image
+                    <img
                       width={200}
-                      src={logo_1}
+                      src="/assets/hero/t-bg.webp"
+                      x-src={logo_1}
                       alt="zepto sign customizer"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -126,7 +135,13 @@ const { tag } = Astro.props;
                   class="product-card card-3"
                 >
                   <div class="card-icon xl:w-[55px] w-[45px]">
-                    <Image width={200} src={logo_3} alt="zepto infinSEO" />
+                    <img
+                      width={200}
+                      src="/assets/hero/t-bg.webp"
+                      x-src={logo_3}
+                      alt="zepto infinSEO"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
                 <div
@@ -135,7 +150,13 @@ const { tag } = Astro.props;
                   class="product-card card-4"
                 >
                   <div class="card-icon xl:w-[75px] w-[65px]">
-                    <Image width={200} src={logo_4} alt="bootsly" />
+                    <img
+                      width={200}
+                      src="/assets/hero/t-bg.webp"
+                      x-src={logo_4}
+                      alt="bootsly"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
                 <div
@@ -144,7 +165,13 @@ const { tag } = Astro.props;
                   class="product-card card-5"
                 >
                   <div class="card-icon xl:w-[70px] w-[60px]">
-                    <Image width={200} src={logo_5} alt="zepto popman" />
+                    <img
+                      width={200}
+                      src="/assets/hero/t-bg.webp"
+                      x-src={logo_5}
+                      alt="zepto popman"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -156,12 +183,39 @@ const { tag } = Astro.props;
   </ComponentLayout>
 </div>
 
+<script>
+  let loadCount = 0;
+  const callback = () => {
+    loadCount++;
+    if (loadCount == 5) {
+      document.querySelector("._hero-visual")?.classList.add("img-loaded");
+    }
+  };
+  document.querySelectorAll("[x-src]").forEach(function (el) {
+    const newSrc = el.getAttribute("x-src");
+    if (newSrc) {
+      const img = new Image();
+      img.onload = () => {
+        el.setAttribute("src", newSrc);
+        callback();
+      };
+      img.src = newSrc;
+    }
+  });
+</script>
+
 <style>
   /* button style */
   .hero-buttons {
     display: flex;
     margin-bottom: 2rem;
     animation: fadeInUp 0.8s ease-out 0.6s both;
+  }
+  [x-src] {
+    visibility: hidden;
+  }
+  ._hero-visual.img-loaded [x-src] {
+    visibility: visible;
   }
   button {
     position: relative;
@@ -576,9 +630,9 @@ const { tag } = Astro.props;
       width: 45px;
     }
   }
-    @media screen and (max-width: 1440px) and (min-width: 1024px) {
-      .hero-container {
-        gap: 10px;
-      }
+  @media screen and (max-width: 1440px) and (min-width: 1024px) {
+    .hero-container {
+      gap: 10px;
     }
+  }
 </style>
