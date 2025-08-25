@@ -1,0 +1,105 @@
+---
+import ComponentLayout from "../../layouts/ComponentLayout.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const content = [
+  {
+    title: "Introduction",
+    description: [
+      "Welcome to the Zepto Apps Affiliate Program. By participating in our program, you agree to these Terms & Conditions. These rules are designed to create a transparent, fair, and mutually beneficial partnership between Zepto Apps and our affiliate partners.",
+    ],
+  },
+  {
+    title: "Eligibility",
+    description: [
+      "The program is open to Shopify agencies, consultants, and other qualified partners who can promote Zepto Apps to merchants.",
+      "Affiliates must have a valid business or professional presence.",
+    ],
+  },
+  {
+    title: "Affiliate Links & Promotion",
+    description: [
+      "Affiliates will receive unique referral links for Zepto Apps products: Product Personalizer, Sign Customizer, Boostly, and PopMan.",
+      "Promotions can be made via email, website, social media, or other professional channels, following ethical marketing practices.",
+      "Affiliates may not use deceptive or spammy methods to generate referrals.",
+    ],
+  },
+  {
+    title: "Commission Structure",
+    description: [
+      "Single Apps: Affiliates earn recurring commissions on the base price of Product Personalizer and Sign Customizer.",
+      "Bundles (2+ Apps): Affiliates earn recurring commissions on the base prices of Zepto apps in the bundle. Boostly and PopMan always give full base price as commission.",
+      "Commission Percentage: Varies by plan and bundle",
+      "Product Personalizer Starter / Sign Customizer Essential: 20% on base price",
+      "Other single apps or bundles: 25% on base price",
+      "Activation Bonus: A one-time bonus is paid when a merchant activates a key app via your referral. Recurrent subscriptions do not generate activation bonus again.",
+    ],
+  },
+  {
+    title: "Payment Terms",
+    description: [
+      "Commissions are calculated based on the base price, not the discounted price.",
+      "Payments are processed monthly, within 15 days after the end of the month.",
+      "Minimum payout threshold: $50.",
+    ],
+  },
+  {
+    title: "Merchant Discounts & Bundles",
+    description: [
+      "Merchant discounts are applied for bundles to increase bundle adoption.",
+      "Offering bundles can increase affiliate earnings because recurring commissions are calculated on base prices, including bundled apps.",
+    ],
+  },
+  {
+    title: "Termination",
+    description: [
+      "Zepto Apps reserves the right to suspend or terminate an affiliate account if terms are violated.",
+      "Affiliates can terminate participation anytime via written notice.",
+    ],
+  },
+  {
+    title: "Liability & Disclaimer",
+    description: [
+      "Zepto Apps is not responsible for any taxes, fees, or losses incurred by affiliates.",
+      "Affiliates are responsible for ethical promotion and compliance with local laws.",
+    ],
+  },
+  {
+    title: "Changes to Terms",
+    description: [
+      "Zepto Apps may update these Terms & Conditions at any time. Affiliates will be notified via email. Continued participation constitutes acceptance of the updated terms.",
+    ],
+  },
+];
+---
+
+<Layout
+  head={{
+    title: "Terms & Conditions | Affiliate Program | Zepto Apps",
+  }}
+>
+  <ComponentLayout class="!py-22">
+    <div class="text-center mb-10">
+      <span class="text-2xl mb-4 block">Zepto Apps Affiliate Program</span>
+      <h1 class="text-center mb-4 md:text-5xl sm:text-4xl text-3xl font-bold">
+        Terms & Conditions
+      </h1>
+    </div>
+    <div class="flex flex-col items-start gap-8">
+      {
+        content?.map((con, idx) => (
+          <div>
+            <h2 class="text-xl font-medium mb-4">
+              {idx + 1}. {con?.title}
+            </h2>
+            <div class="flex flex-col gap-3">
+              {con?.description?.map((desc) => (
+                <p>{desc}</p>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </ComponentLayout>
+</Layout>

@@ -1,8 +1,8 @@
 ---
-import ComponentLayout from "../layouts/ComponentLayout.astro";
-import Layout from "../layouts/Layout.astro";
-import PartnerPackageCard from "../components/PartnerPackageCard.astro";
-import CollaborateSvg from "../components/CollaborateSvg.astro";
+import ComponentLayout from "../../layouts/ComponentLayout.astro";
+import Layout from "../../layouts/Layout.astro";
+import PartnerPackageCard from "../../components/PartnerPackageCard.astro";
+import CollaborateSvg from "../../components/CollaborateSvg.astro";
 
 const faqData = [
   {
@@ -401,9 +401,25 @@ const faqData = [
             maxlength="500"
             class="border border-gray-300 p-2 rounded"></textarea>
         </label>
+        <label class="flex items-center gap-2 justify-center">
+          <input
+            type="checkbox"
+            id="terms"
+            name="terms"
+            required
+            class="accent-primary_2"
+          />
+          <span>
+            I agree to the <a
+              target="_self"
+              href="/affiliate-program/terms"
+              class="underline text-primary_2">Terms & Conditions</a
+            > *
+          </span>
+        </label>
         <button
           type="submit"
-          class="bg-primary active:bg-primary_2 text-white p-2 rounded md:min-w-xl md:mx-auto"
+          class="bg-primary active:bg-primary_2 text-white p-2 rounded-md md:min-w-xl md:mx-auto"
         >
           Submit Affiliate Application
         </button>
