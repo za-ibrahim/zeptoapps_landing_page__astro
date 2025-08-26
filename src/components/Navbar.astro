@@ -39,21 +39,23 @@ const allLinks = [
       },
     ],
   },
-  {
-    title: "Collaborate",
-    urls: [
-      {
-        target: "_self",
-        title: "Become a Partner",
-        url: "/partners",
-      },
-      {
-        target: "_self",
-        title: "Affiliate Program",
-        url: "/affiliate-program",
-      },
-    ],
-  },
+
+  // {
+  //   title: "Collaborate",
+  //   urls: [
+  //     {
+  //       target: "_self",
+  //       title: "Become a Partner",
+  //       url: "/partners",
+  //     },
+  //     {
+  //       target: "_self",
+  //       title: "Affiliate Program",
+  //       url: "/affiliate-program",
+  //     },
+  //   ],
+  // },
+
   // {
   //   title: "Blog",
   //   url: "blogs",
@@ -177,11 +179,14 @@ const allLinks = [
 
       <!-- Mobile Menu Button -->
       <button
-        class="lg:hidden mobile-menu-button p-2 overflow-y-auto h-full"
-        aria-label="Toggle mobile menu"
+        class="lg:hidden text-primary focus:outline-none cursor-pointer mobile-menu-button"
+        id="menuToggle"
+        aria-label="Toggle menu"
         aria-expanded="false"
       >
-        <svg viewBox="-2.5 0 19 19" xmlns="http://www.w3.org/2000/svg" class="cf-icon-svg"><path fill="currentColor" d="M.789 4.836a1.03 1.03 0 0 1 1.03-1.029h10.363a1.03 1.03 0 1 1 0 2.059H1.818A1.03 1.03 0 0 1 .79 4.836zm12.422 4.347a1.03 1.03 0 0 1-1.03 1.029H1.819a1.03 1.03 0 0 1 0-2.059h10.364a1.03 1.03 0 0 1 1.029 1.03zm0 4.345a1.03 1.03 0 0 1-1.03 1.03H1.819a1.03 1.03 0 1 1 0-2.059h10.364a1.03 1.03 0 0 1 1.029 1.03z"/></svg>
+        <div id="menuIcon" class="overflow-y-auto transition-transform duration-500 ease-out w-11 h-11 flex justify-center items-center">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" style="margin-left:0"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </div>
       </button>
     </div>
 
@@ -270,7 +275,7 @@ const allLinks = [
     fill: var(--color-primary);
   }
 
-  .mobile-menu-button svg {
+  #menuToggle #menuIcon svg {
     height: 1.65rem;
     width: auto;
   }
