@@ -42,7 +42,13 @@ import ComponentLayout from "../layouts/ComponentLayout.astro";
           <div
             class={`shadow-box h-[280px] md:min-h-[360px] bg-white ${className}`}
           >
-            <Image class="icon w-15 h-15 mb-5" src={icon} alt={label} />
+            <Image
+              class="icon w-15 h-15 mb-5"
+              width={60}
+              height={60}
+              src={icon}
+              alt={label}
+            />
             <span class="mg:text-8xl md:text-7xl text-6xl font-bold relative z-10">
               {count}
             </span>
