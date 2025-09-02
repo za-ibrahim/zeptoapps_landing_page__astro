@@ -1,0 +1,36 @@
+<div id="preloader">
+  <img src="/loading.gif" alt="Loading..." />
+</div>
+
+<style>
+  #preloader {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Fade out smoothly on first load */
+  #preloader.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  const preloader = document.getElementById("preloader");
+
+  // Only run if first time
+  if (!sessionStorage.getItem("astroLoaded")) {
+    window.addEventListener("load", () => {
+      preloader?.classList.add("hidden");
+      sessionStorage.setItem("astroLoaded", "true");
+    });
+  } else {
+    preloader.style.display = "none";
+  }
+</script>

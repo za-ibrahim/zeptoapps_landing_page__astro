@@ -14,6 +14,12 @@ const {
 ---
 
 <head>
+  <script>
+    // If already loaded once, skip preloader
+    if (sessionStorage.getItem("astroLoaded")) {
+      document.write("<style>#preloader{display:none!important}</style>");
+    }
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>

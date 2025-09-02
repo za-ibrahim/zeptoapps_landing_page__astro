@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import ComponentLayout from "./ComponentLayout.astro";
 import "../styles/global.css";
 import SEOHead from "../components/SEOHead.astro";
+import Preloader from "../components/Preloader.astro";
 
 const { head } = Astro.props;
 ---
@@ -19,6 +20,7 @@ const { head } = Astro.props;
   </head> -->
   {head && <SEOHead {...head} />}
   <body>
+    <Preloader />
     <div id="navbar-container" class="navbar-transition">
       <ComponentLayout>
         <Navbar />

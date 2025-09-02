@@ -1,7 +1,7 @@
 ---
 import ComponentLayout from "../layouts/ComponentLayout.astro";
 import pplrImg from "../assets/products/1.png";
-import SignCustomizerImg from "../assets/products/2_without_border.png";
+import SignCustomizerImg from "../assets/products/2_without_border.webp";
 import BoostlyCartImg from "../assets/products/3.png";
 import InfinSEOImg from "../assets/products/4.png";
 import popManImg from "../assets/products/5.png";
@@ -67,7 +67,7 @@ const products = [
         products?.map((prod) => (
           <a href={prod?.link} target="_blank" class="card shadow-lg">
             <div class="w-full max-h-[400px] overflow-hidden">
-              <Image src={prod?.banner} alt={prod?.name} />
+              <Image src={prod?.banner} alt={prod?.name} loading="lazy" />
             </div>
             <div class="relative">
               <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full overflow-hidden object-contain m-auto shadow-lg">
@@ -76,7 +76,6 @@ const products = [
                   alt={prod?.name}
                   class="w-auto h-full"
                   loading="lazy"
-                  decoding="async"
                 />
               </div>
               <h2 class="product_name mt-12 font-bold text-center sm:text-3xl text-2xl transition-all duration-300 ease-in-out">
