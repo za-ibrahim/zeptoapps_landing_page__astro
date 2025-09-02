@@ -1,5 +1,5 @@
 <div id="preloader">
-  <img src="/assets/loader.gif" alt="Loading..." />
+  <img id="gifLoader" src="/assets/loader.gif" alt="Loading..." />
 </div>
 
 <style>
@@ -14,10 +14,26 @@
     transition: opacity 0.3s ease;
   }
 
+  #gifLoader {
+    animation: slowShow 0.5s linear;
+  }
+
   /* Fade out smoothly on first load */
   #preloader.hidden {
     opacity: 0;
     pointer-events: none;
+  }
+
+  @keyframes slowShow {
+    0% {
+      visibility: hidden;
+    }
+    99% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
   }
 </style>
 
