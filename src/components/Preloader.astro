@@ -29,48 +29,6 @@
   </svg> -->
 </div>
 
-<style>
-  #preloader {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
-
-  /* GIF sizing */
-  #gifLoader {
-    width: 90px; /* explicit size */
-    height: 90px; /* prevents layout shift */
-    display: block;
-    animation: slowShow 0.55s linear;
-  }
-
-  /* Fade out smoothly on first load */
-  #preloader.hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  @keyframes slowShow {
-    0% {
-      visibility: hidden;
-    }
-    99% {
-      visibility: hidden;
-    }
-    100% {
-      visibility: visible;
-    }
-  }
-</style>
-
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const preloader = document.getElementById("preloader");

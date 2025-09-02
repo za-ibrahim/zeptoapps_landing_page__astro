@@ -1,6 +1,4 @@
 ---
-import Preloader from "./Preloader.astro";
-
 const {
   title = "Zepto Apps | Shopify Apps | Themes | Custom Ecommerce",
   description = "Zepto Apps is a Web Application Development Company Building Shopify Apps, Themes &amp; Custom E-commerce. Over the last 7 years, we have successfully served 68k customers with our premium products and services. Our SaaS application, Zepto Product Personalizer, is empowering 16,000 E-commerce businesses across the globe.",
@@ -16,6 +14,48 @@ const {
 ---
 
 <head>
+  <style is:inline>
+    #preloader {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    /* GIF sizing */
+    #gifLoader {
+      width: 90px; /* explicit size */
+      height: 90px; /* prevents layout shift */
+      display: block;
+      animation: slowShow 0.55s linear;
+    }
+
+    /* Fade out smoothly on first load */
+    #preloader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes slowShow {
+      0% {
+        visibility: hidden;
+      }
+      99% {
+        visibility: hidden;
+      }
+      100% {
+        visibility: visible;
+      }
+    }
+  </style>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
@@ -68,5 +108,4 @@ const {
 
   <!-- Optional: preload hero image or fonts for performance -->
   <!-- <link rel="preload" as="image" href="/hero.jpg" /> -->
-  <Preloader />
 </head>
