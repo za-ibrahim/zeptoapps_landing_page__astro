@@ -27,21 +27,21 @@ body {
     background-color: #f2f4f5;
     font-family: var(--font-poppins);
     font-weight: 400;
+    overflow: hidden;
 }
+
 
 
 .custom-shape {
     position: relative;
     border-radius: 8px;
-    clip-path: polygon(
-            0% 0%,
+    clip-path: polygon(0% 0%,
             100% 0%,
             100% 97%,
             75% 80%,
             25% 80%,
             0% 97%,
-            0% 0%
-    );
+            0% 0%);
     z-index: 1;
     overflow: hidden;
     transition: all 0.3s ease-in-out;

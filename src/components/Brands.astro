@@ -1,21 +1,40 @@
 ---
-import { Image } from "astro:assets";
-import m_1 from "../assets/brands/m_01.webp";
-import m_2 from "../assets/brands/m_02.webp";
-import m_3 from "../assets/brands/m_03.webp";
-import m_4 from "../assets/brands/m_04.webp";
-import m_5 from "../assets/brands/m_05.webp";
-import m_6 from "../assets/brands/m_06.webp";
-import m_7 from "../assets/brands/m_07.webp";
-import m_8 from "../assets/brands/m_08.webp";
-import m_9 from "../assets/brands/m_09.webp";
-import m_10 from "../assets/brands/m_10.webp";
-import m_11 from "../assets/brands/m_11.webp";
-import m_12 from "../assets/brands/m_12.webp";
-import m_13 from "../assets/brands/m_13.webp";
-import m_14 from "../assets/brands/m_14.webp";
-import m_15 from "../assets/brands/m_15.webp";
-import m_16 from "../assets/brands/m_16.webp";
+// import { Image } from "astro:assets";
+// import m_1 from "../assets/brands/m_01.webp";
+// import m_2 from "../assets/brands/m_02.webp";
+// import m_3 from "../assets/brands/m_03.webp";
+// import m_4 from "../assets/brands/m_04.webp";
+// import m_5 from "../assets/brands/m_05.webp";
+// import m_6 from "../assets/brands/m_06.webp";
+// import m_7 from "../assets/brands/m_07.webp";
+// import m_8 from "../assets/brands/m_08.webp";
+// import m_9 from "../assets/brands/m_09.webp";
+// import m_10 from "../assets/brands/m_10.webp";
+// import m_11 from "../assets/brands/m_11.webp";
+// import m_12 from "../assets/brands/m_12.webp";
+// import m_13 from "../assets/brands/m_13.webp";
+// import m_14 from "../assets/brands/m_14.webp";
+// import m_15 from "../assets/brands/m_15.webp";
+// import m_16 from "../assets/brands/m_16.webp";
+// import xImg from "../assets/t-bg.webp";
+
+const m_1 = "/assets/brands/m_01.webp";
+const m_2 = "/assets/brands/m_02.webp";
+const m_3 = "/assets/brands/m_03.webp";
+const m_4 = "/assets/brands/m_04.webp";
+const m_5 = "/assets/brands/m_05.webp";
+const m_6 = "/assets/brands/m_06.webp";
+const m_7 = "/assets/brands/m_07.webp";
+const m_8 = "/assets/brands/m_08.webp";
+const m_9 = "/assets/brands/m_09.webp";
+const m_10 = "/assets/brands/m_10.webp";
+const m_11 = "/assets/brands/m_11.webp";
+const m_12 = "/assets/brands/m_12.webp";
+const m_13 = "/assets/brands/m_13.webp";
+const m_14 = "/assets/brands/m_14.webp";
+const m_15 = "/assets/brands/m_15.webp";
+const m_16 = "/assets/brands/m_16.webp";
+const xImg = "/assets/hero/t-bg.webp";
 
 const brands = [
   m_1,
@@ -43,14 +62,28 @@ const brands = [
       {
         brands.slice(0, 8).map((brand) => (
           <div>
-            <Image width={300} height={100} src={brand} alt="Brand Logo" loading="lazy" />
+            <img
+              class="brand_logo"
+              width={300}
+              height={100}
+              src={xImg}
+              data-src={brand}
+              loading="lazy"
+            />
           </div>
         ))
       }
       {
         brands.slice(0, 8).map((brand) => (
           <div>
-            <Image width={300} height={100} src={brand} alt="Brand Logo" loading="lazy" />
+            <img
+              class="brand_logo"
+              width={300}
+              height={100}
+              src={xImg}
+              data-src={brand}
+              loading="lazy"
+            />
           </div>
         ))
       }
@@ -61,14 +94,28 @@ const brands = [
       {
         brands.slice(8, 16).map((brand) => (
           <div>
-            <Image width={300} height={100} src={brand} alt="Brand Logo" loading="lazy" />
+            <img
+              class="brand_logo"
+              width={300}
+              height={100}
+              src={xImg}
+              data-src={brand}
+              loading="lazy"
+            />
           </div>
         ))
       }
       {
         brands.slice(8, 16).map((brand) => (
           <div>
-            <Image width={300} height={100} src={brand} alt="Brand Logo" loading="lazy" />
+            <img
+              class="brand_logo"
+              width={300}
+              height={100}
+              src={xImg}
+              data-src={brand}
+              loading="lazy"
+            />
           </div>
         ))
       }
@@ -138,3 +185,33 @@ const brands = [
     }
   }
 </style>
+
+<script>
+  // Define a custom event
+  const customEvent = new Event("heroImgLoadedChange");
+
+  // Override the property to dispatch the event on change
+  Object.defineProperty(window, "heroImgLoaded", {
+    configurable: true,
+    get() {
+      return this._heroImgLoaded;
+    },
+    set(newValue) {
+      this._heroImgLoaded = newValue;
+      window.dispatchEvent(customEvent); // Trigger custom event
+    },
+  });
+
+  // Listen for the custom event
+  window.addEventListener("heroImgLoadedChange", () => {
+    if (window.heroImgLoaded) {
+      const imgs = document.querySelectorAll(".brand_logo");
+      console.log(imgs);
+      setTimeout(() => {
+        imgs.forEach((img) => {
+          img.src = img.getAttribute("data-src");
+        });
+      }, 500);
+    }
+  });
+</script>
