@@ -23,7 +23,7 @@ const {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #fff;
+      background: #f2f4f5;
       z-index: 9999;
       opacity: 1;
       transition: opacity 0.3s ease;
@@ -31,8 +31,8 @@ const {
 
     /* GIF sizing */
     #gifLoader {
-      width: 90px; /* explicit size */
-      height: 90px; /* prevents layout shift */
+      /* width: 90px;
+      height: 90px; */
       display: block;
       animation: slowShow 0.55s linear;
     }
@@ -54,7 +54,138 @@ const {
         visibility: visible;
       }
     }
+
+    @keyframes ldio-k8kpenxtq7p {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .ldio-k8kpenxtq7p div {
+      box-sizing: border-box !important;
+    }
+
+    .ldio-k8kpenxtq7p > div {
+      position: absolute;
+      width: 124.62px;
+      height: 124.62px;
+      top: 30.69px;
+      left: 30.69px;
+      border-radius: 50%;
+      border: 9.3px solid #000;
+      border-color: #0670bb transparent #0670bb transparent;
+      animation: ldio-k8kpenxtq7p 0.5681818181818182s linear infinite;
+    }
+
+    .ldio-k8kpenxtq7p > div:nth-child(2),
+    .ldio-k8kpenxtq7p > div:nth-child(4) {
+      width: 102.30000000000001px;
+      height: 102.30000000000001px;
+      top: 41.85px;
+      left: 41.85px;
+      animation: ldio-k8kpenxtq7p 0.5681818181818182s linear infinite reverse;
+    }
+
+    .ldio-k8kpenxtq7p > div:nth-child(2) {
+      border-color: transparent #f69727 transparent #f69727;
+    }
+
+    .ldio-k8kpenxtq7p > div:nth-child(3) {
+      border-color: transparent;
+    }
+
+    .ldio-k8kpenxtq7p > div:nth-child(3) div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: rotate(45deg);
+    }
+
+    .ldio-k8kpenxtq7p > div:nth-child(3) div:before,
+    .ldio-k8kpenxtq7p > div:nth-child(3) div:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 9.3px;
+      height: 9.3px;
+      top: -9.3px;
+      left: 48.36px;
+      background: #0670bb;
+      border-radius: 50%;
+      box-shadow: 0 115.32000000000001px 0 0 #0670bb;
+    }
+
+    .ldio-k8kpenxtq7p > div:nth-child(3) div:after {
+      left: -9.3px;
+      top: 48.36px;
+      box-shadow: 115.32000000000001px 0 0 0 #0670bb;
+    }
+
+    .ldio-k8kpenxtq7p > div:nth-child(4) {
+      border-color: transparent;
+    }
+
+    .ldio-k8kpenxtq7p > div:nth-child(4) div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: rotate(45deg);
+    }
+
+    .ldio-k8kpenxtq7p > div:nth-child(4) div:before,
+    .ldio-k8kpenxtq7p > div:nth-child(4) div:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 9.3px;
+      height: 9.3px;
+      top: -9.3px;
+      left: 37.2px;
+      background: #f69727;
+      border-radius: 50%;
+      box-shadow: 0 93px 0 0 #f69727;
+    }
+
+    .ldio-k8kpenxtq7p > div:nth-child(4) div:after {
+      left: -9.3px;
+      top: 37.2px;
+      box-shadow: 93px 0 0 0 #f69727;
+    }
+
+    .loadingio-spinner-double-ring-n82zc9i61wh {
+      width: 186px;
+      height: 186px;
+      display: inline-block;
+      overflow: hidden;
+      background: none;
+    }
+
+    .ldio-k8kpenxtq7p {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform: translateZ(0) scale(1);
+      backface-visibility: hidden;
+      transform-origin: 0 0;
+      /* see note above */
+    }
+
+    .ldio-k8kpenxtq7p div {
+      box-sizing: content-box;
+    }
   </style>
+  <script>
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+      setTimeout(() => {
+        preloader?.classList.add("hidden");
+      }, 750);
+    });
+  </script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
