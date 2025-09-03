@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import logo from "../assets/_image.png";
+const logo = "/assets/_image.png";
 import ComponentLayout from "../layouts/ComponentLayout.astro";
 import SpingLoader from "./SpingLoader.astro";
 
@@ -41,7 +41,14 @@ const productLinks = [
             <!-- Logo -->
             <div class="mb-6">
               <a href="/">
-                <Image src={logo} alt="Zepto Apps Logo" width={128} height={50} class="w-32 h-auto" loading="lazy" />
+                <Image
+                  src={logo}
+                  alt="Zepto Apps Logo"
+                  width={128}
+                  height={50}
+                  class="w-32 h-auto"
+                  loading="lazy"
+                />
               </a>
             </div>
 
